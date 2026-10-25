@@ -1,6 +1,6 @@
-# DEATHWIRE / BLACK CIRCUIT
+# DEATHWIRE v0.20 / FULL THROTTLE
 
-A standalone, offline, side-view cyberpunk motorcycle combat racer. Twelve short campaign events across four industrial districts, plus seeded Endless, Death Race, Gauntlet and an optional practice run. Built from the supplied v0.04 prototype.
+A standalone, offline, side-view cyberpunk motorcycle combat racer. Twelve short campaign events across four industrial districts, plus seeded Endless, Death Race, Gauntlet and an optional practice run. Developed from v0.10 BLACK CIRCUIT. v0.20 adds freight cannons, foundry demolition, magnetic data rails, orbital launch assemblies, and competitive surviving rivals. Existing v1 saves are preserved.
 
 **Play:** open `dist/DEATHWIRE.html` in a modern desktop browser. It contains everything: no downloads, accounts, backend, keys or assets to fetch. Landscape touch controls appear on touch devices. Browser policies can limit persistent storage for local files; use the local server for reliable save testing.
 
@@ -34,3 +34,5 @@ The bike cruises when throttle is released. Read the road, keep momentum, and la
 With the server running, run `npm test`, `npm run test:campaign`, and `npm run test:export`. Tests need Chromium (`/usr/bin/chromium`, or set `CHROMIUM`). See [TESTING.md](TESTING.md) for evidence and limitations, [CURRENT_STATE.md](CURRENT_STATE.md) for the current milestone, and [KNOWN_ISSUES.md](KNOWN_ISSUES.md) for remaining work.
 
 No deployment or remote push has been performed. Progress lives in this browser's local storage; there is no account sync. Clearing browser data removes progress.
+
+Additional v0.20 checks: `npm run test:racing`, `npm run test:encounters`, and `node tests/objectives.cjs`. A foundry demolition event requires destroying all three cyan relays before crossing the finish. Space strikes forward; direct collisions also destroy relays.

@@ -1,22 +1,16 @@
-# Current state / v0.10 BLACK CIRCUIT
+# Current state / v0.20 FULL THROTTLE
 
-A playable offline campaign build is available at `dist/DEATHWIRE.html`; the checkout root and `source/index.html` contain identical generated copies. Development source and tests are included. No remote push, game deployment or publication occurred.
+Playable artifact: `dist/DEATHWIRE.html`. Source remains in `source/`; controls and the basic motorcycle integration remain intact. The campaign is still twelve brisk events across four districts. v1 credits, medals, equipment and options remain compatible without a schema change.
 
-## Verified
+Four new signature assemblies:
 
-- Browser keyboard throttle, hop, boost, pause and immediate same-seed retry run with real animation frames.
-- Grounded leaning raises the front contact while the rear remains supported; releasing lean settles the bike.
-- Loop engagement and forward upright release, jump/fuel behavior, melee direction, rival hazard damage, moving platform contact from above and rejection from below.
-- Finite courses retain geometry behind the rider, choose supported finish positions and provide usable checkpoint recovery locations.
-- Twelve campaign events clear sequentially with an automated rider using normal throttle, lean, hop and strike decisions. Stock bike, no god mode, health overrides, teleports or forced finishes in that traversal. Campaign completion persists through reload.
-- First-clear/improved-medal rewards, garage purchase/equip, validated save input, preference persistence and storage failure fallback.
-- 100 seeds audited through at least 22,000 course units each for deterministic geometry, bounded slopes, launch envelopes and gap lengths.
-- Responsive landscape control bounds at 844 × 390; standalone export makes no external resource requests.
+- **Overdrive:** staged conveyor runway, three velocity strips, launch ramp, 300-unit gap and broad recovery deck.
+- **Iron Cathedral:** linked working presses, conveyor, four collapsing bridge spans and a lower rescue deck shared by all riders.
+- **Ghost Transmission:** an elevated sinusoidal magnetic rail with throttle/brake/boost control, visual data architecture and a launch exit. It is explicitly guided arcade motion; the lower road provides a fallback.
+- **Orbital:** linked tower loops, a charged runway and a long skyline launch. The final campaign event combines multiple signature families.
 
-## Limits
+Every signature passed isolated normal-input traversal at cruise/full throttle on all four builds (32 combinations), without recovery credits or health overrides. The entire campaign also passed stock-bike normal-input traversal, including three required demolition relays in event 6. Existing 17 browser checks and 100 extended seeded audits pass. Standalone export runs with real browser keyboard controls and no external requests. All four signatures also passed real animation-frame throttle-only traversals, with live screenshots recorded.
 
-Automated traversal is evidence of reachability, not a substitute for human fun/balance testing. Ghost Protocol was cleared with little integrity remaining. Guided loops and contact samples are arcade approximations. Finite race opponents can crash or be eliminated; the player is generally faster under sustained throttle. Real mobile hardware, Firefox/Safari, prolonged Endless soak testing and every garage build/seed combination remain unverified. See `KNOWN_ISSUES.md`.
+Racing changed materially: better hazard anticipation, normal boost management, common impact rules, and visible chassis durability comparable to player garage builds. Sustained low-speed contact no longer deals repeated pileup damage. In 18 recorded races (six courses, three seeds each), AI finishers appeared in 16 races; 33 of 72 AI starters finished; AI beat the scripted player in 12 races. The complete table and actual race gaps are in `tests/racing-results.json`. Field simulation continues after the player finish through a test-only rollout so later finishers are measured, not inferred.
 
-## Environment
-
-Node 24, Python 3.12 and system Chromium were available. `npm ci` and `npm run build` succeeded. The optional Python server is running on port 8000 in this instance; processes must restart in future tasks. Reusable install/start instructions were saved in an environment configuration draft. That draft does not itself execute scripts or publish a reusable snapshot; review/save and publication remain user actions in environment settings. Fresh-task restoration has not been tested.
+Remaining limits: this is still an arcade game with guided loops/rails; there are no true rigid-body machines or alternate-route planning. Two recorded late fields were eliminated. The demolition climax is demanding (10 integrity remaining in the recorded stock run). Human fun/balance testing, real mobile hardware and other browser engines remain unverified. New screenshots were visually inspected; traversal uses a geometry-aware scripted rider, not a human playtest.

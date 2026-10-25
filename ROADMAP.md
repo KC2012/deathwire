@@ -1,5 +1,14 @@
 # Milestones
 
+## v0.20 delivered
+
+- [x] Four district signature families and reauthored pacing.
+- [x] Competitive rivals with measured finish/placement outcomes.
+- [x] Tested demolition event and v1 save compatibility.
+- [x] 32 isolated build/speed traversals, 18 sampled races, complete campaign and regression/export checks.
+- [ ] Human balance testing, real-device QA, more elaborate physical machinery and recurring-rival story beats.
+
+
 ## Implemented / v0.10 Black Circuit
 
 - [x] Run and audit the supplied prototype; preserve its playable identity.

@@ -21,6 +21,16 @@ const EVENTS=[
  ['Last light','sprint',13800,['skyrail','cascade','loop','flow'],'One crew left. One road out. Race the skyline.',42],
  ['DEATHWIRE','sprint',15400,['reactor','rocketjump','loop','flow'],'The final circuit. Finish the run and own the road.',46]
 ].map((e,id)=>({id,title:e[0],mode:e[1],length:e[2],modules:e[3],brief:e[4],par:[11,14.5,15.5,15.5,17,19,19,20,20,23,24,29][id],seed:'BLACK-'+(id+1)+'-CIRCUIT',region:Math.floor(id/3)}));
+// Authored pacing: signature assemblies punctuate open competition, not repeated hazard decks.
+const V20_ROUTES=[
+ ['flow','ramp','jump','flow'],['flow','ramp','flow','overdrive'],['overdrive','flow','loop','flow'],
+ ['foundry','flow','ramp','flow'],['flow','foundry','flow','jump'],['foundry','flow','pressrun','flow'],
+ ['datastream','flow','platform','flow'],['datastream','flow','skyrail','flow'],['datastream','flow','doublejump','flow'],
+ ['orbital','flow','rocketjump','flow'],['flow','orbital','flow','skyrail'],['overdrive','flow','datastream','flow','orbital','flow']
+];
+EVENTS.forEach((e,i)=>{e.modules=V20_ROUTES[i];e.par*=1.25;e.brief+=' '+['Run the freight accelerator.','The Iron Choir never stops working.','Ride the signal above the broken grid.','Break orbit. Leave the city behind.'][e.region]});
+EVENTS[2].title='Overdrive / freight cannon';EVENTS[5].title='The iron cathedral';EVENTS[8].title='Ghost transmission';EVENTS[11].title='FULL THROTTLE / Saint’s last light';
+EVENTS[5].format='demolition';EVENTS[5].brief='Destroy all three cyan relays with a strike or collision, then escape the assembly line.';
 const PARTS=[
  {name:'STOCK / Wireframe',desc:'Balanced, agile, unbreakable spirit. The complete circuit is built for this machine.',cost:0,hp:100,speed:0,regen:.11,attack:0},
  {name:'ENGINE / Redline',desc:'+35 top speed. Lighter armor: 85 integrity. Faster lines demand cleaner riding.',cost:200,hp:85,speed:35,regen:.11,attack:0},
@@ -51,7 +61,7 @@ function showCircuit(){
  $('campaignStatus').textContent=completed===12?'CIRCUIT COMPLETE // The road is yours. Revisit any event for gold.':`${completed} / 12 EVENTS CLEARED  //  ${save.credits} SCRAP  //  ${PARTS[save.equipped].name}`;
  $('regions').replaceChildren();
  REGIONS.forEach((r,ri)=>{const col=document.createElement('div');col.className='region';col.style.borderColor=r.color;const title=document.createElement('h3');title.textContent=r.name;col.append(title);const lore=document.createElement('p');lore.textContent=r.crew;col.append(lore);
-  EVENTS.filter(e=>e.region===ri).forEach(e=>{const b=document.createElement('button');b.className='event'+(save.medals[e.id]?' done':'');b.disabled=!unlocked(e.id);b.title=e.brief+' Gold: '+e.par+' seconds'+(e.mode==='sprint'?' and first place.':'.');b.innerHTML=`<small>${e.mode==='trial'?'CHECKPOINT RUN':'CREW RACE'} / ${(e.length/1000).toFixed(1)} KM</small><b>${e.title}</b><small class="medal">${save.medals[e.id]?'◆'.repeat(save.medals[e.id])+' '+(save.times[e.id]?.toFixed(1)||'—')+'s':unlocked(e.id)?'RIDE →':'LOCKED'}</small>`;b.addEventListener('click',()=>launchEvent(e.id));col.append(b)});$('regions').append(col)});
+  EVENTS.filter(e=>e.region===ri).forEach(e=>{const b=document.createElement('button');b.className='event'+(save.medals[e.id]?' done':'');b.disabled=!unlocked(e.id);b.title=e.brief+' Gold: '+e.par+' seconds'+(e.mode==='sprint'?' and first place.':'.');b.innerHTML=`<small>${e.format==='demolition'?'DEMOLITION RUN':e.mode==='trial'?'CHECKPOINT RUN':'CREW RACE'} / ${(e.length/1000).toFixed(1)} KM</small><b>${e.title}</b><small style="display:block;line-height:1.5">${e.brief.split('.')[0]}.</small><small class="medal">${save.medals[e.id]?'◆'.repeat(save.medals[e.id])+' '+(save.times[e.id]?.toFixed(1)||'—')+'s':unlocked(e.id)?'RIDE →':'LOCKED'}</small>`;b.addEventListener('click',()=>launchEvent(e.id));col.append(b)});$('regions').append(col)});
 }
 function launchEvent(id){if(!unlocked(id))return false;activeEvent=EVENTS[id];$('circuit').classList.add('hidden');$('modeSelect').value=activeEvent.mode;$('seedInput').value=activeEvent.seed;startGame(false);toast(activeEvent.title.toUpperCase(),2);return true}
 function settleEvent(win){

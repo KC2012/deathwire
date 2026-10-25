@@ -13,3 +13,13 @@
 11. Separate editable code and HTML shell, with a tiny offline export script. Play requires no installed packages; Playwright is development-only.
 12. Use browser-local saves with validation, bounded numbers, an explicit schema version and graceful failures. No network profile or account system.
 13. Defer elaborate weapons, alternate-route AI, ragdoll constraints and a visual course editor. Preserve the tested coherent campaign instead of presenting unfinished labels as features.
+
+## v0.20 decisions
+
+14. Preserve basic handling; focus on connected encounter design and racing rather than a new physics rewrite.
+15. Add four signature families with wide entries/exits. Long launches declare a 420-unit/s approach envelope and receive velocity strips before takeoff. Keep a fallback road under magnetic rails and under collapsing bridge spans.
+16. Fix contact damage at its cause: separating riders at similar speeds should not drain health. Resolve penetration by actual front/rear order; damage requires a significant relative impact. The same player/rival impact thresholds apply.
+17. Give rivals explicit garage-comparable durability and non-positional speed targets. Sprinter/raider boost consumes/recharges fuel; nobody receives speed based on distance to the player. Remove premature ramp hopping so the common launch code fires.
+18. Retain elimination as a legitimate outcome. Racing regression requires AI finishers in at least 80% of 18 sampled races and on every representative course across three seeds, plus actual wins against the scripted player. It does not demand invincible survivors in every run.
+19. Add one tested event format: demolition escape. Missing a cyan relay fails the event. Do not add untested chase/weapon features just to increase format count.
+20. Retain save schema v1 and preserve existing progress and best times. Existing best times refer to their historical courses; new medals remain attainable.

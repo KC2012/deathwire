@@ -42,7 +42,8 @@ function screenX(x){return x-camX}function drawLine(x1,y1,x2,y2,col='#e8f7ff',wi
 function drawBackground(){ctx.fillStyle='#05070a';ctx.fillRect(0,0,W,H);const mid=390-camY;ctx.save();let cityShift=(camX*.11)%90;ctx.fillStyle='#0e1820';for(let i=-2;i<W/90+3;i++){const hx=80+(Math.sin((i+Math.floor(camX*.11/90))*17.49)+1)*78;let x=i*90-cityShift;ctx.fillRect(x,mid-hx-74,65,hx+125);for(let j=0;j<7;j++){const yy=mid-hx-65+j*19;ctx.fillStyle=(j+i)%4===0?'#25323d':'#101e27';ctx.fillRect(x+12,yy,3,5);ctx.fillRect(x+34,yy,3,5)}}ctx.strokeStyle='#1d2c33';ctx.lineWidth=1;for(let j=0;j<5;j++){let y=mid+46+j*33;drawLine(0,y,W,y,'#131b25',1)}const shift=(camX*.26)%125;for(let i=-1;i<W/125+2;i++){let x=i*125-shift;drawLine(x,mid-185,x+80,mid-185,'#101b24',1)}ctx.restore();let grad=ctx.createLinearGradient(0,mid-140,0,H);grad.addColorStop(0,'#05070a00');grad.addColorStop(1,'#11192744');ctx.fillStyle=grad;ctx.fillRect(0,mid-140,W,H)}
 function drawRoad(){for(const g of ground){if(g.x2<camX-60||g.x1>camX+W+60||g.dead)continue;const x1=screenX(g.x1),x2=screenX(g.x2),y1=g.y1-camY,y2=g.y2-camY;ctx.fillStyle=g.fragile?'#1b2630':'#121c25';ctx.beginPath();ctx.moveTo(x1,y1);ctx.lineTo(x2,y2);ctx.lineTo(x2,H+220);ctx.lineTo(x1,H+220);ctx.closePath();ctx.fill();drawLine(x1,y1,x2,y2,g.fragile?'#9faab5':'#e4faff',g.fragile?2:3);drawLine(x1,y1+8,x2,y2+8,'#324856',1);const dx=x2-x1,dy=y2-y1,len=Math.hypot(dx,dy);if(g.fragile){for(let j=0;j<len/19;j++){const t=j*19/len;let x=lerp(x1,x2,t),y=lerp(y1,y2,t);drawLine(x-3,y+2,x+4,y+10,'#8eabb2',1)}}else{for(let j=0;j<len/42;j++){const t=j*42/len;let x=lerp(x1,x2,t),y=lerp(y1,y2,t);drawLine(x,y+19,x+7,y+19,'#243540',1)}}if(g.conveyor){for(let j=0;j<len/25;j++){const t=((j*25+worldTime*56)%Math.max(1,len))/Math.max(1,len);const px=lerp(x1,x2,t),py=lerp(y1,y2,t);drawLine(px-7,py+5,px+7,py+5,'#73eaf8',2)}}if(g.launch){const mx=lerp(x1,x2,.7),my=lerp(y1,y2,.7);drawLine(mx,my-3,mx+16,my-17,'#ffffff',2)}}for(const h of hazards)if(h.type==='platform'&&h.x+h.width>camX-80&&h.x<camX+W+80&&!h.broken){const x=screenX(h.x),y=platformY(h)-camY;ctx.fillStyle='#172431';ctx.fillRect(x,y,h.width,14);drawLine(x,y,x+h.width,y,'#f2ffff',3);drawLine(x+10,y+7,x+h.width-10,y+7,'#758f9e',1);drawLine(x+h.width/2,y+14,x+h.width/2,510-camY,'#344954',1);drawLine(x+h.width/2-12,510-camY,x+h.width/2+12,510-camY,'#344954',3)}}
 function blade(x,y,r,t){ctx.save();ctx.translate(x,y);ctx.rotate(t);ctx.strokeStyle='#e4f6ff';ctx.fillStyle='#081018';ctx.lineWidth=2;ctx.beginPath();for(let i=0;i<16;i++){let a=i*TAU/16,r1=i%2===0?r+7:r-2;let xx=Math.cos(a)*r1,yy=Math.sin(a)*r1;if(i===0)ctx.moveTo(xx,yy);else ctx.lineTo(xx,yy)}ctx.closePath();ctx.fill();ctx.stroke();ctx.beginPath();ctx.arc(0,0,r*.55,0,TAU);ctx.strokeStyle='#91a8b7';ctx.stroke();drawLine(-r*.6,0,r*.6,0,'#a6c8d3',1);drawLine(0,-r*.6,0,r*.6,'#a6c8d3',1);ctx.fillStyle='#fff';ctx.beginPath();ctx.arc(0,0,4,0,TAU);ctx.fill();ctx.restore()}
-function drawHazards(){for(const h of hazards){let x=screenX(h.x),y=h.y-camY;if(x< -220||x>W+220||h._gone)continue;ctx.save();if(h.type==='loop'){
+function drawHazards(){for(const h of hazards){let x=screenX(h.x),y=h.y-camY;if(x< -(h.length||220)||x>W+220||h._gone)continue;ctx.save();if(h.type==='magrail'){ctx.beginPath();for(let i=0;i<=60;i++){const xx=x+h.length*i/60,yy=y-h.rise*Math.sin(Math.PI*i/60);if(!i)ctx.moveTo(xx,yy+28);else ctx.lineTo(xx,yy+28)}ctx.lineWidth=9;ctx.strokeStyle='#203442';ctx.stroke();ctx.lineWidth=2;ctx.strokeStyle='#ac98ff';ctx.stroke();}
+if(h.type==='loop'){
   ctx.beginPath();ctx.arc(x,y,h.radius,0,TAU);ctx.lineWidth=13;ctx.strokeStyle='#152c35';ctx.stroke();
   ctx.beginPath();ctx.arc(x,y,h.radius,0,TAU);ctx.lineWidth=3;ctx.strokeStyle='#d5faff';ctx.stroke();
   ctx.setLineDash([7,13]);ctx.beginPath();ctx.arc(x,y,h.radius-8,0,TAU);ctx.lineWidth=2;ctx.strokeStyle='#4ad5e5';ctx.stroke();ctx.setLineDash([]);
@@ -50,6 +51,7 @@ function drawHazards(){for(const h of hazards){let x=screenX(h.x),y=h.y-camY;if(
  }
  if(h.type==='saw'){let yy=y+Math.sin(worldTime*1.7+h.phase)*9;drawLine(x,yy-87,x,yy-29,'#647884',3);blade(x,yy,h.radius,worldTime*6+h.phase)}
 if(h.type==='spikes'){ctx.strokeStyle='#f5faff';ctx.fillStyle='#172532';ctx.lineWidth=2;for(let xx=0;xx<h.width;xx+=14){ctx.beginPath();ctx.moveTo(x+xx,y);ctx.lineTo(x+xx+7,y-19);ctx.lineTo(x+xx+14,y);ctx.closePath();ctx.fill();ctx.stroke()}}
+if(h.relay&&!h.broken){drawLine(x,y-65,x,y-20,'#54f2ff',3);ctx.strokeStyle='#54f2ff';ctx.strokeRect(x-22,y-25,44,48);ctx.font='bold 10px monospace';ctx.fillStyle='#54f2ff';ctx.fillText('◆',x-5,y-43)}
 if(h.type==='barrel'&&!h.broken){ctx.fillStyle='#17212a';ctx.fillRect(x-12,y-16,24,29);ctx.strokeStyle='#f7f7f7';ctx.lineWidth=2;ctx.strokeRect(x-12,y-16,24,29);drawLine(x-12,y-9,x+12,y-9,'#99acbb',2);drawLine(x-12,y+6,x+12,y+6,'#99acbb',2);ctx.font='bold 19px monospace';ctx.textAlign='center';ctx.fillStyle='#f7e5eb';ctx.fillText('!',x,y+5)}
 if(h.type==='crusher'){let v=(Math.sin(worldTime*2.4+h.phase)+1)/2,by=y+v*105;drawLine(x,y-125,x,y-5,'#405765',7);ctx.fillStyle='#1e2d36';ctx.fillRect(x-31,by-21,62,40);ctx.strokeStyle='#ecfcff';ctx.lineWidth=2;ctx.strokeRect(x-31,by-21,62,40);for(let j=-22;j<30;j+=15){ctx.beginPath();ctx.moveTo(x+j,by+19);ctx.lineTo(x+j+7,by+28);ctx.lineTo(x+j+14,by+19);ctx.stroke()}}
 if(h.type==='swing'){let a=Math.sin(worldTime*1.6+h.phase)*1.03,px=x+Math.sin(a)*h.length,py=y+Math.cos(a)*h.length;drawLine(x,y,px,py,'#8b9eae',3);ctx.fillStyle='#061018';ctx.strokeStyle='#eafaff';ctx.lineWidth=3;ctx.beginPath();ctx.arc(px,py,h.radius,0,TAU);ctx.fill();ctx.stroke();for(let j=0;j<8;j++){let aa=j*TAU/8+worldTime;drawLine(px+Math.cos(aa)*(h.radius-10),py+Math.sin(aa)*(h.radius-10),px+Math.cos(aa)*(h.radius+6),py+Math.sin(aa)*(h.radius+6),'#eef9ff',2)}}
@@ -100,7 +102,7 @@ function drawEmpty(){if(!player){camY=0}}
 // DEATHWIRE // RIDECRAFT + DEATHWORKS integrated mechanical overhaul
 // All values are in world pixels, seconds and radians. One game-world physics.
 // -----------------------------------------------------------------------------
-let hitLog=[];
+let hitLog=[],assemblies=[];
 let seedKey='', spawnRng=null, lastCheckpoint=0, checkpointIndex=0, checkpoints=[],
     wreckPieces=[], wreckClock=0, crashReason='', comboCount=0, comboUntil=0,
     bestCombo=0, chainKills=0, riderSerial=0, stageMessage='', stageMessageUntil=0,
@@ -110,10 +112,10 @@ function loadRecords(){try{records=JSON.parse(localStorage.getItem('deathwire.re
 function saveRecords(){try{localStorage.setItem('deathwire.records.v02',JSON.stringify(records))}catch(_){}}
 function showRecord(){const r=records[mode];const el=$('recordLine');if(el)el.textContent=r?`PERSONAL BEST // ${(r.distance/1000).toFixed(2)} KM • ${r.score} PTS • ${r.kills} KILLS`:'NO PERSONAL BEST YET // MAKE YOUR FIRST RUN'}
 const ARCHETYPES=[
-  {key:'SPRINTER',speed:440,hp:40,attack:12,tell:.58,color:'#dbe9f0'},
-  {key:'BRUISER',speed:340,hp:67,attack:19,tell:.85,color:'#ffc3d3'},
-  {key:'RAIDER',speed:385,hp:45,attack:15,tell:.65,color:'#b2e6e9'},
-  {key:'SURVIVOR',speed:360,hp:48,attack:11,tell:.83,color:'#bfc5dc'}
+  {key:'SPRINTER',speed:440,hp:85,attack:12,tell:.58,color:'#dbe9f0'},
+  {key:'BRUISER',speed:340,hp:135,attack:19,tell:.85,color:'#ffc3d3'},
+  {key:'RAIDER',speed:385,hp:100,attack:15,tell:.65,color:'#b2e6e9'},
+  {key:'SURVIVOR',speed:360,hp:100,attack:11,tell:.83,color:'#bfc5dc'}
 ];
 function rngAI(a=0,b=1){return a+(b-a)*(spawnRng?spawnRng():Math.random())}
 function getSegment(x){
@@ -149,7 +151,33 @@ function generateModule(forced=null){
   moduleCount%6===0?['flow','ramp','conveyor']:
   moduleCount%6===5?['gauntlet','cascade','wheel','barricade','jump','loop','doublejump']:
   ['flow','ramp','jump','spikes','saws','crusher','barrels','bridge','platform','laser','swing','conveyor','cascade','wheel','barricade','loop','doublejump','halfpipe','rocketjump'];
- const typ=forced||(activeEvent?activeEvent.modules[(moduleCount)%activeEvent.modules.length]:pickTrack(deck));let x0=cursor;moduleCount++;
+ const typ=forced||(activeEvent?activeEvent.modules[moduleCount%activeEvent.modules.length]:(moduleCount%5===4?pickTrack(['overdrive','foundry','datastream','orbital']):pickTrack(deck)));let x0=cursor;moduleCount++;
+
+ if(['overdrive','foundry','datastream','orbital'].includes(typ)){
+  const base=roadY;assemblies.push({type:typ,start:x0,end:0,y:base});
+  road(280,0);
+  if(typ==='overdrive'){
+   road(460,0,{conveyor:1});for(const dx of [360,200,65])hz('boost',cursor-dx,roadY-3,{damage:0});
+   road(180,-95,{launch:true,requiredSpeed:420});const lip=roadY;gap(300);roadY=clamp(lip+85,300,420);road(560,0);road(220,25);
+  }
+  if(typ==='foundry'){
+   const sy=roadY;const start=cursor;road(780,0,{conveyor:1});
+   for(let i=0;i<3;i++)hz('crusher',start+170+i*240,sy-145,{phase:i*2.1,damage:24});
+   road(220,-45,{launch:true});const startBridge=cursor,yy=roadY;
+   for(let i=0;i<4;i++)road(120,0,{fragile:true,breakDelay:2.6});
+   ground.push({x1:startBridge,x2:cursor,y1:yy+65,y2:yy+65,dead:false});
+   road(400,40);hz('boost',cursor-120,roadY-3,{damage:0});
+  }
+  if(typ==='datastream'){
+   const start=cursor;hz('magrail',start+45,roadY-28,{length:900,rise:175,damage:0});road(1040,0);
+   road(160,-55,{launch:true});const yy=roadY;gap(145);roadY=clamp(yy+60,300,420);road(450,0);
+  }
+  if(typ==='orbital'){
+   for(let i=0;i<2;i++){road(220,0);hz('boost',cursor-100,roadY-3,{damage:0});road(280,0);hz('loop',cursor-130,roadY-101,{radius:101,damage:0})}
+   road(260,0);hz('boost',cursor-70,roadY-3,{damage:0});road(180,-85,{launch:true,requiredSpeed:420});const yy=roadY;gap(280);roadY=clamp(yy+80,300,420);road(550,0);
+  }
+  assemblies[assemblies.length-1].end=cursor;
+ }
  if(typ==='flow'){road(165,randTrack(-13,13));road(210,randTrack(-25,25));road(195,randTrack(-26,26));road(180,randTrack(-18,18))}
  if(typ==='ramp'){road(170,0);road(158,-68,{launch:true});road(158,57);road(200,0);hz('boost',cursor-138,roadY-2,{damage:0})}
  if(typ==='jump'){
@@ -239,10 +267,10 @@ function generateModule(forced=null){
   hz('wheel',cursor-160,roadY-38,{radius:48,damage:28,speed:.8});road(260,0);
  }
  decorate({pressrun:'IRON CHOIR',skyrail:'SKYRAIL',reactor:'REACTOR',flow:'OPEN ROAD',ramp:'LAUNCH SYSTEM',jump:'BROKEN HIGHWAY',spikes:'SPIKE FIELD',saws:'SAW WORKS',crusher:'PRESS CHAMBER',barrels:'FUEL DUMP',bridge:'FRAGILE OVERPASS',platform:'LIFT BRIDGE',laser:'SECURITY GRID',swing:'PENDULUM YARD',conveyor:'VELOCITY FACTORY',cascade:'CHAIN REACTION',wheel:'TURBINE YARD',gauntlet:'DEATHWORKS GAUNTLET',barricade:'BLAST BARRICADE',loop:'FULL LOOP / HOLD THROTTLE',halfpipe:'RAVINE / LAUNCH',doublejump:'DOUBLE GAP / JUMP',rocketjump:'ROCKET LAUNCH'}[typ],x0,cursor);
- sectionMetrics.push({type:typ,start:x0,end:cursor});
+ sectionMetrics.push({type:typ,start:x0,end:cursor,entrySpeed:['overdrive','orbital'].includes(typ)?420:250,pacing:['flow','overdrive','datastream','orbital'].includes(typ)?'release':'challenge'});
 }
 function initTrack(){
- ground=[];hazards=[];enemies=[];particles=[];sparks=[];labels=[];sectionMetrics=[];
+ ground=[];hazards=[];enemies=[];particles=[];sparks=[];labels=[];sectionMetrics=[];assemblies=[];
  cursor=-800;roadY=398;moduleCount=0;road(1000,0);decorate('START / DEAD CITY',0,200);
  generateModule('flow');generateModule('ramp');generateModule(activeEvent?.practice?'flow':'spikes');
  for(let i=0;i<3;i++)generateModule();generatedUpTo=cursor;nextEnemyX=680;
@@ -251,7 +279,7 @@ function initTrack(){
 function spawnEnemy(x,y,type=null){
  const a=type||ARCHETYPES[Math.floor(rngAI(0,ARCHETYPES.length))];
  const e=makeBike(x,y,true);e.id=++riderSerial;e.role=a.key;e.archetype=a;e.hp=e.maxHp=a.hp;
- e.vx=rngAI(a.speed-40,a.speed+15);e.targetSpeed=a.speed+rngAI(-22,22);
+ e.vx=rngAI(a.speed-40,a.speed+15);e.targetSpeed=({SPRINTER:550,BRUISER:480,RAIDER:520,SURVIVOR:505}[a.key]||500)+rngAI(-12,12);
  e.name=['VEX','MOTHER IRON','NULL','SAINT'][ARCHETYPES.indexOf(a)]||a.key;e.ai=rngAI(0,100);e.attackIntent=0;e.telegraph=0;e.risk=rngAI(.15,.93);
  e.damageFlash=0;e.invuln=.5;e.finished=false;e.finTime=Infinity;
  enemies.push(e);return e
@@ -277,7 +305,10 @@ function startGame(newSeed=false){
  if(mode!=='endless'){while(cursor<finishX+1000)generateModule();nextEnemyX=finishX+1000;}
  ensureTrack();
  if(activeEvent){const part=PARTS[save.equipped];player.hp=player.maxHp=part.hp;}
- if(mode!=='endless'){while(!groundAt(finishX)||groundAt(finishX)?.road?.fragile)finishX+=30;}
+ if(mode!=='endless'){while(!groundAt(finishX)?.road||groundAt(finishX)?.road?.fragile)finishX+=30;}
+ if(activeEvent?.format==='demolition'){
+  for(let i=1;i<=3;i++){const desired=finishX*i/4;let g=ground.find(g=>g.x1>desired&&g.x2-g.x1>200&&!g.fragile&&!g.launch);if(g){const x=(g.x1+g.x2)/2;hz('barrel',x,(g.y1+g.y2)/2-16,{relay:true,damage:18})}}
+ }
  // Place starting grid close enough to actually race against rivals.
  if(mode==='sprint'){
   for(let i=0;i<4;i++){
@@ -298,7 +329,7 @@ function ensureTrack(){
   const g=groundAt(xx);if(g&&xx>600)spawnEnemy(xx,g.y-29);
  }
  if(mode==='endless'&&player&&player.x>1800){const pruneX=player.x-1650;
-  ground=ground.filter(g=>g.x2>pruneX);
+  assemblies=assemblies.filter(a=>a.end>pruneX);ground=ground.filter(g=>g.x2>pruneX);
   hazards=hazards.filter(h=>h.x>pruneX-210&&!h._gone);
   labels=labels.filter(l=>l.end>pruneX);
   enemies=enemies.filter(e=>(e.x>pruneX-450||e.finished)&&!e.gone);
@@ -350,6 +381,8 @@ function updateBike(b,dt){
  if(b.dead||b.gone||b.finished)return;
  // Guided high-speed loop: the circular rail carries the bike through a full inversion.
  // This is deliberately an arcade set-piece, not a claim of rigid-body loop physics.
+ if(b.railRide){if((!b.enemy&&pressed.boost)&&b.boost>.025){b.vx+=200*dt;b.boost=Math.max(0,b.boost-dt*.44)}const h=b.railRide;b.lastX=b.x;b.lastY=b.y;b.vx=clamp(b.vx+(b.enemy||pressed.gas?90:-40)*dt,300,760);if(!b.enemy&&pressed.brake)b.vx=Math.max(250,b.vx-480*dt);b.x+=b.vx*dt;const t=clamp((b.x-h.x)/h.length,0,1);b.y=h.y-h.rise*Math.sin(Math.PI*t);b.angle=Math.atan(-h.rise*Math.PI/h.length*Math.cos(Math.PI*t));b.wheel+=b.vx*dt/11;b.onGround=false;if(t>=1){b.railRide=null;b.vy=120;b.angle=0;b.jumpCooldown=.2;if(!b.enemy)bumpScore('GHOST TRANSMISSION',220)}return}
+ if(b.onGround&&!b.railRide){const rail=hazards.find(h=>h.type==='magrail'&&b.x>=h.x-18&&b.x<h.x+25);if(rail)b.railRide=rail;}
  if(b.loopRide){
   const h=b.loopRide;h.progress+=dt*clamp(b.vx/104,2.9,6.3);
   const a=h.progress;
@@ -380,19 +413,13 @@ function updateBike(b,dt){
   if(justJump)jumpBike(b,true);if(justAttack)attack();
   steer=(pressed.back?-1:0)+(pressed.forward?1:0);
  }else{
-  let look=groundAt(b.x+135),now=groundAt(b.x),far=groundAt(b.x+205);
-  const trap=hazards.find(h=>!h.broken&&h.x>b.x+32&&h.x<b.x+185&&['saw','spikes','wheel','crusher','swing','laser'].includes(h.type));
-  const nearJump=(!look||!far||!!now?.road?.launch);
-  target=b.targetSpeed+(b.role==='SPRINTER'?55:0);
-  if(nearJump&&b.onGround&&b.jumpCooldown<=0){
-   if(groundAt(b.x+65))jumpBike(b,true);
-  }
-  if(trap&&b.onGround&&b.jumpCooldown<=0&&trap.x-b.x<105+b.vx*.055){
-   if(b.risk>.37||b.role==='SURVIVOR')jumpBike(b,true);
-  }
-  if(trap&&b.role==='SURVIVOR')target=Math.min(target,305);
-  
-  
+  const now=groundAt(b.x);
+  const trap=hazards.find(h=>!h.broken&&!h._gone&&['saw','spikes','wheel','barrel','laser','swing'].includes(h.type)&&h.x>b.x+25&&h.x<b.x+b.vx*(['laser','swing','wheel'].includes(h.type)?.38:.28));
+  target=b.targetSpeed;
+  // Allow the common ramp launch to fire: early AI hops used to miss entire landings.
+  if(trap&&b.onGround&&!now?.road?.launch)jumpBike(b,true);
+  const useBoost=b.boost>.15&&b.onGround&&!trap&&(b.role==='SPRINTER'||b.role==='RAIDER');
+  if(useBoost){target+=150;b.boost=Math.max(0,b.boost-dt*.44);b.charge=.17}else b.boost=Math.min(1,b.boost+dt*.11);
   const dx=player.x-b.x;
   if(Math.abs(dx)<97&&Math.abs(player.y-b.y)<66&&b.attackCD<=0&&b.stagger<=0&&b.role!=='SURVIVOR'){
    b.telegraph=b.archetype.tell;
@@ -408,7 +435,7 @@ function updateBike(b,dt){
    }
   }
   // Don't automatically restore enemies to upright during risky midair movements.
-  if(!b.onGround)steer=clamp(-b.angle*1.1,-.9,.9);
+  if(!b.onGround){const landing=groundAt(b.x+b.vx*.2);const desired=Math.atan(landing?.slope||0);steer=clamp((desired-b.angle)*3-b.angular*.7,-1,1);}
  }
  const response=b.enemy?1.65:2.75;
  if(!b.enemy){target+=(activeEvent?PARTS[save.equipped].speed:0);if(b.charge>0)target=Math.max(target,b.vx-20);}
@@ -497,7 +524,7 @@ function updateBike(b,dt){
  if(Math.random()<.43&&b.onGround)trail(b)
 }
 function hazardCollision(h,b,dt){
- if(b.dead||b.gone||b.finished||b.loopRide||h._gone||h.broken||h.type==='loop')return;
+ if(b.dead||b.gone||b.finished||b.loopRide||h._gone||h.broken||h.type==='loop'||h.type==='magrail')return;
  const dx=b.x-h.x,dy=b.y-h.y;
  let hit=false;
  if(h.type==='saw'){
@@ -553,17 +580,16 @@ function handleBikes(){
   const dx=e.x-player.x,dy=e.y-player.y;
   if(Math.abs(dx)<38&&Math.abs(dy)<30){
    const speed=Math.abs(e.vx-player.vx);
-   if(player.invuln<=0){damage(player,clamp(4+speed*.045,5,16),'COLLISION');player.vx=Math.max(125,player.vx-22);player.angular-=.16}
-   if(e.invuln<=0){damage(e,clamp(10+speed*.12,9,28),'IMPACT');e.vy-=45;e.angular+=.36}
-   e.x+=dx>0?4:-4;
+   if(speed>65&&player.invuln<=0){damage(player,clamp(4+speed*.045,5,16),'COLLISION');player.vx=Math.max(125,player.vx-22);player.angular-=.16}
+   if(speed>65&&e.invuln<=0){damage(e,clamp(4+speed*.045,5,16),'IMPACT');e.vy-=45;e.angular+=.36}
+   const separation=(38-Math.abs(dx))*.6;const direction=dx>=0?1:-1;e.x+=direction*separation;player.x-=direction*separation*.4;
   }
  }
  for(let i=0;i<active.length;i++)for(let j=i+1;j<active.length;j++){
   const a=active[i],b=active[j];
-  if(Math.abs(a.x-b.x)<30&&Math.abs(a.y-b.y)<28){const avg=(a.vx+b.vx)/2;
-   a.vx=avg-24;b.vx=avg+24;
-   if(a.invuln===0)damage(a,8,'PILEUP');
-   if(b.invuln===0)damage(b,8,'PILEUP');
+  if(Math.abs(a.x-b.x)<30&&Math.abs(a.y-b.y)<28){const relative=Math.abs(a.vx-b.vx),front=a.x>=b.x?a:b,rear=a.x>=b.x?b:a;const overlap=32-Math.abs(a.x-b.x);front.x+=overlap*.5;rear.x-=overlap*.5;
+   const avg=(front.vx+rear.vx)/2;front.vx=Math.max(front.vx,avg+15);rear.vx=Math.min(rear.vx,avg-15);
+   if(relative>100){damage(a,8,'PILEUP');damage(b,8,'PILEUP');}
   }
  }
 }
@@ -578,7 +604,7 @@ function damage(b,n,why='IMPACT'){
 }
 function destroyBike(b,why='WRECKED'){
  if(b.dead)return;
- b.dead=true;boomVisualOnly(b.x,b.y);
+ b.reason=why;b.dead=true;boomVisualOnly(b.x,b.y);
  if(b.enemy){kills++;score+=200;b.gone=true;chainKills++;
   if(player&&!player.dead)bumpScore('RIVAL DESTROYED',250);
   fx(105,.26,'sawtooth',.085);
@@ -595,7 +621,7 @@ function destroyBike(b,why='WRECKED'){
 }
 function recoverTrial(reason='CRASH'){
  if(mode!=='trial'||recoveryCredits<=0)return false;
- gameState='play';player.loopRide=null;recoveryCredits--;bumpScore('CHECKPOINT RESCUE',15);
+ gameState='play';player.loopRide=null;player.railRide=null;recoveryCredits--;bumpScore('CHECKPOINT RESCUE',15);
  boomVisualOnly(player.x,player.y);
  const x=Math.max(0,lastCheckpoint);
  player.x=x;player.y=(groundAt(x)?.y||398)-29;
@@ -607,7 +633,7 @@ function recoverTrial(reason='CRASH'){
 }
 function finish(win,reason){
  if(gameState!=='play'&&gameState!=='crash')return;
- gameState='dead';gameResult=reason;clearControls();
+ player.finished=win;gameState='dead';gameResult=reason;clearControls();
  $('endMenu').classList.remove('hidden');
  $('endType').textContent=win?'COURSE COMPLETE':'RUN TERMINATED';
  $('endTitle').innerHTML=win?'FINISH<span class="slash">/</span>LINE':'TOTAL<span class="slash">/</span>LOSS';
@@ -635,7 +661,7 @@ function update(dt){
  for(const e of enemies)if(!e.gone&&!e.dead&&(mode!=='endless'||Math.abs(e.x-player.x)<1950))updateBike(e,dt);
  justJump=false;justAttack=false;
  for(const h of hazards){
-  if(h.x<player.x-950||h.x>player.x+1750)continue;
+  if(mode==='endless'&&(h.x<player.x-950||h.x>player.x+1750))continue;
   hazardCollision(h,player,dt);
   for(const e of enemies)if(!e.dead&&!e.gone&&Math.abs(e.x-h.x)<155)hazardCollision(h,e,dt);
  }
@@ -652,7 +678,8 @@ function update(dt){
  }
  if(mode!=='endless'){
   for(const e of enemies)if(!e.dead&&!e.gone&&!e.finished&&e.x>=finishX){e.finished=true;e.finTime=runTime}
-  if(player.x>=finishX){
+  if(player.x>=finishX&&!player.finished){
+   if(activeEvent?.format==='demolition'&&hazards.some(h=>h.relay&&!h.broken)){finish(false,'RELAYS MISSED // STRIKE OR RAM ALL THREE');return;}
    const pos=racePosition();
    finish(true,mode==='sprint'?`FINISHED ${['1ST','2ND','3RD'][pos-1]||pos+'TH'} // ${pos===1?'VICTORY':'RACE COMPLETE'}`:'GAUNTLET COMPLETE');
   }
@@ -676,7 +703,8 @@ function updateHud(){
  $('health').style.width=clamp(player.hp/player.maxHp*100,0,100)+'%';$('boostBar').style.width=(player.boost*100)+'%';$('health').style.background=player.hp<30?'#ff657b':'#e8faff';
  const stage=mode==='sprint'?`P${racePosition()}  //  ${Math.max(0,Math.round(finishX-player.x))} M TO FINISH`:
  mode==='trial'?`RETRIES ${recoveryCredits}  //  CP ${checkpointIndex}/2  //  ${Math.max(0,Math.round(finishX-player.x))} M`:`SEED ${seedKey}`;
- $('stage').textContent=activeEvent?(activeEvent.practice?'PRACTICE':activeEvent.title.toUpperCase())+' // '+stage:stage;
+ const objective=activeEvent?.format==='demolition'?`RELAYS ${hazards.filter(h=>h.relay&&h.broken).length}/3 // `:'';
+ $('stage').textContent=objective+(activeEvent?(activeEvent.practice?'PRACTICE':activeEvent.title.toUpperCase())+' // '+stage:stage);
  $('warning').textContent=warningText;$('warning').style.opacity=worldTime<warningUntil?'1':'0';
  $('toasts').textContent=worldTime<toastUntil?toastText:'';
  $('flash').style.opacity=settings.flashes?flash.toFixed(2):'0';
@@ -723,7 +751,7 @@ function render(){
  ctx.setTransform(DPR,0,0,DPR,0,0);ctx.fillStyle='#05070a';ctx.fillRect(0,0,W,H);
  if(!player){drawBackground();return}
  ctx.save();if(settings.shake&&shake>0)ctx.translate((Math.random()-.5)*shake,(Math.random()-.5)*shake);
- drawBackground();drawDistrict();drawRoad();drawFinish();drawTrialMarkers();drawHazards();
+ drawBackground();drawDistrict();drawAssemblies();drawRoad();drawFinish();drawTrialMarkers();drawHazards();
  for(const e of enemies)rider(e);if(!player.dead)rider(player);
  drawWreck();drawParticles();drawSpeedFX();drawProgress();ctx.restore();
  if(gameState==='crash'){ctx.fillStyle='#f16c8116';ctx.fillRect(0,0,W,H)}
@@ -747,9 +775,22 @@ function updateCrash(dt){
   particles=particles.filter(p=>p.life>0);
   if(wreckClock<=0){if(mode==='trial'&&recoveryCredits>0){gameState='play';recoverTrial(crashReason)}else finish(false,crashReason)}
 }
+function drawAssemblies(){
+ for(const a of assemblies){if(a.end<camX-200||a.start>camX+W+200)continue;const x=screenX(a.start),len=a.end-a.start,y=a.y-camY;ctx.save();ctx.strokeStyle='#587581';ctx.fillStyle='#09131d';
+ if(a.type==='overdrive'){for(let i=0;i<5;i++){const xx=x+260+i*115;ctx.strokeRect(xx,y-105,70,120);drawLine(xx,y-105,xx+70,y-105,'#54f2ff',3)}for(let i=0;i<4;i++){const xx=x+900+i*90;drawLine(xx,y+170,xx,y-230,'#283b49',5);drawLine(xx-30,y-230,xx+30,y-230,'#ff9fba',2)}ctx.font='bold 44px monospace';ctx.fillStyle='#24424c';ctx.fillText('OVR / DRV',x+350,y-145)}
+ if(a.type==='foundry'){ctx.fillRect(x+180,y-250,1050,24);drawLine(x+180,y-250,x+1230,y-250,'#ff9fba',3);for(let i=0;i<7;i++){const xx=x+230+i*145;drawLine(xx,y-250,xx,y+180,'#344957',8);ctx.save();ctx.translate(xx,y-185);ctx.rotate(worldTime*(i%2?1:-1));blade(0,0,36,0);ctx.restore()}for(let i=0;i<5;i++){drawLine(x+1300+i*100,y-130,x+1350+i*100,y+80,'#425467',2)}}
+ if(a.type==='datastream'){for(let i=0;i<11;i++){let xx=x+280+i*95;const yy=y-28-175*Math.sin(Math.PI*i/10);ctx.strokeStyle=i%2?'#a79af8':'#54f2ff';ctx.strokeRect(xx-8,yy-80,16,160);ctx.fillStyle='#0f172c';ctx.fillRect(xx-20,y+90,40,120)}ctx.globalAlpha=.3;for(let i=0;i<10;i++)drawLine(x+200,y-220+i*24,x+1300,y-220+i*24,'#7c75b6',1)}
+ if(a.type==='orbital'){for(let i=0;i<2;i++){const xx=x+640+i*500;drawLine(xx,y+250,xx,y-280,'#43515e',8);ctx.beginPath();ctx.arc(xx,y-100,160,0,TAU);ctx.strokeStyle='#384658';ctx.lineWidth=2;ctx.stroke()}for(let i=0;i<5;i++){const xx=x+1550+i*120;drawLine(xx,y+220,xx,y-200,'#313f53',6);drawLine(xx,y-200,xx+80,y-220,'#f5e0a5',2)}}
+ ctx.restore();
+ }
+}
+
 function drawDistrict(){
  const ri=activeEvent?.region??Math.floor(Math.max(0,player.x)/6500)%4;const accent=REGIONS[ri]?.color||'#54f2ff';
  ctx.save();ctx.globalAlpha=.18;ctx.strokeStyle=accent;ctx.lineWidth=1;
+ if(ri===2){ctx.globalAlpha=.2;for(let i=0;i<18;i++){const xx=((i*117-camX*.12)%(W+150)+W+150)%(W+150);ctx.strokeRect(xx,70+(i%4)*70,32,150);drawLine(xx,0,xx,H,'#a79af8',1)}}
+ if(ri===3){ctx.globalAlpha=.2;for(let i=0;i<5;i++){const xx=i*390-camX*.12%390;ctx.beginPath();ctx.ellipse(xx,H*.45,150,35,0,0,TAU);ctx.stroke();drawLine(xx,H*.45,xx,H,'#f5e0a5',3)}}
+ if(ri===1){ctx.globalAlpha=.2;for(let i=0;i<8;i++){const xx=i*230-camX*.2%230;ctx.fillRect(xx,H*.2,52,H);drawLine(xx,H*.2,xx+52,H*.2,'#ff9fba',3)}}
  for(let i=Math.floor(camX*.3/420)-1;i<Math.floor(camX*.3/420)+6;i++){const x=i*420-camX*.3,y=H*.58;drawLine(x,y,x,y-140,accent,2);drawLine(x,y-140,x+170,y-155,accent,2);drawLine(x+110,y-150,x+110,y-60,accent,1);ctx.beginPath();ctx.arc(x+110,y-58,6,0,TAU);ctx.stroke()}
  ctx.globalAlpha=.5;ctx.fillStyle=accent;ctx.font='10px monospace';ctx.textAlign='left';ctx.fillText(REGIONS[ri]?.name||'THE SPRAWL',20,H-38);ctx.restore();
 }
@@ -772,11 +813,11 @@ function warpTo(distance){
 }
 function auditTrack(){
  let gaps=[],invalid=[],prev=null;
- for(const g of ground){
+ for(const g of [...ground].sort((a,b)=>a.x1-b.x1)){
   if(g.x2<=g.x1||Math.abs((g.y2-g.y1)/(g.x2-g.x1))>.75)invalid.push(`steep segment ${g.x1}`);
   if(prev&&g.x1>prev.x2+1){const length=g.x1-prev.x2;
-   const vy=315+Math.min(96,250*.17),drop=g.y1-prev.y2;const flight=(vy+Math.sqrt(Math.max(0,vy*vy+2*925*drop)))/925;
-   gaps.push({start:prev.x2,length,safeRange:250*flight});if(!prev.launch||length>250*flight)invalid.push(`launch envelope ${prev.x2}: ${length}`);if(length>190)invalid.push(`untraversable gap ${prev.x2}: ${length}`)}
+   const approach=prev.requiredSpeed||250;const vy=315+Math.min(96,approach*.17),drop=g.y1-prev.y2;const flight=(vy+Math.sqrt(Math.max(0,vy*vy+2*925*drop)))/925;
+   gaps.push({start:prev.x2,length,safeRange:approach*flight});if(!prev.launch||length>approach*flight)invalid.push(`launch envelope ${prev.x2}: ${length}`);if(length>340)invalid.push(`untraversable gap ${prev.x2}: ${length}`)}
   prev=g;
  }
  return {seed:seedKey,segments:ground.length,hazards:hazards.length,modules:sectionMetrics.length,gaps:gaps.length,maxGap:Math.max(0,...gaps.map(g=>g.length)),invalid};
@@ -784,6 +825,6 @@ function auditTrack(){
 
 /*__CIRCUIT__*/
 $('startBtn').addEventListener('click',()=>{activeEvent=null;startGame(false)});$('howBtn').addEventListener('click',showManual);$('manualBack').addEventListener('click',closeManual);$('pauseBtn').addEventListener('click',pauseToggle);$('resumeBtn').addEventListener('click',pauseToggle);$('restartBtn').addEventListener('click',()=>startGame(false));$('quitBtn').addEventListener('click',quit);$('againBtn').addEventListener('click',()=>startGame(false));$('newBtn').addEventListener('click',()=>{activeEvent=null;startGame(true)});$('endQuitBtn').addEventListener('click',quit);$('helpBtn').addEventListener('click',showManual);$('soundBtn').addEventListener('click',()=>{settings.sound=!settings.sound;save.options.sound=settings.sound;persist();$('soundBtn').textContent=settings.sound?'SFX ON':'SFX OFF';if(settings.sound)audioInit()});$('devClose').addEventListener('click',closeDev);$('devAuditBtn').addEventListener('click',()=>{const r=auditTrack();$('devAudit').textContent=r.invalid.length?`${r.invalid.length} ISSUES | ${r.invalid[0]}`:`OK | ${r.modules} modules | ${r.maxGap.toFixed(0)}px max gap`});$('devGod').addEventListener('change',e=>settings.god=e.target.checked);$('devSlow').addEventListener('change',e=>settings.slow=e.target.checked);$('devHitboxes').addEventListener('change',e=>settings.hitboxes=e.target.checked);$('devShake').addEventListener('change',e=>settings.shake=e.target.checked);$('devHeal').addEventListener('click',()=>{player.hp=player.maxHp;player.boost=1});$('devSpawn').addEventListener('click',()=>{spawnEnemy(player.x+240,groundAt(player.x+240)?.y-19||350);$('devCounts').textContent=`${enemies.length} / ${hazards.length}`});$('devWarp').addEventListener('click',()=>warpTo(Number($('devDistance').value)||2500));
-window.__deathwire={state:()=>({activeEvent:activeEvent?.id,angle:player?.angle,y:player?.y,grounded:player?.onGround,frontContact:!!player?.contactF,rearContact:!!player?.contactR,loop:!!player?.loopRide,finishX,checkpointIndex,lastCheckpoint,boost:player?.boost,gameState,seedKey,seed,mode,position:player?.x,speed:player?.vx,hp:player?.hp,kills,rank:player?racePosition():null,ground:ground.length,hazards:hazards.length,enemies:enemies.length,worldTime,comboCount,recoveries:recoveryCredits}),audit:auditTrack,modules:()=>sectionMetrics.slice(),advance:(seconds)=>{for(let i=0;i<Math.min(10000,Math.round(seconds/FIXED_STEP))&&gameState==='play';i++)update(FIXED_STEP);return {state:gameState,position:player?.x,hp:player?.hp,score}},start:(s)=>{if(s!==undefined)$('seedInput').value=String(s);startGame(false)},pause:pauseToggle,dev:toggleDev,controls:pressed,warp:warpTo,launch:launchEvent,hits:()=>hitLog,campaign:()=>JSON.parse(JSON.stringify(save)),events:EVENTS,validateSave,geometry:()=>({checkpoints:checkpoints.map(c=>({...c})),ground:ground.map(g=>({...g})),hazards:hazards.map(h=>({type:h.type,x:h.x,y:h.y,actualY:h.type==='platform'?platformY(h):h.y,radius:h.radius,width:h.width})),riders:enemies.map(e=>({id:e.id,x:e.x,y:e.y,hp:e.hp,dead:e.dead,gone:e.gone,finished:e.finished,role:e.role}))}),test:{setBike:(v)=>Object.assign(player,v),setRivals:(v)=>{enemies=v.map(x=>Object.assign(makeBike(x.x,x.y,true),x))},finish:(win)=>finish(win,'TEST FINISH'),jump:()=>jumpBike(player,true),hit:attack,damage:(n)=>damage(player,n,'TEST'),recover:recoverTrial,step:(n)=>{for(let i=0;i<n&&gameState==='play';i++)update(FIXED_STEP)},simulate:(n,auto=false)=>{let minHP=player.hp,crashes=0;for(let i=0;i<n;i++){if(gameState==='play'){if(auto){pressed.gas=true;pressed.back=player.angle>.2;pressed.forward=player.angle<-.3;const trap=hazards.find(h=>!h.broken&&!h._gone&&['spikes','saw','barrel','wheel','swing','laser'].includes(h.type)&&h.x>player.x+30&&h.x<player.x+player.vx*(['laser','swing','wheel'].includes(h.type)?.38:.26));if(trap&&player.onGround)justJump=true;if(enemies.some(e=>!e.dead&&e.x>player.x&&e.x-player.x<85&&Math.abs(e.y-player.y)<60))justAttack=true;}update(FIXED_STEP);minHP=Math.min(minHP,player.hp)}else if(gameState==='crash'){crashes++;updateCrash(FIXED_STEP)}else break;}return {state:gameState,x:player.x,hp:player.hp,time:runTime,minHP,crashes,recoveries:recoveryCredits}},resetProgress:()=>{save=freshSave();persist()}}};
+window.__deathwire={state:()=>({activeEvent:activeEvent?.id,angle:player?.angle,y:player?.y,grounded:player?.onGround,frontContact:!!player?.contactF,rearContact:!!player?.contactR,loop:!!player?.loopRide,finishX,checkpointIndex,lastCheckpoint,relays:hazards.filter(h=>h.relay&&h.broken).length,boost:player?.boost,gameState,seedKey,seed,mode,position:player?.x,speed:player?.vx,hp:player?.hp,kills,rank:player?racePosition():null,ground:ground.length,hazards:hazards.length,enemies:enemies.length,worldTime,comboCount,recoveries:recoveryCredits}),audit:auditTrack,modules:()=>sectionMetrics.slice(),advance:(seconds)=>{for(let i=0;i<Math.min(10000,Math.round(seconds/FIXED_STEP))&&gameState==='play';i++)update(FIXED_STEP);return {state:gameState,position:player?.x,hp:player?.hp,score}},start:(s)=>{if(s!==undefined)$('seedInput').value=String(s);startGame(false)},pause:pauseToggle,dev:toggleDev,controls:pressed,warp:warpTo,launch:launchEvent,hits:()=>hitLog,campaign:()=>JSON.parse(JSON.stringify(save)),events:EVENTS,validateSave,geometry:()=>({checkpoints:checkpoints.map(c=>({...c})),ground:ground.map(g=>({...g})),hazards:hazards.map(h=>({type:h.type,x:h.x,y:h.y,actualY:h.type==='platform'?platformY(h):h.y,radius:h.radius,width:h.width})),riders:enemies.map(e=>({time:e.finTime,boost:e.boost,id:e.id,x:e.x,y:e.y,hp:e.hp,dead:e.dead,gone:e.gone,finished:e.finished,role:e.role}))}),test:{encounter:(type,gear=0)=>{activeEvent=null;startGame(false);ground=[];hazards=[];enemies=[];assemblies=[];sectionMetrics=[];cursor=-500;roadY=398;road(1000,0);generateModule(type);finishX=cursor-120;mode='trial';activeEvent={practice:true,modules:['flow'],length:finishX};nextEnemyX=Infinity;save.equipped=gear;player.hp=player.maxHp=PARTS[gear].hp;return {finishX,modules:sectionMetrics.slice()};},render:()=>{updateHud();render()},assemblies:()=>assemblies.map(a=>({...a})),raceOut:()=>{for(let i=0;i<14400&&enemies.some(e=>!e.finished&&!e.dead&&!e.gone);i++)update(FIXED_STEP);return enemies.map(e=>({reason:e.reason,name:e.name,finished:e.finished,time:e.finTime,hp:e.hp,x:e.x,dead:e.dead||e.gone}))},setBike:(v)=>Object.assign(player,v),setRivals:(v)=>{enemies=v.map(x=>Object.assign(makeBike(x.x,x.y,true),x))},finish:(win)=>finish(win,'TEST FINISH'),jump:()=>jumpBike(player,true),hit:attack,damage:(n)=>damage(player,n,'TEST'),recover:recoverTrial,step:(n)=>{for(let i=0;i<n&&gameState==='play';i++)update(FIXED_STEP)},simulate:(n,auto=false,cruise=false)=>{let minHP=player.hp,crashes=0;for(let i=0;i<n;i++){if(gameState==='play'){if(auto){pressed.gas=!cruise;pressed.back=player.angle>.2;pressed.forward=player.angle<-.3;const trap=hazards.find(h=>!h.broken&&!h._gone&&['spikes','saw','barrel','wheel','swing','laser'].includes(h.type)&&h.x>player.x+30&&h.x<player.x+player.vx*(['laser','swing','wheel'].includes(h.type)?.38:.26));if(trap&&player.onGround)justJump=true;if(hazards.some(h=>h.type==='barrel'&&!h.broken&&h.x>player.x&&h.x-player.x<80&&Math.abs(h.y-player.y)<76))justAttack=true;if(enemies.some(e=>!e.dead&&e.x>player.x&&e.x-player.x<85&&Math.abs(e.y-player.y)<60))justAttack=true;}update(FIXED_STEP);minHP=Math.min(minHP,player.hp)}else if(gameState==='crash'){crashes++;updateCrash(FIXED_STEP)}else break;}return {state:gameState,x:player.x,hp:player.hp,time:runTime,minHP,crashes,recoveries:recoveryCredits}},resetProgress:()=>{save=freshSave();persist()}}};
 last=performance.now();requestAnimationFrame(tick);
 })();

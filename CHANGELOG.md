@@ -1,5 +1,16 @@
 # Changelog
 
+## v0.20 / FULL THROTTLE
+
+- Four connected signature assemblies: freight cannon, working foundry/collapsing skybridge, elevated magnetic data rail, and linked orbital tower launches.
+- Reauthored campaign pacing and district skylines; finale combines the signature families.
+- Demolition escape objective with three required cyan relays, HUD tracking, collision/strike interaction and explicit missed-objective failure.
+- AI boost, better hazard anticipation and landing correction; shared symmetric impact thresholds and contact separation. Removed attrition from sustained low-speed pileups.
+- Explicit rival chassis durability; no invulnerability or distance-based rubber banding.
+- Long-launch speed metadata, fixed-road finish selection, extended encounter/racing/save/objective tests and screenshots.
+- Existing controls, core bike integration, offline distribution and v1 campaign saves preserved.
+
+
 ## v0.10 / BLACK CIRCUIT
 
 From supplied v0.04 ROCKET RIDE:

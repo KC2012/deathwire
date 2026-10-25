@@ -1,3 +1,21 @@
+# v0.20 validation
+
+Run the existing commands below plus `npm run test:racing`, `npm run test:encounters`, and `node tests/objectives.cjs` with the static server on port 8000.
+
+Current evidence replaces the v0.10 result JSON files; the text below remains historical context. `tests/racing-results.json` contains 18 races, individual AI finish times, player times, real ranks and elimination reasons. `tests/racing-summary.json` summarizes outcomes. The racing threshold is regular competition (>=80% of sampled races with finishers and every course represented), not a guarantee that every rider survives. Two fields were eliminated. AI sometimes places ahead of the geometry-aware attacking player. Test-only field rollout measures actual later finishes through the shared simulation.
+
+`tests/encounter-results.json`: four signature assemblies × four builds × cruise/throttle = 32 positive-integrity completions, zero crash/recovery, with valid geometry audits. No invincibility or health overrides. Isolated encounter setup selects the gear and constructs a clean test course; traversals use the game update and normal input policy. Showcase screenshots use deliberate developer repositioning and are not presented as traversal proof.
+
+`tests/objectives.cjs`: validates existing v1 progress, equipment, credits and medals, and confirms missing all demolition relays fails without a medal. The full campaign traversal confirms the successful demolition path. The other 17 browser checks, 100 extended seeds, and real-frame standalone input smoke check also pass.
+
+`node tests/live-encounters.cjs` additionally passed four real animation-frame, throttle-only signature traversals with zero browser exceptions. Its screenshots capture live riding rather than developer-warped positions.
+
+New screenshots: `docs/screenshots/v020-*.png`. Chromium renders were inspected for rail/launch readability. This is not human playtesting. Hardware/mobile performance and other browser engines remain unrun.
+
+The initial AI statistics failed. Logs exposed repeated resting-contact pileup damage and premature AI ramp jumps; both were corrected. An encounter assertion initially expected three unused recovery credits, but isolated courses intentionally start with zero; the final assertion requires zero credits and zero crashes. No assertion or collision was disabled to count a failing traversal as passing.
+
+---
+
 # Validation / v0.10
 
 Run from the checkout root, with the development server running on port 8000:

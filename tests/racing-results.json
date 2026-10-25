@@ -1,0 +1,938 @@
+[
+  {
+    "id": 1,
+    "repeat": 0,
+    "player": {
+      "state": "dead",
+      "x": 7871.777228651811,
+      "hp": 85.13036558726532,
+      "time": 13.74999999999986,
+      "minHP": 85.13036558726532,
+      "crashes": 0,
+      "recoveries": 0
+    },
+    "rank": 2,
+    "rivals": [
+      {
+        "reason": "IMPACT",
+        "name": "VEX",
+        "finished": false,
+        "time": null,
+        "hp": -2.648521761755389,
+        "x": 4405.927404148487,
+        "dead": true
+      },
+      {
+        "reason": "STRIKE",
+        "name": "MOTHER IRON",
+        "finished": false,
+        "time": null,
+        "hp": -10.31448051769695,
+        "x": 5026.8545095001155,
+        "dead": true
+      },
+      {
+        "name": "NULL",
+        "finished": true,
+        "time": 13.824999999999855,
+        "hp": 41.36958967239929,
+        "x": 7874.606522901172,
+        "dead": false
+      },
+      {
+        "name": "SAINT",
+        "finished": true,
+        "time": 13.474999999999875,
+        "hp": 92,
+        "x": 7873.5939571206,
+        "dead": false
+      }
+    ],
+    "finishers": 2,
+    "beatPlayer": 1
+  },
+  {
+    "id": 1,
+    "repeat": 1,
+    "player": {
+      "state": "dead",
+      "x": 7873.454451552287,
+      "hp": 76.95600676274749,
+      "time": 13.824999999999855,
+      "minHP": 76.95600676274749,
+      "crashes": 0,
+      "recoveries": 0
+    },
+    "rank": 3,
+    "rivals": [
+      {
+        "reason": "STRIKE",
+        "name": "VEX",
+        "finished": false,
+        "time": null,
+        "hp": -4.918268022110709,
+        "x": 4338.888362275322,
+        "dead": true
+      },
+      {
+        "reason": "STRIKE",
+        "name": "MOTHER IRON",
+        "finished": false,
+        "time": null,
+        "hp": -13.437140595150037,
+        "x": 5489.682252301244,
+        "dead": true
+      },
+      {
+        "name": "NULL",
+        "finished": true,
+        "time": 13.791666666666524,
+        "hp": 37.94293659939225,
+        "x": 7871.710799087129,
+        "dead": false
+      },
+      {
+        "name": "SAINT",
+        "finished": true,
+        "time": 13.558333333333204,
+        "hp": 100,
+        "x": 7872.7428476495625,
+        "dead": false
+      }
+    ],
+    "finishers": 2,
+    "beatPlayer": 2
+  },
+  {
+    "id": 1,
+    "repeat": 2,
+    "player": {
+      "state": "dead",
+      "x": 7875.186983908605,
+      "hp": 89.47181032005244,
+      "time": 13.783333333333191,
+      "minHP": 89.47181032005244,
+      "crashes": 0,
+      "recoveries": 0
+    },
+    "rank": 3,
+    "rivals": [
+      {
+        "reason": "STRIKE",
+        "name": "VEX",
+        "finished": false,
+        "time": null,
+        "hp": -24.543592939127084,
+        "x": 4585.507274136876,
+        "dead": true
+      },
+      {
+        "reason": "STRIKE",
+        "name": "MOTHER IRON",
+        "finished": false,
+        "time": null,
+        "hp": -1.34906792324011,
+        "x": 5235.741316162265,
+        "dead": true
+      },
+      {
+        "name": "NULL",
+        "finished": true,
+        "time": 13.716666666666528,
+        "hp": 41.144624147626004,
+        "x": 7873.145370664906,
+        "dead": false
+      },
+      {
+        "name": "SAINT",
+        "finished": true,
+        "time": 13.366666666666548,
+        "hp": 92,
+        "x": 7875.092330757185,
+        "dead": false
+      }
+    ],
+    "finishers": 2,
+    "beatPlayer": 2
+  },
+  {
+    "id": 2,
+    "repeat": 0,
+    "player": {
+      "state": "dead",
+      "x": 8920.891173691525,
+      "hp": 77.05591432519157,
+      "time": 16.19166666666639,
+      "minHP": 77.05591432519157,
+      "crashes": 0,
+      "recoveries": 0
+    },
+    "rank": 2,
+    "rivals": [
+      {
+        "reason": "STRIKE",
+        "name": "VEX",
+        "finished": false,
+        "time": null,
+        "hp": -24.43654482548711,
+        "x": 5153.6963342287845,
+        "dead": true
+      },
+      {
+        "reason": "STRIKE",
+        "name": "MOTHER IRON",
+        "finished": false,
+        "time": null,
+        "hp": -0.5944406403793963,
+        "x": 7452.653672348028,
+        "dead": true
+      },
+      {
+        "reason": "IMPACT",
+        "name": "NULL",
+        "finished": false,
+        "time": null,
+        "hp": -4.8331050052002915,
+        "x": 8527.51769237656,
+        "dead": true
+      },
+      {
+        "name": "SAINT",
+        "finished": true,
+        "time": 15.899999999999737,
+        "hp": 92,
+        "x": 8920.630366840509,
+        "dead": false
+      }
+    ],
+    "finishers": 1,
+    "beatPlayer": 1
+  },
+  {
+    "id": 2,
+    "repeat": 1,
+    "player": {
+      "state": "dead",
+      "x": 8921.614902983156,
+      "hp": 100,
+      "time": 16.07499999999973,
+      "minHP": 100,
+      "crashes": 0,
+      "recoveries": 0
+    },
+    "rank": 1,
+    "rivals": [
+      {
+        "reason": "STRIKE",
+        "name": "VEX",
+        "finished": false,
+        "time": null,
+        "hp": -22.5249309246343,
+        "x": 5062.121279618827,
+        "dead": true
+      },
+      {
+        "reason": "STRIKE",
+        "name": "MOTHER IRON",
+        "finished": false,
+        "time": null,
+        "hp": -0.8910034530932336,
+        "x": 5890.673776385355,
+        "dead": true
+      },
+      {
+        "name": "NULL",
+        "finished": true,
+        "time": 16.958333333333012,
+        "hp": 71.03721725071094,
+        "x": 8923.698687440323,
+        "dead": false
+      },
+      {
+        "reason": "STRIKE",
+        "name": "SAINT",
+        "finished": false,
+        "time": null,
+        "hp": -7.291082670411377,
+        "x": 8644.179943676829,
+        "dead": true
+      }
+    ],
+    "finishers": 1,
+    "beatPlayer": 0
+  },
+  {
+    "id": 2,
+    "repeat": 2,
+    "player": {
+      "state": "dead",
+      "x": 8921.181713284712,
+      "hp": 88.53339839901328,
+      "time": 16.083333333333062,
+      "minHP": 88.53339839901328,
+      "crashes": 0,
+      "recoveries": 0
+    },
+    "rank": 1,
+    "rivals": [
+      {
+        "reason": "IMPACT",
+        "name": "VEX",
+        "finished": false,
+        "time": null,
+        "hp": -2.4051378212407926,
+        "x": 5099.4461796959995,
+        "dead": true
+      },
+      {
+        "name": "MOTHER IRON",
+        "finished": true,
+        "time": 17.308333333332993,
+        "hp": 105.63110566154833,
+        "x": 8921.068927360233,
+        "dead": false
+      },
+      {
+        "name": "NULL",
+        "finished": true,
+        "time": 17.033333333333008,
+        "hp": 46.0871778676061,
+        "x": 8922.755533017316,
+        "dead": false
+      },
+      {
+        "reason": "STRIKE",
+        "name": "SAINT",
+        "finished": false,
+        "time": null,
+        "hp": -28.25680784738927,
+        "x": 7845.078360189123,
+        "dead": true
+      }
+    ],
+    "finishers": 2,
+    "beatPlayer": 0
+  },
+  {
+    "id": 4,
+    "repeat": 0,
+    "player": {
+      "state": "dead",
+      "x": 10300.508889270093,
+      "hp": 52,
+      "time": 18.09166666666628,
+      "minHP": 52,
+      "crashes": 0,
+      "recoveries": 0
+    },
+    "rank": 4,
+    "rivals": [
+      {
+        "reason": "STRIKE",
+        "name": "VEX",
+        "finished": false,
+        "time": null,
+        "hp": -8.958436299922784,
+        "x": 8991.259865232489,
+        "dead": true
+      },
+      {
+        "name": "MOTHER IRON",
+        "finished": true,
+        "time": 18.016666666666286,
+        "hp": 30.860855784300917,
+        "x": 10303.093118739187,
+        "dead": false
+      },
+      {
+        "name": "NULL",
+        "finished": true,
+        "time": 17.68333333333297,
+        "hp": 68,
+        "x": 10301.9952535248,
+        "dead": false
+      },
+      {
+        "name": "SAINT",
+        "finished": true,
+        "time": 17.62499999999964,
+        "hp": 44,
+        "x": 10301.7683752557,
+        "dead": false
+      }
+    ],
+    "finishers": 3,
+    "beatPlayer": 3
+  },
+  {
+    "id": 4,
+    "repeat": 1,
+    "player": {
+      "state": "dead",
+      "x": 10273.51217850027,
+      "hp": 52,
+      "time": 18.041666666666284,
+      "minHP": 52,
+      "crashes": 0,
+      "recoveries": 0
+    },
+    "rank": 3,
+    "rivals": [
+      {
+        "reason": "STRIKE",
+        "name": "VEX",
+        "finished": false,
+        "time": null,
+        "hp": -10.60485057439853,
+        "x": 7725.190132197327,
+        "dead": true
+      },
+      {
+        "reason": "STRIKE",
+        "name": "MOTHER IRON",
+        "finished": false,
+        "time": null,
+        "hp": -13.681691874489907,
+        "x": 8861.694475636166,
+        "dead": true
+      },
+      {
+        "name": "NULL",
+        "finished": true,
+        "time": 17.891666666666293,
+        "hp": 7.990688920957265,
+        "x": 10273.079940148744,
+        "dead": false
+      },
+      {
+        "name": "SAINT",
+        "finished": true,
+        "time": 17.7916666666663,
+        "hp": 44,
+        "x": 10272.049129891564,
+        "dead": false
+      }
+    ],
+    "finishers": 2,
+    "beatPlayer": 2
+  },
+  {
+    "id": 4,
+    "repeat": 2,
+    "player": {
+      "state": "dead",
+      "x": 10300.896075363402,
+      "hp": 52,
+      "time": 18.09166666666628,
+      "minHP": 52,
+      "crashes": 0,
+      "recoveries": 0
+    },
+    "rank": 3,
+    "rivals": [
+      {
+        "reason": "STRIKE",
+        "name": "VEX",
+        "finished": false,
+        "time": null,
+        "hp": -8.517088668401652,
+        "x": 7565.334639495365,
+        "dead": true
+      },
+      {
+        "reason": "STRIKE",
+        "name": "MOTHER IRON",
+        "finished": false,
+        "time": null,
+        "hp": -5.092849661113203,
+        "x": 9159.31071544627,
+        "dead": true
+      },
+      {
+        "name": "NULL",
+        "finished": true,
+        "time": 17.808333333332964,
+        "hp": 60,
+        "x": 10303.958140690069,
+        "dead": false
+      },
+      {
+        "name": "SAINT",
+        "finished": true,
+        "time": 17.73333333333297,
+        "hp": 44,
+        "x": 10302.908175253737,
+        "dead": false
+      }
+    ],
+    "finishers": 2,
+    "beatPlayer": 2
+  },
+  {
+    "id": 7,
+    "repeat": 0,
+    "player": {
+      "state": "dead",
+      "x": 11651.104066712793,
+      "hp": 92.13730726052334,
+      "time": 20.849999999999458,
+      "minHP": 92.13730726052334,
+      "crashes": 0,
+      "recoveries": 0
+    },
+    "rank": 3,
+    "rivals": [
+      {
+        "reason": "STRIKE",
+        "name": "VEX",
+        "finished": false,
+        "time": null,
+        "hp": -6.893660047355247,
+        "x": 7875.125569251872,
+        "dead": true
+      },
+      {
+        "reason": "STRIKE",
+        "name": "MOTHER IRON",
+        "finished": false,
+        "time": null,
+        "hp": -30.150040512076103,
+        "x": 10326.826282626302,
+        "dead": true
+      },
+      {
+        "name": "NULL",
+        "finished": true,
+        "time": 20.724999999999465,
+        "hp": 92,
+        "x": 11650.209525960856,
+        "dead": false
+      },
+      {
+        "name": "SAINT",
+        "finished": true,
+        "time": 20.441666666666148,
+        "hp": 100,
+        "x": 11655.236160563723,
+        "dead": false
+      }
+    ],
+    "finishers": 2,
+    "beatPlayer": 2
+  },
+  {
+    "id": 7,
+    "repeat": 1,
+    "player": {
+      "state": "dead",
+      "x": 11651.214457552933,
+      "hp": 100,
+      "time": 20.833333333332792,
+      "minHP": 100,
+      "crashes": 0,
+      "recoveries": 0
+    },
+    "rank": 3,
+    "rivals": [
+      {
+        "reason": "STRIKE",
+        "name": "VEX",
+        "finished": false,
+        "time": null,
+        "hp": -14.545717169513765,
+        "x": 7878.1352392389745,
+        "dead": true
+      },
+      {
+        "reason": "STRIKE",
+        "name": "MOTHER IRON",
+        "finished": false,
+        "time": null,
+        "hp": -22.23756614916176,
+        "x": 10580.720543083597,
+        "dead": true
+      },
+      {
+        "name": "NULL",
+        "finished": true,
+        "time": 20.616666666666138,
+        "hp": 100,
+        "x": 11650.388912105947,
+        "dead": false
+      },
+      {
+        "name": "SAINT",
+        "finished": true,
+        "time": 20.341666666666153,
+        "hp": 100,
+        "x": 11652.51230395017,
+        "dead": false
+      }
+    ],
+    "finishers": 2,
+    "beatPlayer": 2
+  },
+  {
+    "id": 7,
+    "repeat": 2,
+    "player": {
+      "state": "dead",
+      "x": 11651.214457552933,
+      "hp": 100,
+      "time": 20.833333333332792,
+      "minHP": 100,
+      "crashes": 0,
+      "recoveries": 0
+    },
+    "rank": 5,
+    "rivals": [
+      {
+        "name": "VEX",
+        "finished": true,
+        "time": 20.724999999999465,
+        "hp": 5.577556048073895,
+        "x": 11653.823655308226,
+        "dead": false
+      },
+      {
+        "name": "MOTHER IRON",
+        "finished": true,
+        "time": 20.62499999999947,
+        "hp": 111,
+        "x": 11650.275398451427,
+        "dead": false
+      },
+      {
+        "name": "NULL",
+        "finished": true,
+        "time": 20.524999999999476,
+        "hp": 76,
+        "x": 11652.563432539726,
+        "dead": false
+      },
+      {
+        "name": "SAINT",
+        "finished": true,
+        "time": 20.33333333333282,
+        "hp": 92,
+        "x": 11655.167871923015,
+        "dead": false
+      }
+    ],
+    "finishers": 4,
+    "beatPlayer": 4
+  },
+  {
+    "id": 10,
+    "repeat": 0,
+    "player": {
+      "state": "dead",
+      "x": 13800.564425449955,
+      "hp": 90.16884047229468,
+      "time": 26.608333333332464,
+      "minHP": 90.16884047229468,
+      "crashes": 0,
+      "recoveries": 0
+    },
+    "rank": 2,
+    "rivals": [
+      {
+        "reason": "STRIKE",
+        "name": "VEX",
+        "finished": false,
+        "time": null,
+        "hp": -12.078548914430108,
+        "x": 5235.484196921941,
+        "dead": true
+      },
+      {
+        "name": "MOTHER IRON",
+        "finished": true,
+        "time": 26.258333333332484,
+        "hp": 103,
+        "x": 13803.892632549803,
+        "dead": false
+      },
+      {
+        "reason": "STRIKE",
+        "name": "NULL",
+        "finished": false,
+        "time": null,
+        "hp": -2.8100881828734643,
+        "x": 7201.50639147582,
+        "dead": true
+      },
+      {
+        "reason": "STRIKE",
+        "name": "SAINT",
+        "finished": false,
+        "time": null,
+        "hp": -26.079630372858947,
+        "x": 13034.351919990831,
+        "dead": true
+      }
+    ],
+    "finishers": 1,
+    "beatPlayer": 1
+  },
+  {
+    "id": 10,
+    "repeat": 1,
+    "player": {
+      "state": "dead",
+      "x": 13800.564425449955,
+      "hp": 85.37783115570792,
+      "time": 26.224999999999152,
+      "minHP": 85.37783115570792,
+      "crashes": 0,
+      "recoveries": 0
+    },
+    "rank": 1,
+    "rivals": [
+      {
+        "reason": "STRIKE",
+        "name": "VEX",
+        "finished": false,
+        "time": null,
+        "hp": -2.165381238537538,
+        "x": 4318.949307142069,
+        "dead": true
+      },
+      {
+        "reason": "PILEUP",
+        "name": "MOTHER IRON",
+        "finished": false,
+        "time": null,
+        "hp": -2.551172048744899,
+        "x": 7045.775585704685,
+        "dead": true
+      },
+      {
+        "reason": "STRIKE",
+        "name": "NULL",
+        "finished": false,
+        "time": null,
+        "hp": -10.293923079710545,
+        "x": 8534.34128503926,
+        "dead": true
+      },
+      {
+        "reason": "STRIKE",
+        "name": "SAINT",
+        "finished": false,
+        "time": null,
+        "hp": -13.979056379403819,
+        "x": 7943.037745786074,
+        "dead": true
+      }
+    ],
+    "finishers": 0,
+    "beatPlayer": 0
+  },
+  {
+    "id": 10,
+    "repeat": 2,
+    "player": {
+      "state": "dead",
+      "x": 13803.11982923331,
+      "hp": 100,
+      "time": 26.524999999999135,
+      "minHP": 100,
+      "crashes": 0,
+      "recoveries": 0
+    },
+    "rank": 1,
+    "rivals": [
+      {
+        "reason": "STRIKE",
+        "name": "VEX",
+        "finished": false,
+        "time": null,
+        "hp": -16.94053337265406,
+        "x": 4271.451121054038,
+        "dead": true
+      },
+      {
+        "reason": "PILEUP",
+        "name": "MOTHER IRON",
+        "finished": false,
+        "time": null,
+        "hp": -4.4048159026447635,
+        "x": 5203.962875719843,
+        "dead": true
+      },
+      {
+        "reason": "PILEUP",
+        "name": "NULL",
+        "finished": false,
+        "time": null,
+        "hp": -7.7160438216527005,
+        "x": 11161.206771209974,
+        "dead": true
+      },
+      {
+        "name": "SAINT",
+        "finished": true,
+        "time": 27.29166666666576,
+        "hp": 39.07720227046613,
+        "x": 13801.128823334348,
+        "dead": false
+      }
+    ],
+    "finishers": 1,
+    "beatPlayer": 0
+  },
+  {
+    "id": 11,
+    "repeat": 0,
+    "player": {
+      "state": "dead",
+      "x": 15401.201407345176,
+      "hp": 100,
+      "time": 29.208333333332316,
+      "minHP": 100,
+      "crashes": 0,
+      "recoveries": 0
+    },
+    "rank": 1,
+    "rivals": [
+      {
+        "reason": "STRIKE",
+        "name": "VEX",
+        "finished": false,
+        "time": null,
+        "hp": -40.41315197406036,
+        "x": 13706.54554052924,
+        "dead": true
+      },
+      {
+        "name": "MOTHER IRON",
+        "finished": false,
+        "time": null,
+        "hp": 118.36401380261282,
+        "x": 5480.524298919232,
+        "dead": true
+      },
+      {
+        "name": "NULL",
+        "finished": false,
+        "time": null,
+        "hp": 84,
+        "x": 5518.004715294425,
+        "dead": true
+      },
+      {
+        "reason": "STRIKE",
+        "name": "SAINT",
+        "finished": false,
+        "time": null,
+        "hp": -15.96769810698424,
+        "x": 7475.839719639334,
+        "dead": true
+      }
+    ],
+    "finishers": 0,
+    "beatPlayer": 0
+  },
+  {
+    "id": 11,
+    "repeat": 1,
+    "player": {
+      "state": "dead",
+      "x": 15401.201407345176,
+      "hp": 70,
+      "time": 29.341666666665642,
+      "minHP": 70,
+      "crashes": 0,
+      "recoveries": 0
+    },
+    "rank": 1,
+    "rivals": [
+      {
+        "name": "VEX",
+        "finished": false,
+        "time": null,
+        "hp": 22.370178496898696,
+        "x": 14431.13489497146,
+        "dead": true
+      },
+      {
+        "name": "MOTHER IRON",
+        "finished": true,
+        "time": 31.02499999999888,
+        "hp": 127,
+        "x": 15401.17091872378,
+        "dead": false
+      },
+      {
+        "name": "NULL",
+        "finished": true,
+        "time": 30.841666666665557,
+        "hp": 28.68303269757784,
+        "x": 15400.439465715437,
+        "dead": false
+      },
+      {
+        "reason": "STRIKE",
+        "name": "SAINT",
+        "finished": false,
+        "time": null,
+        "hp": -14.949888978384813,
+        "x": 7810.953541744044,
+        "dead": true
+      }
+    ],
+    "finishers": 2,
+    "beatPlayer": 0
+  },
+  {
+    "id": 11,
+    "repeat": 2,
+    "player": {
+      "state": "dead",
+      "x": 15404.33282598669,
+      "hp": 72.68311100363586,
+      "time": 29.033333333332326,
+      "minHP": 72.68311100363586,
+      "crashes": 0,
+      "recoveries": 0
+    },
+    "rank": 2,
+    "rivals": [
+      {
+        "name": "VEX",
+        "finished": true,
+        "time": 29.933333333332275,
+        "hp": 37.89342539272401,
+        "x": 15400.909337612946,
+        "dead": false
+      },
+      {
+        "name": "MOTHER IRON",
+        "finished": true,
+        "time": 31.224999999998868,
+        "hp": 119,
+        "x": 15400.75614411899,
+        "dead": false
+      },
+      {
+        "name": "NULL",
+        "finished": true,
+        "time": 30.783333333332227,
+        "hp": 18.675645335095503,
+        "x": 15400.940035246686,
+        "dead": false
+      },
+      {
+        "name": "SAINT",
+        "finished": true,
+        "time": 28.72499999999901,
+        "hp": 100,
+        "x": 15403.870112554581,
+        "dead": false
+      }
+    ],
+    "finishers": 4,
+    "beatPlayer": 1
+  }
+]
