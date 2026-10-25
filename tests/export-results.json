@@ -1,0 +1,35 @@
+{
+  "status": "PASS",
+  "state": {
+    "activeEvent": 0,
+    "angle": 0,
+    "y": 352.42484643450007,
+    "grounded": true,
+    "frontContact": true,
+    "rearContact": true,
+    "loop": false,
+    "finishX": 6200,
+    "checkpointIndex": 1,
+    "lastCheckpoint": 2231.6666666666665,
+    "boost": 0.5709999999999953,
+    "gameState": "play",
+    "seedKey": "BLACK-1-CIRCUIT",
+    "seed": 4210819520,
+    "mode": "trial",
+    "position": 2520.2463581403354,
+    "speed": 676.3800751622714,
+    "hp": 79,
+    "kills": 0,
+    "rank": 1,
+    "ground": 39,
+    "hazards": 10,
+    "enemies": 0,
+    "worldTime": 4.908333333333367,
+    "comboCount": 2,
+    "recoveries": 3
+  },
+  "requests": [
+    "http://127.0.0.1:8000/dist/DEATHWIRE.html"
+  ],
+  "errors": []
+}

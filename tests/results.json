@@ -1,0 +1,74 @@
+{
+  "date": "2026-10-25T03:51:35.956Z",
+  "results": [
+    {
+      "name": "Menu and input contract",
+      "status": "PASS"
+    },
+    {
+      "name": "Grounded wheelie lifts front contact; release settles",
+      "status": "PASS"
+    },
+    {
+      "name": "Jump leaves road, lands, and boost consumes fuel",
+      "status": "PASS"
+    },
+    {
+      "name": "100 seeds reproduce geometry and satisfy bounded jump/slope rules",
+      "status": "PASS"
+    },
+    {
+      "name": "Every campaign course has safe finish and two usable checkpoints",
+      "status": "PASS"
+    },
+    {
+      "name": "Campaign rewards are idempotent and save survives reload",
+      "status": "PASS"
+    },
+    {
+      "name": "Malformed saves validate and unknown versions reset",
+      "status": "PASS"
+    },
+    {
+      "name": "Melee hits forward rider and not rear rider",
+      "status": "PASS"
+    },
+    {
+      "name": "Loop engages and exits upright with forward velocity",
+      "status": "PASS"
+    },
+    {
+      "name": "Fatal crash and checkpoint recovery restore a playable state",
+      "status": "PASS"
+    },
+    {
+      "name": "Moving platform supports contact from above and rejects underside snapping",
+      "status": "PASS"
+    },
+    {
+      "name": "Rival uses the same spike damage and real finish ranking",
+      "status": "PASS"
+    },
+    {
+      "name": "Checkpoint advancement and retry restore a retained safe road",
+      "status": "PASS"
+    },
+    {
+      "name": "Garage purchase, equip and settings persist through UI",
+      "status": "PASS"
+    },
+    {
+      "name": "Unavailable storage keeps campaign playable without throwing",
+      "status": "PASS"
+    },
+    {
+      "name": "Landscape touch layout fits 844 by 390",
+      "status": "PASS"
+    },
+    {
+      "name": "No browser exceptions",
+      "status": "PASS"
+    }
+  ],
+  "errors": []
+}

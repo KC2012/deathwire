@@ -1,0 +1,633 @@
+{
+  "date": "2026-10-25T03:51:35.656Z",
+  "runs": [
+    {
+      "id": 0,
+      "title": "First current",
+      "state": "dead",
+      "x": 6203.621238590705,
+      "hp": 100,
+      "time": 11.458333333333323,
+      "minHP": 100,
+      "crashes": 0,
+      "recoveries": 3,
+      "medal": 2,
+      "finish": 6200,
+      "rank": 1,
+      "rivals": [],
+      "hits": []
+    },
+    {
+      "id": 1,
+      "title": "Street teeth",
+      "state": "dead",
+      "x": 7602.296889969367,
+      "hp": 77.79619496499289,
+      "time": 15.399999999999766,
+      "minHP": 77.79619496499289,
+      "crashes": 0,
+      "recoveries": 0,
+      "medal": 2,
+      "finish": 7600,
+      "rank": 1,
+      "rivals": [
+        {
+          "id": 1,
+          "x": 1187.610035237792,
+          "y": 282.4734602315553,
+          "hp": 0,
+          "dead": true,
+          "gone": true,
+          "finished": false,
+          "role": "SPRINTER"
+        },
+        {
+          "id": 2,
+          "x": 1714.5678047909182,
+          "y": 253.69375185405377,
+          "hp": -35.15252602086095,
+          "dead": true,
+          "gone": true,
+          "finished": false,
+          "role": "BRUISER"
+        },
+        {
+          "id": 3,
+          "x": 1840.8650514733656,
+          "y": 333.7495533663654,
+          "hp": -10.645768862086381,
+          "dead": true,
+          "gone": true,
+          "finished": false,
+          "role": "RAIDER"
+        },
+        {
+          "id": 4,
+          "x": 1727.824114833659,
+          "y": 338.0097817303613,
+          "hp": -3.3871333893670936,
+          "dead": true,
+          "gone": true,
+          "finished": false,
+          "role": "SURVIVOR"
+        }
+      ],
+      "hits": [
+        {
+          "x": 905,
+          "time": 1.9749999999999954,
+          "why": "COLLISION",
+          "n": 8.237476534386598
+        },
+        {
+          "x": 1278,
+          "time": 2.6916666666666598,
+          "why": "COLLISION",
+          "n": 6.668885227629582
+        },
+        {
+          "x": 1632,
+          "time": 3.3749999999999907,
+          "why": "COLLISION",
+          "n": 7.29744327299092
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Exit wound",
+      "state": "dead",
+      "x": 8831.448639795864,
+      "hp": 90.84323453584994,
+      "time": 16.80833333333302,
+      "minHP": 90.84323453584994,
+      "crashes": 0,
+      "recoveries": 0,
+      "medal": 2,
+      "finish": 8830,
+      "rank": 1,
+      "rivals": [
+        {
+          "id": 1,
+          "x": 743.0392640540384,
+          "y": 360.3524226543608,
+          "hp": -10.867860966802198,
+          "dead": true,
+          "gone": true,
+          "finished": false,
+          "role": "SPRINTER"
+        },
+        {
+          "id": 2,
+          "x": 969.2097498753087,
+          "y": 341.0597993038301,
+          "hp": -21.887890812650433,
+          "dead": true,
+          "gone": true,
+          "finished": false,
+          "role": "BRUISER"
+        },
+        {
+          "id": 3,
+          "x": 1003.5998780541902,
+          "y": 341.8701733588241,
+          "hp": -1.188754288999803,
+          "dead": true,
+          "gone": true,
+          "finished": false,
+          "role": "RAIDER"
+        },
+        {
+          "id": 4,
+          "x": 1429.2778623051347,
+          "y": 204.7074662174937,
+          "hp": -23.262804978296494,
+          "dead": true,
+          "gone": true,
+          "finished": false,
+          "role": "SURVIVOR"
+        }
+      ],
+      "hits": [
+        {
+          "x": 1307,
+          "time": 2.7333333333333263,
+          "why": "COLLISION",
+          "n": 9.156765464150059
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Choir practice",
+      "state": "dead",
+      "x": 8403.551839995895,
+      "hp": 19,
+      "time": 16.34166666666638,
+      "minHP": 19,
+      "crashes": 0,
+      "recoveries": 3,
+      "medal": 2,
+      "finish": 8400,
+      "rank": 1,
+      "rivals": [],
+      "hits": [
+        {
+          "x": 3422,
+          "time": 6.725000000000124,
+          "why": "CRUSHER",
+          "n": 28
+        },
+        {
+          "x": 6543,
+          "time": 12.691666666666586,
+          "why": "CRUSHER",
+          "n": 28
+        },
+        {
+          "x": 8140,
+          "time": 15.783333333333077,
+          "why": "SWING",
+          "n": 25
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Heavy metal",
+      "state": "dead",
+      "x": 10004.163144748554,
+      "hp": 63.07296641343535,
+      "time": 17.99999999999962,
+      "minHP": 63.07296641343535,
+      "crashes": 0,
+      "recoveries": 0,
+      "medal": 2,
+      "finish": 10000,
+      "rank": 1,
+      "rivals": [
+        {
+          "id": 1,
+          "x": 805.6179561437491,
+          "y": 393.0192666892439,
+          "hp": -9.835575584401312,
+          "dead": true,
+          "gone": true,
+          "finished": false,
+          "role": "SPRINTER"
+        },
+        {
+          "id": 2,
+          "x": 1028.95739096558,
+          "y": 391.42173473071307,
+          "hp": -22.079085429020886,
+          "dead": true,
+          "gone": true,
+          "finished": false,
+          "role": "BRUISER"
+        },
+        {
+          "id": 3,
+          "x": 1236.6717084447055,
+          "y": 294.3600299407886,
+          "hp": -1.169320784044885,
+          "dead": true,
+          "gone": true,
+          "finished": false,
+          "role": "RAIDER"
+        },
+        {
+          "id": 4,
+          "x": 1454.4264122653544,
+          "y": 276.258822060553,
+          "hp": -19.231780025409023,
+          "dead": true,
+          "gone": true,
+          "finished": false,
+          "role": "SURVIVOR"
+        }
+      ],
+      "hits": [
+        {
+          "x": 1413,
+          "time": 2.9333333333333256,
+          "why": "COLLISION",
+          "n": 8.927033586564647
+        },
+        {
+          "x": 7694,
+          "time": 14.174999999999836,
+          "why": "CRUSHER",
+          "n": 28
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Assembly line",
+      "state": "dead",
+      "x": 10862.999366708633,
+      "hp": 48,
+      "time": 20.033333333332838,
+      "minHP": 48,
+      "crashes": 0,
+      "recoveries": 3,
+      "medal": 2,
+      "finish": 10860,
+      "rank": 1,
+      "rivals": [],
+      "hits": [
+        {
+          "x": 3769,
+          "time": 7.350000000000155,
+          "why": "CRUSHER",
+          "n": 26
+        },
+        {
+          "x": 8314,
+          "time": 15.433333333333097,
+          "why": "CRUSHER",
+          "n": 26
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Dead signal",
+      "state": "dead",
+      "x": 9804.184888781823,
+      "hp": 77,
+      "time": 20.149999999999498,
+      "minHP": 77,
+      "crashes": 0,
+      "recoveries": 3,
+      "medal": 2,
+      "finish": 9800,
+      "rank": 1,
+      "rivals": [],
+      "hits": [
+        {
+          "x": 6977,
+          "time": 14.2166666666665,
+          "why": "LASER",
+          "n": 23
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Ghost protocol",
+      "state": "dead",
+      "x": 11500.059198125811,
+      "hp": 3.4641013656377595,
+      "time": 21.23333333333277,
+      "minHP": 3.4641013656377595,
+      "crashes": 0,
+      "recoveries": 0,
+      "medal": 2,
+      "finish": 11500,
+      "rank": 1,
+      "rivals": [
+        {
+          "id": 1,
+          "x": 1185.5658801641239,
+          "y": 291.11504151123603,
+          "hp": 0,
+          "dead": true,
+          "gone": true,
+          "finished": false,
+          "role": "SPRINTER"
+        },
+        {
+          "id": 2,
+          "x": 1914.7159731279987,
+          "y": 295.2672090480943,
+          "hp": -21.535927891986567,
+          "dead": true,
+          "gone": true,
+          "finished": false,
+          "role": "BRUISER"
+        },
+        {
+          "id": 3,
+          "x": 1795.6767558072474,
+          "y": 313.5249719497289,
+          "hp": -3,
+          "dead": true,
+          "gone": true,
+          "finished": false,
+          "role": "RAIDER"
+        },
+        {
+          "id": 4,
+          "x": 1538.4177825297365,
+          "y": 279.3338790667481,
+          "hp": -1.7737083787636152,
+          "dead": true,
+          "gone": true,
+          "finished": false,
+          "role": "SURVIVOR"
+        }
+      ],
+      "hits": [
+        {
+          "x": 870,
+          "time": 1.908333333333329,
+          "why": "COLLISION",
+          "n": 8.891749722903711
+        },
+        {
+          "x": 1260,
+          "time": 2.6583333333333266,
+          "why": "COLLISION",
+          "n": 5.416216396989
+        },
+        {
+          "x": 1624,
+          "time": 3.358333333333324,
+          "why": "COLLISION",
+          "n": 7.227932514469526
+        },
+        {
+          "x": 3695,
+          "time": 7.283333333333485,
+          "why": "LASER",
+          "n": 23
+        },
+        {
+          "x": 4339,
+          "time": 8.575000000000154,
+          "why": "SWING",
+          "n": 29
+        },
+        {
+          "x": 7413,
+          "time": 13.958333333333181,
+          "why": "LASER",
+          "n": 23
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Blackout",
+      "state": "dead",
+      "x": 12205.541839066645,
+      "hp": 100,
+      "time": 20.64999999999947,
+      "minHP": 100,
+      "crashes": 0,
+      "recoveries": 3,
+      "medal": 2,
+      "finish": 12200,
+      "rank": 1,
+      "rivals": [],
+      "hits": []
+    },
+    {
+      "id": 9,
+      "title": "Above the static",
+      "state": "dead",
+      "x": 12801.65716178015,
+      "hp": 100,
+      "time": 25.124999999999215,
+      "minHP": 100,
+      "crashes": 0,
+      "recoveries": 3,
+      "medal": 2,
+      "finish": 12800,
+      "rank": 1,
+      "rivals": [],
+      "hits": []
+    },
+    {
+      "id": 10,
+      "title": "Last light",
+      "state": "dead",
+      "x": 13804.274469143824,
+      "hp": 38.34497605944887,
+      "time": 25.708333333332515,
+      "minHP": 38.34497605944887,
+      "crashes": 0,
+      "recoveries": 0,
+      "medal": 2,
+      "finish": 13800,
+      "rank": 1,
+      "rivals": [
+        {
+          "id": 1,
+          "x": 779.7427980479214,
+          "y": 373.15937304158837,
+          "hp": -10.91332849018098,
+          "dead": true,
+          "gone": true,
+          "finished": false,
+          "role": "SPRINTER"
+        },
+        {
+          "id": 2,
+          "x": 995.0264933064909,
+          "y": 373.69862123951316,
+          "hp": -13.070136662382758,
+          "dead": true,
+          "gone": true,
+          "finished": false,
+          "role": "BRUISER"
+        },
+        {
+          "id": 3,
+          "x": 1203.5250710775879,
+          "y": 290.3756398776812,
+          "hp": -9.080073670704081,
+          "dead": true,
+          "gone": true,
+          "finished": false,
+          "role": "RAIDER"
+        },
+        {
+          "id": 4,
+          "x": 1246.6897444412643,
+          "y": 280.18835674297566,
+          "hp": -4.416575087122403,
+          "dead": true,
+          "gone": true,
+          "finished": false,
+          "role": "SURVIVOR"
+        }
+      ],
+      "hits": [
+        {
+          "x": 954,
+          "time": 2.066666666666662,
+          "why": "COLLISION",
+          "n": 11.655023940551136
+        },
+        {
+          "x": 5127,
+          "time": 9.441666666666771,
+          "why": "SWING",
+          "n": 25
+        },
+        {
+          "x": 9311,
+          "time": 17.283333333332994,
+          "why": "SWING",
+          "n": 25
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "title": "DEATHWIRE",
+      "state": "dead",
+      "x": 15424.350831438274,
+      "hp": 81.99485215901291,
+      "time": 31.091666666665542,
+      "minHP": 81.99485215901291,
+      "crashes": 0,
+      "recoveries": 0,
+      "medal": 2,
+      "finish": 15400,
+      "rank": 1,
+      "rivals": [
+        {
+          "id": 1,
+          "x": 576.1106452132715,
+          "y": 352.0157374570072,
+          "hp": -2.7448419359373943,
+          "dead": true,
+          "gone": true,
+          "finished": false,
+          "role": "SPRINTER"
+        },
+        {
+          "id": 2,
+          "x": 948.3940980617767,
+          "y": 348.7430175270484,
+          "hp": -4.983520055999158,
+          "dead": true,
+          "gone": true,
+          "finished": false,
+          "role": "BRUISER"
+        },
+        {
+          "id": 3,
+          "x": 1331.1121867436186,
+          "y": 191.94622859709705,
+          "hp": -13.684326924647529,
+          "dead": true,
+          "gone": true,
+          "finished": false,
+          "role": "RAIDER"
+        },
+        {
+          "id": 4,
+          "x": 1569.4389628826768,
+          "y": 193.5623482156393,
+          "hp": -10.989259003371824,
+          "dead": true,
+          "gone": true,
+          "finished": false,
+          "role": "SURVIVOR"
+        }
+      ],
+      "hits": [
+        {
+          "x": 835,
+          "time": 1.8416666666666626,
+          "why": "COLLISION",
+          "n": 9.390996613240198
+        },
+        {
+          "x": 1326,
+          "time": 2.783333333333326,
+          "why": "COLLISION",
+          "n": 8.614151227746905
+        }
+      ]
+    }
+  ],
+  "save": {
+    "version": 1,
+    "credits": 3600,
+    "medals": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "times": [
+      11.458333333333323,
+      15.399999999999766,
+      16.80833333333302,
+      16.34166666666638,
+      17.99999999999962,
+      20.033333333332838,
+      20.149999999999498,
+      21.23333333333277,
+      20.64999999999947,
+      25.124999999999215,
+      25.708333333332515,
+      31.091666666665542
+    ],
+    "owned": [
+      0
+    ],
+    "equipped": 0,
+    "options": {
+      "sound": true,
+      "shake": true,
+      "flashes": true,
+      "fullFX": true
+    }
+  },
+  "errors": []
+}

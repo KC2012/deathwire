@@ -1,0 +1,16 @@
+import fs from 'node:fs';
+import vm from 'node:vm';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
+import crypto from 'node:crypto';
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
+const read=p=>fs.readFileSync(path.join(root,p),'utf8');
+const game=read('source/game.js').replace('/*__CIRCUIT__*/',read('source/circuit.js'));
+new vm.Script(game,{filename:'deathwire.js'});
+const html=read('source/shell.html').replace('/*__GAME__*/',()=>game);
+if(/<script[^>]+src=|<link[^>]+href=|https?:\/\//.test(html))throw Error('Standalone export unexpectedly depends on a network resource');
+fs.mkdirSync(path.join(root,'dist'),{recursive:true});
+for(const p of ['source/index.html','index.html','dist/DEATHWIRE.html'])fs.writeFileSync(path.join(root,p),html);
+const hash=crypto.createHash('sha256').update(html).digest('hex');
+fs.writeFileSync(path.join(root,'dist/SHA256SUMS'),hash+'  DEATHWIRE.html\n');
+console.log(`Built offline DEATHWIRE: ${Buffer.byteLength(html)} bytes / SHA256 ${hash}`);
