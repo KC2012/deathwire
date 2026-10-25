@@ -8,6 +8,7 @@
 - AI boost, better hazard anticipation and landing correction; shared symmetric impact thresholds and contact separation. Removed attrition from sustained low-speed pileups.
 - Explicit rival chassis durability; no invulnerability or distance-based rubber banding.
 - Long-launch speed metadata, fixed-road finish selection, extended encounter/racing/save/objective tests and screenshots.
+- Clear previous-run impact notices on restart.
 - Existing controls, core bike integration, offline distribution and v1 campaign saves preserved.
 
 

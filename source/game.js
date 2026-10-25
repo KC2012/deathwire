@@ -298,7 +298,7 @@ function startGame(newSeed=false){
  let entered=$('seedInput').value.trim();
  if(newSeed||!entered){entered=String(Math.floor(Math.random()*90000000)+10000000);$('seedInput').value=entered}
  seedKey=entered;seed=hashSeed(seedKey);rng=srand(seed);spawnRng=srand(seed^0x4d7a923b);fxRng=srand(seed^0x9e3779b9);
- hitLog=[];runTime=0;worldTime=0;clock=0;frame=0;score=0;kills=0;nearMisses=0;shake=0;flash=0;camX=-180;camY=0;
+ warningText='';warningUntil=0;hitLog=[];runTime=0;worldTime=0;clock=0;frame=0;score=0;kills=0;nearMisses=0;shake=0;flash=0;camX=-180;camY=0;
  riderSerial=0;chainKills=0;comboCount=0;bestCombo=0;comboUntil=0;wreckPieces=[];wreckClock=0;gameResult='';
  finishX=activeEvent?activeEvent.length:(mode==='trial'?2950:5100);recoveryCredits=mode==='trial'?3:0;physicsAccumulator=0;
  initTrack();player=makeBike(0,370,false);player.y=370;player.onGround=true;player.vx=250;
