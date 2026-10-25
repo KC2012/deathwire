@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><meta name="theme-color" content="#05070a"><title>DEATHWIRE — v0.20 // FULL THROTTLE</title>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><meta name="theme-color" content="#05070a"><title>DEATHWIRE — v0.30 // EVENT HORIZON</title>
 <style>
 :root{--ink:#e9f6fa;--dim:#8da3ac;--cyan:#54f2ff;--danger:#ff657b;--bg:#05070a}*{box-sizing:border-box}html,body{margin:0;background:#020305;color:var(--ink);font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;overflow:hidden;touch-action:none}button,input,select{font:inherit}button{cursor:pointer;color:var(--ink)}#shell{position:relative;width:100vw;height:100dvh;overflow:hidden;background:#05070a;isolation:isolate}canvas{position:absolute;width:100%;height:100%;display:block;image-rendering:auto}#crt{position:absolute;inset:0;pointer-events:none;opacity:.16;background:repeating-linear-gradient(0deg,transparent 0px,transparent 3px,#000 4px);mix-blend-mode:multiply}#flash{position:absolute;inset:0;pointer-events:none;background:#f0ffff;opacity:0}#hud{position:absolute;left:0;right:0;top:0;padding:15px 19px 4px;display:none;pointer-events:none;text-shadow:0 2px 3px #000}#hud .row{display:flex;align-items:flex-start;gap:18px}.stat{font-size:9px;color:#adc0c8;letter-spacing:1.5px}.stat strong{display:block;font-size:19px;color:white;letter-spacing:0;font-weight:800;line-height:1.2}.stat .accent{color:var(--cyan)}#healthWrap{margin-top:7px;width:152px;height:5px;background:#273640}#health{width:100%;height:100%;background:#e8faff;box-shadow:0 0 11px #8edcf7}#hud .right{margin-left:auto;text-align:right}#comboHud{position:absolute;top:88px;left:20px;color:#98f6ff;font-size:10px;letter-spacing:1.3px;text-shadow:0 0 8px #25dbff88}#stage{font-size:10px;color:var(--cyan);letter-spacing:2px;margin-top:7px;min-height:15px}#warning{position:absolute;left:50%;top:16%;transform:translateX(-50%);color:#fff;font-weight:900;font-size:clamp(11px,2.5vw,20px);letter-spacing:.19em;text-align:center;text-shadow:0 0 10px #fff;opacity:0;pointer-events:none;white-space:nowrap}#toasts{position:absolute;left:50%;top:30%;transform:translateX(-50%);pointer-events:none;text-align:center;font-weight:900;font-size:16px;letter-spacing:2px}#controlsHelp{position:absolute;bottom:13px;left:50%;transform:translateX(-50%);font-size:9px;letter-spacing:1px;color:#9baab2;white-space:nowrap;pointer-events:none;display:none}#topButtons{position:absolute;right:15px;top:87px;display:none;gap:5px;z-index:4}#topButtons button{font-size:11px;color:#cde7ea;background:#07121acc;border:1px solid #58636b99;padding:8px 9px;min-width:33px}#topButtons button:hover{border-color:#fff;color:#fff}.overlay{position:absolute;inset:0;display:grid;place-items:center;background:linear-gradient(#02040a9e,#02040bdd);z-index:10;padding:18px;overflow:auto}.panel{width:min(590px,100%);border:1px solid #657b87;background:#060b12ed;box-shadow:0 0 50px #000,0 0 0 5px #070b11a0;padding:clamp(16px,3vw,29px);max-height:97%;overflow:auto}.eyebrow{color:var(--cyan);font-size:10px;letter-spacing:3px;font-weight:700}.logo{font-size:clamp(38px,8vw,75px);font-weight:1000;letter-spacing:-5px;line-height:.94;margin:13px 0 5px;text-shadow:3px 3px 0 #1e6a81}.logo .slash{color:var(--cyan)}.subtitle{font-size:12px;letter-spacing:1.5px;color:#a5bec5;margin:11px 0 19px;line-height:1.7}.blurb{font-size:12px;line-height:1.8;color:#c6d5dc;max-width:520px}.bar{height:1px;background:linear-gradient(90deg,#d9f7ff77,transparent);margin:14px 0}.actions{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0 9px}.primary{background:#defaff;color:#07131a;border:1px solid #fff;padding:12px 16px;font-weight:900;letter-spacing:1px}.secondary{background:transparent;color:#d9e9ed;border:1px solid #556a75;padding:11px 14px;font-weight:700;letter-spacing:.6px}.primary:hover{background:var(--cyan)}.secondary:hover{border-color:white}.fine{font-size:10px;color:#879ba5;line-height:1.7}.gridHints{display:grid;grid-template-columns:1fr 1fr;gap:7px 18px;margin:15px 0;font-size:11px;color:#c2d5dc}.key{display:inline-block;min-width:25px;padding:3px 5px;margin-right:5px;text-align:center;background:#182631;border:1px solid #586e78;color:#fff}.picker{background:#0d1921;border:1px solid #526571;color:#fff;padding:9px 10px;font-size:12px;max-width:100%}.pickrow{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:10px}.pickrow label{font-size:11px;color:#96acb7}.hidden{display:none!important}#mobile{position:absolute;bottom:16px;left:0;right:0;padding:0 16px;display:none;align-items:flex-end;justify-content:space-between;pointer-events:none;z-index:3;gap:10px}#mobile .bank{display:flex;gap:7px;align-items:flex-end;pointer-events:auto}.pad{background:#101e29c9;color:#e2f5f7;border:1px solid #cbe9fa6c;min-width:56px;min-height:54px;border-radius:7px;font-size:10px;letter-spacing:.3px;font-weight:800;touch-action:none;user-select:none;box-shadow:0 3px 12px #0008}.pad.pressed{background:#d6faff;color:#05080c}.pad.hit{border-color:#ff98a2}.pad.boost{border-color:#5ff1ff}.pad.tall{min-height:68px}.pad.stack{min-width:49px}#orient{display:none;position:absolute;inset:0;z-index:20;background:#05080c;align-items:center;justify-content:center;padding:30px;text-align:center;line-height:1.9;font-size:13px;letter-spacing:1px}.brand{font-size:10px;color:#8799a1;letter-spacing:1px;display:flex;justify-content:space-between;gap:15px;margin-top:16px}.muted{color:#8da6b0}.dev{width:min(600px,100%);font-size:12px}.dev h2{margin:0 0 12px}.dev .rowdev{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px solid #283540}.dev input[type=number]{width:130px;background:#0d1c25;color:white;border:1px solid #526875;padding:8px}.dev input[type=checkbox]{accent-color:#76f2ff}.devbuttons{display:flex;gap:8px;flex-wrap:wrap;margin-top:17px}@media(hover:none),(pointer:coarse){#mobile.playing{display:flex}#controlsHelp{display:none!important}}@media(max-width:750px){#comboHud{top:59px;left:12px;font-size:8px}#hud{padding:9px 12px}#hud .row{gap:8px}.stat{font-size:7px}.stat strong{font-size:13px}#healthWrap{width:92px}#stage{font-size:8px;margin-top:3px}#topButtons{top:59px;right:8px}#topButtons button{font-size:9px;padding:6px}#mobile{bottom:9px;padding:0 9px;gap:4px}#mobile .bank{gap:4px}.pad{min-width:49px;min-height:46px;font-size:9px}.pad.tall{min-height:55px}.pad.stack{min-width:39px}#warning{top:19%}}@media(orientation:portrait) and (max-width:700px){#orient{display:flex}}@media(max-height:410px){#controlsHelp{bottom:6px}#mobile{bottom:6px}.pad{min-height:43px}.pad.tall{min-height:49px}}
 
@@ -7,13 +7,13 @@
 </style></head><body><div id="shell"><canvas id="game"></canvas><div id="crt"></div><div id="flash"></div>
 <div id="hud"><div class="row"><div class="stat">SPEED<strong id="speed">000<span class="accent"> KM/H</span></strong><div id="boostWrap" aria-label="Boost fuel"><div id="boostBar"></div></div><div id="healthWrap"><div id="health"></div></div></div><div class="stat">DISTANCE<strong id="dist">0.00 KM</strong></div><div class="stat">KILLS<strong id="kills">00</strong></div><div class="stat right" id="timerstat">RUN TIME<strong id="timer">00:00</strong><div id="stage"></div></div></div><div id="comboHud">SCORE 0</div></div><div id="warning"></div><div id="toasts"></div><div id="topButtons"><button id="soundBtn" aria-label="Sound">SFX ON</button><button id="pauseBtn" aria-label="Pause">II</button><button id="helpBtn" aria-label="Help">?</button></div><div id="controlsHelp">↑ / W THROTTLE &nbsp; ↓ / S BRAKE &nbsp; ←→ / AD LEAN &nbsp; Z HOP &nbsp; SPACE STRIKE &nbsp; X BOOST &nbsp; P PAUSE</div>
 <div id="mobile"><div class="bank"><button class="pad tall" data-input="brake">BRAKE</button><button class="pad tall" data-input="gas">THROTTLE</button></div><div class="bank"><button class="pad stack" data-input="back">LEAN<br>BACK</button><button class="pad stack" data-input="forward">LEAN<br>FWD</button><button class="pad" data-input="jump">HOP</button><button class="pad hit tall" data-input="attack">HIT</button><button class="pad boost tall" data-input="boost">BOOST</button></div></div>
-<div id="menu" class="overlay"><div class="panel"><div class="eyebrow">FULL THROTTLE / AN OFFLINE MOTORSPORT NIGHTMARE</div><div class="logo">DEATH<span class="slash">/</span>WIRE</div><div class="subtitle">THE ROAD IS TRYING TO KILL YOU. SO IS EVERYONE ELSE.</div><div class="bar"></div><p class="blurb">The city owns the roads. Tonight, you take them back. Ride four industrial districts, break the crews that guard them, and earn your place on the Black Circuit. Every wreck is a lesson. Every finish is yours.</p><div class="actions"><button class="primary" id="campaignBtn">ENTER THE CIRCUIT ↗</button><button class="secondary" id="garageBtn">GARAGE</button><button class="secondary" id="trainingBtn">PRACTICE</button></div><div class="bar"></div><div class="eyebrow">QUICK PLAY / NO UNLOCKS REQUIRED</div><div class="pickrow"><label for="modeSelect">RUN TYPE</label><select class="picker" id="modeSelect"><option value="endless">ENDLESS — SURVIVE</option><option value="sprint">DEATH RACE — 5 KM</option><option value="trial">GAUNTLET — 3 KM / 3 RECOVERIES</option></select><label for="seedInput">SEED</label><input class="picker" id="seedInput" aria-label="Track seed" style="width:130px" placeholder="RANDOM" maxlength="12"></div><div id="recordLine" class="fine" style="margin-top:12px;color:#97f5ff">NO PERSONAL BEST YET // MAKE YOUR FIRST RUN</div><div class="actions"><button class="primary" id="startBtn">QUICK PLAY →</button><button class="secondary" id="howBtn">CONTROLS / MANUAL</button></div><div class="fine">OFFLINE • FIXED STEP RIDECRAFT • SEEDED COURSES • NO ACCOUNTS</div><div class="brand"><span>UNAFFILIATED.PAGE</span><span>DEATHWIRE // v0.20 FULL THROTTLE</span></div></div></div>
+<div id="menu" class="overlay"><div class="panel"><div class="eyebrow">EVENT HORIZON / AN OFFLINE MOTORSPORT NIGHTMARE</div><div class="logo">DEATH<span class="slash">/</span>WIRE</div><div class="subtitle">THE ROAD IS TRYING TO KILL YOU. SO IS EVERYONE ELSE.</div><div class="bar"></div><p class="blurb">The city owns the roads. Tonight, you take them back. Ride four industrial districts, break the crews that guard them, and earn your place on the Black Circuit. Every wreck is a lesson. Every finish is yours.</p><div class="actions"><button class="primary" id="campaignBtn">ENTER THE CIRCUIT ↗</button><button class="secondary" id="garageBtn">GARAGE</button><button class="secondary" id="trainingBtn">PRACTICE</button></div><div class="bar"></div><div class="eyebrow">QUICK PLAY / NO UNLOCKS REQUIRED</div><div class="pickrow"><label for="modeSelect">RUN TYPE</label><select class="picker" id="modeSelect"><option value="endless">ENDLESS — SURVIVE</option><option value="sprint">DEATH RACE — 5 KM</option><option value="trial">GAUNTLET — 3 KM / 3 RECOVERIES</option></select><label for="seedInput">SEED</label><input class="picker" id="seedInput" aria-label="Track seed" style="width:130px" placeholder="RANDOM" maxlength="12"></div><div id="recordLine" class="fine" style="margin-top:12px;color:#97f5ff">NO PERSONAL BEST YET // MAKE YOUR FIRST RUN</div><div class="actions"><button class="primary" id="startBtn">QUICK PLAY →</button><button class="secondary" id="howBtn">CONTROLS / MANUAL</button></div><div class="fine">OFFLINE • FIXED STEP RIDECRAFT • SEEDED COURSES • NO ACCOUNTS</div><div class="brand"><span>UNAFFILIATED.PAGE</span><span>DEATHWIRE // v0.30 EVENT HORIZON</span></div></div></div>
 <div id="pauseMenu" class="overlay hidden"><div class="panel"><div class="eyebrow">SYSTEM HALTED</div><div class="logo" style="font-size:45px;letter-spacing:-2px">PAUSED<span class="slash">//</span></div><p class="blurb" id="pauseStats"></p><div class="actions"><button class="primary" id="resumeBtn">▶ RESUME</button><button class="secondary" id="restartBtn">RESTART SEED</button><button class="secondary" id="quitBtn">MAIN MENU</button></div><div class="fine">P / ESC TO RESUME &nbsp; • &nbsp; CTRL + SHIFT + D: DEV PANEL</div></div></div>
 <div id="endMenu" class="overlay hidden"><div class="panel"><div class="eyebrow" id="endType">RUN TERMINATED</div><div class="logo" style="font-size:clamp(33px,7vw,61px)" id="endTitle">TOTAL<span class="slash">/</span>LOSS</div><p class="blurb" id="endReport"></p><div class="bar"></div><div class="actions"><button class="primary" id="againBtn">▶ RETRY SAME TRACK</button><button class="secondary" id="newBtn">NEW RANDOM TRACK</button><button class="primary hidden" id="nextEventBtn">CIRCUIT MAP →</button><button class="secondary" id="endQuitBtn">MAIN MENU</button></div><div class="fine" id="seedReport"></div></div></div>
-<div id="manual" class="overlay hidden"><div class="panel"><div class="eyebrow">PILOT FIELD MANUAL</div><h2>HOW TO STAY ALIVE</h2><p class="blurb">Your bike cruises automatically. Throttle and boost build speed; braking changes the approach to a hazard. Lean on the ground to wheelie or press the front wheel down; lean in the air to rotate and land wheels-down. Hard nose-first landings cost health and speed. Launch ramps and hops can clear gaps, spikes, and machinery. In DEATH RACE your position is ranked against riders on the same course. In GAUNTLET you get three checkpoint recoveries.</p><div class="gridHints"><div><span class="key">↑</span> Accelerate</div><div><span class="key">↓</span> Brake</div><div><span class="key">←</span> Lean back</div><div><span class="key">→</span> Lean forward</div><div><span class="key">Z</span> Hop / jump</div><div><span class="key">SPACE</span> Strike riders</div><div><span class="key">X</span> Boost (recharges)</div><div><span class="key">P</span> Pause</div></div><p class="blurb">Track geometry and hazard animation teach you how to survive. Full loops automatically engage their guide rails when approached at speed. Warning signs mark trap sections. Riders telegraph attacks; strike forward at close range. Fragile road breaks under EVERY rider. Near misses, clean airtime and physical takedowns build combo score. Death Races have real finishing places; Gauntlet has checkpoints. <strong>Tip:</strong> Jump before saws and spike beds. Attacking near explosives can set off a chain reaction.</p><div class="actions"><button class="primary" id="manualBack">GOT IT</button></div><div class="fine">CTRL + SHIFT + D opens testing tools during gameplay.</div></div></div>
+<div id="manual" class="overlay hidden"><div class="panel"><div class="eyebrow">PILOT FIELD MANUAL</div><h2>HOW TO STAY ALIVE</h2><p class="blurb">Your bike cruises automatically. Throttle and boost build speed; braking changes the approach to a hazard. Lean on the ground to wheelie or press the front wheel down; lean in the air to rotate and land wheels-down. Hard nose-first landings cost health and speed. Launch ramps and hops can clear gaps, spikes, and machinery. In DEATH RACE your position is ranked against riders on the same course. In GAUNTLET you get three checkpoint recoveries.</p><div class="gridHints"><div><span class="key">↑</span> Accelerate</div><div><span class="key">↓</span> Brake</div><div><span class="key">←</span> Lean back</div><div><span class="key">→</span> Lean forward</div><div><span class="key">Z</span> Hop / jump</div><div><span class="key">SPACE</span> Strike riders</div><div><span class="key">X</span> Boost (recharges)</div><div><span class="key">P</span> Pause</div></div><p class="blurb">Track geometry and hazard animation teach you how to survive. Full loops automatically engage their guide rails when approached at speed. Warning signs mark trap sections. Riders telegraph attacks; strike forward at close range. Fragile road breaks under EVERY rider. Near misses, clean airtime and physical takedowns build combo score. Death Races have real finishing places; Gauntlet has checkpoints. <strong>Tip:</strong> Jump before saws and spike beds. Attacking near explosives can set off a chain reaction.</p><div class="actions"><button class="primary" id="manualBack">GOT IT</button></div><div class="fine">Brake + lean forward to guard against rival strikes. CTRL + SHIFT + D opens testing tools.</div></div></div>
 <div id="devMenu" class="overlay hidden"><div class="panel dev"><div class="eyebrow">DEATHWIRE / ENGINEERING BAY</div><h2>DEV // DEBUGGER</h2><div class="rowdev"><label>Seed</label><span id="devSeed"></span></div><div class="rowdev"><label>Invincibility</label><input type="checkbox" id="devGod"></div><div class="rowdev"><label>Slow motion (0.4×)</label><input type="checkbox" id="devSlow"></div><div class="rowdev"><label>Draw collision bounds</label><input type="checkbox" id="devHitboxes"></div><div class="rowdev"><label>Screen shake</label><input type="checkbox" id="devShake" checked></div><div class="rowdev"><label>Reposition distance (meters)</label><input type="number" id="devDistance" min="0" max="99999" step="100" value="2500"></div><div class="rowdev"><label>Riders / hazards</label><span id="devCounts"></span></div><div class="rowdev"><label>Track audit</label><span id="devAudit">-</span></div><div class="devbuttons"><button class="secondary" id="devSpawn">SPAWN RIDER</button><button class="secondary" id="devHeal">HEAL / REFUEL</button><button class="secondary" id="devWarp">WARP AHEAD</button><button class="secondary" id="devAuditBtn">AUDIT TRACK</button><button class="secondary" id="devClose">RETURN</button></div><div class="fine" style="margin-top:12px">Session-only tools. The terrain and modules reproduce from each seed. Enemy choices and effects may vary.</div></div></div>
 <div id="orient"><div><div style="font-size:42px">↻</div><strong>ROTATE DEVICE TO LANDSCAPE</strong><br><span class="muted">Wide screen recommended for the deathtrap ahead.</span></div></div>
-<div id="circuit" class="overlay hidden"><div class="panel wide"><div class="circuitHeader"><div><div class="eyebrow">FOUR DISTRICTS / ONE WAY OUT</div><h2>THE FULL THROTTLE</h2></div><button class="secondary" id="circuitBack">BACK</button></div><div id="campaignStatus" class="missionBrief"></div><div class="regions" id="regions"></div><div class="fine">Finish an event to advance. Medals reward speed and race placement; every first clear funds your garage. Retry freely. No farming required.</div></div></div>
+<div id="circuit" class="overlay hidden"><div class="panel wide"><div class="circuitHeader"><div><div class="eyebrow">FOUR DISTRICTS / ONE WAY OUT</div><h2>THE EVENT HORIZON</h2></div><button class="secondary" id="circuitBack">BACK</button></div><div id="campaignStatus" class="missionBrief"></div><div class="regions" id="regions"></div><div class="fine">Finish an event to advance. Medals reward speed and race placement; every first clear funds your garage. Retry freely. No farming required.</div></div></div>
 <div id="garage" class="overlay hidden"><div class="panel wide"><div class="circuitHeader"><div><div class="eyebrow">INDEPENDENT RIDER / WORKSHOP</div><h2>BUILD YOUR EDGE</h2></div><button class="secondary" id="garageBack">BACK</button></div><div id="wallet" class="missionBrief"></div><div id="parts" class="loadouts"></div><div class="fine">Permanent parts have bounded tradeoffs. The stock bike can finish every event.</div></div></div>
 <div id="options" class="overlay hidden"><div class="panel"><div class="eyebrow">RIDER PREFERENCES</div><h2>MAKE IT YOUR RIDE</h2><div class="settingsrow"><label><input id="optSound" type="checkbox"> Sound</label><label><input id="optShake" type="checkbox"> Screen shake</label><label><input id="optFlash" type="checkbox"> Impact flashes</label><label><input id="optFX" type="checkbox"> Full effects</label></div><div class="fine" id="storageWarning"></div><div class="actions"><button id="optionsBack" class="primary">DONE</button></div></div></div>
 </div><script>
@@ -59,7 +59,7 @@ function boomVisualOnly(x,y){smoke(x,y,38,250,'white');smoke(x,y,15,180,'cyan');
 function fmtTime(t){let m=Math.floor(t/60),s=Math.floor(t%60);return `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`}
 function screenX(x){return x-camX}function drawLine(x1,y1,x2,y2,col='#e8f7ff',width=2){ctx.strokeStyle=col;ctx.lineWidth=width;ctx.beginPath();ctx.moveTo(x1,y1);ctx.lineTo(x2,y2);ctx.stroke()}
 function drawBackground(){ctx.fillStyle='#05070a';ctx.fillRect(0,0,W,H);const mid=390-camY;ctx.save();let cityShift=(camX*.11)%90;ctx.fillStyle='#0e1820';for(let i=-2;i<W/90+3;i++){const hx=80+(Math.sin((i+Math.floor(camX*.11/90))*17.49)+1)*78;let x=i*90-cityShift;ctx.fillRect(x,mid-hx-74,65,hx+125);for(let j=0;j<7;j++){const yy=mid-hx-65+j*19;ctx.fillStyle=(j+i)%4===0?'#25323d':'#101e27';ctx.fillRect(x+12,yy,3,5);ctx.fillRect(x+34,yy,3,5)}}ctx.strokeStyle='#1d2c33';ctx.lineWidth=1;for(let j=0;j<5;j++){let y=mid+46+j*33;drawLine(0,y,W,y,'#131b25',1)}const shift=(camX*.26)%125;for(let i=-1;i<W/125+2;i++){let x=i*125-shift;drawLine(x,mid-185,x+80,mid-185,'#101b24',1)}ctx.restore();let grad=ctx.createLinearGradient(0,mid-140,0,H);grad.addColorStop(0,'#05070a00');grad.addColorStop(1,'#11192744');ctx.fillStyle=grad;ctx.fillRect(0,mid-140,W,H)}
-function drawRoad(){for(const g of ground){if(g.x2<camX-60||g.x1>camX+W+60||g.dead)continue;const x1=screenX(g.x1),x2=screenX(g.x2),y1=g.y1-camY,y2=g.y2-camY;ctx.fillStyle=g.fragile?'#1b2630':'#121c25';ctx.beginPath();ctx.moveTo(x1,y1);ctx.lineTo(x2,y2);ctx.lineTo(x2,H+220);ctx.lineTo(x1,H+220);ctx.closePath();ctx.fill();drawLine(x1,y1,x2,y2,g.fragile?'#9faab5':'#e4faff',g.fragile?2:3);drawLine(x1,y1+8,x2,y2+8,'#324856',1);const dx=x2-x1,dy=y2-y1,len=Math.hypot(dx,dy);if(g.fragile){for(let j=0;j<len/19;j++){const t=j*19/len;let x=lerp(x1,x2,t),y=lerp(y1,y2,t);drawLine(x-3,y+2,x+4,y+10,'#8eabb2',1)}}else{for(let j=0;j<len/42;j++){const t=j*42/len;let x=lerp(x1,x2,t),y=lerp(y1,y2,t);drawLine(x,y+19,x+7,y+19,'#243540',1)}}if(g.conveyor){for(let j=0;j<len/25;j++){const t=((j*25+worldTime*56)%Math.max(1,len))/Math.max(1,len);const px=lerp(x1,x2,t),py=lerp(y1,y2,t);drawLine(px-7,py+5,px+7,py+5,'#73eaf8',2)}}if(g.launch){const mx=lerp(x1,x2,.7),my=lerp(y1,y2,.7);drawLine(mx,my-3,mx+16,my-17,'#ffffff',2)}}for(const h of hazards)if(h.type==='platform'&&h.x+h.width>camX-80&&h.x<camX+W+80&&!h.broken){const x=screenX(h.x),y=platformY(h)-camY;ctx.fillStyle='#172431';ctx.fillRect(x,y,h.width,14);drawLine(x,y,x+h.width,y,'#f2ffff',3);drawLine(x+10,y+7,x+h.width-10,y+7,'#758f9e',1);drawLine(x+h.width/2,y+14,x+h.width/2,510-camY,'#344954',1);drawLine(x+h.width/2-12,510-camY,x+h.width/2+12,510-camY,'#344954',3)}}
+function drawRoad(){for(const g of ground){if(g.x2<camX-60||g.x1>camX+W+60||g.dead)continue;const x1=screenX(g.x1),x2=screenX(g.x2),y1=g.y1-camY,y2=g.y2-camY;ctx.fillStyle=g.fragile?'#1b2630':'#121c25';ctx.beginPath();ctx.moveTo(x1,y1);ctx.lineTo(x2,y2);ctx.lineTo(x2,activeEvent?.technical?y2+24:H+220);ctx.lineTo(x1,activeEvent?.technical?y1+24:H+220);ctx.closePath();ctx.fill();drawLine(x1,y1,x2,y2,g.fragile?'#9faab5':'#e4faff',g.fragile?2:3);drawLine(x1,y1+8,x2,y2+8,'#324856',1);const dx=x2-x1,dy=y2-y1,len=Math.hypot(dx,dy);if(g.fragile){for(let j=0;j<len/19;j++){const t=j*19/len;let x=lerp(x1,x2,t),y=lerp(y1,y2,t);drawLine(x-3,y+2,x+4,y+10,'#8eabb2',1)}}else{for(let j=0;j<len/42;j++){const t=j*42/len;let x=lerp(x1,x2,t),y=lerp(y1,y2,t);drawLine(x,y+19,x+7,y+19,'#243540',1)}}if(g.conveyor){for(let j=0;j<len/25;j++){const t=((j*25+worldTime*56)%Math.max(1,len))/Math.max(1,len);const px=lerp(x1,x2,t),py=lerp(y1,y2,t);drawLine(px-7,py+5,px+7,py+5,'#73eaf8',2)}}if(g.launch){const mx=lerp(x1,x2,.7),my=lerp(y1,y2,.7);drawLine(mx,my-3,mx+16,my-17,'#ffffff',2)}}for(const h of hazards)if(h.type==='platform'&&h.x+h.width>camX-80&&h.x<camX+W+80&&!h.broken){const x=screenX(h.x),y=platformY(h)-camY;ctx.fillStyle='#172431';ctx.fillRect(x,y,h.width,14);drawLine(x,y,x+h.width,y,'#f2ffff',3);drawLine(x+10,y+7,x+h.width-10,y+7,'#758f9e',1);drawLine(x+h.width/2,y+14,x+h.width/2,510-camY,'#344954',1);drawLine(x+h.width/2-12,510-camY,x+h.width/2+12,510-camY,'#344954',3)}}
 function blade(x,y,r,t){ctx.save();ctx.translate(x,y);ctx.rotate(t);ctx.strokeStyle='#e4f6ff';ctx.fillStyle='#081018';ctx.lineWidth=2;ctx.beginPath();for(let i=0;i<16;i++){let a=i*TAU/16,r1=i%2===0?r+7:r-2;let xx=Math.cos(a)*r1,yy=Math.sin(a)*r1;if(i===0)ctx.moveTo(xx,yy);else ctx.lineTo(xx,yy)}ctx.closePath();ctx.fill();ctx.stroke();ctx.beginPath();ctx.arc(0,0,r*.55,0,TAU);ctx.strokeStyle='#91a8b7';ctx.stroke();drawLine(-r*.6,0,r*.6,0,'#a6c8d3',1);drawLine(0,-r*.6,0,r*.6,'#a6c8d3',1);ctx.fillStyle='#fff';ctx.beginPath();ctx.arc(0,0,4,0,TAU);ctx.fill();ctx.restore()}
 function drawHazards(){for(const h of hazards){let x=screenX(h.x),y=h.y-camY;if(x< -(h.length||220)||x>W+220||h._gone)continue;ctx.save();if(h.type==='magrail'){ctx.beginPath();for(let i=0;i<=60;i++){const xx=x+h.length*i/60,yy=y-h.rise*Math.sin(Math.PI*i/60);if(!i)ctx.moveTo(xx,yy+28);else ctx.lineTo(xx,yy+28)}ctx.lineWidth=9;ctx.strokeStyle='#203442';ctx.stroke();ctx.lineWidth=2;ctx.strokeStyle='#ac98ff';ctx.stroke();}
 if(h.type==='loop'){
@@ -72,6 +72,9 @@ if(h.type==='loop'){
 if(h.type==='spikes'){ctx.strokeStyle='#f5faff';ctx.fillStyle='#172532';ctx.lineWidth=2;for(let xx=0;xx<h.width;xx+=14){ctx.beginPath();ctx.moveTo(x+xx,y);ctx.lineTo(x+xx+7,y-19);ctx.lineTo(x+xx+14,y);ctx.closePath();ctx.fill();ctx.stroke()}}
 if(h.relay&&!h.broken){drawLine(x,y-65,x,y-20,'#54f2ff',3);ctx.strokeStyle='#54f2ff';ctx.strokeRect(x-22,y-25,44,48);ctx.font='bold 10px monospace';ctx.fillStyle='#54f2ff';ctx.fillText('◆',x-5,y-43)}
 if(h.type==='barrel'&&!h.broken){ctx.fillStyle='#17212a';ctx.fillRect(x-12,y-16,24,29);ctx.strokeStyle='#f7f7f7';ctx.lineWidth=2;ctx.strokeRect(x-12,y-16,24,29);drawLine(x-12,y-9,x+12,y-9,'#99acbb',2);drawLine(x-12,y+6,x+12,y+6,'#99acbb',2);ctx.font='bold 19px monospace';ctx.textAlign='center';ctx.fillStyle='#f7e5eb';ctx.fillText('!',x,y+5)}
+if(h.type==='repair'){ctx.strokeStyle='#54f2ff';ctx.lineWidth=3;ctx.beginPath();ctx.arc(x,y,30,0,TAU);ctx.stroke();drawLine(x-12,y,x+12,y,'#eaffff',4);drawLine(x,y-12,x,y+12,'#eaffff',4);drawLine(x-40,y+28,x+40,y+28,'#54f2ff',3)}
+if(h.type==='bulkhead'){ctx.fillStyle='#172432';ctx.fillRect(x-28,y-600,56,520);ctx.strokeStyle='#ff9fba';ctx.lineWidth=3;ctx.strokeRect(x-28,y-600,56,520);for(let i=0;i<12;i++)drawLine(x-25,y-590+i*42,x+25,y-560+i*42,'#6f4b63',3);drawLine(x-42,y-78,x+42,y-78,'#54f2ff',4)}
+if(h.type==='piston'){const bottom=h.y+(Math.sin(worldTime*1.5+h.phase)+1)*h.reach*.5;ctx.fillStyle='#14222d';ctx.strokeStyle='#ff9fba';ctx.lineWidth=3;ctx.fillRect(x-65,bottom-camY-40,130,40);ctx.strokeRect(x-65,bottom-camY-40,130,40);drawLine(x,y-220,x,bottom-camY-40,'#758e9d',12)}
 if(h.type==='crusher'){let v=(Math.sin(worldTime*2.4+h.phase)+1)/2,by=y+v*105;drawLine(x,y-125,x,y-5,'#405765',7);ctx.fillStyle='#1e2d36';ctx.fillRect(x-31,by-21,62,40);ctx.strokeStyle='#ecfcff';ctx.lineWidth=2;ctx.strokeRect(x-31,by-21,62,40);for(let j=-22;j<30;j+=15){ctx.beginPath();ctx.moveTo(x+j,by+19);ctx.lineTo(x+j+7,by+28);ctx.lineTo(x+j+14,by+19);ctx.stroke()}}
 if(h.type==='swing'){let a=Math.sin(worldTime*1.6+h.phase)*1.03,px=x+Math.sin(a)*h.length,py=y+Math.cos(a)*h.length;drawLine(x,y,px,py,'#8b9eae',3);ctx.fillStyle='#061018';ctx.strokeStyle='#eafaff';ctx.lineWidth=3;ctx.beginPath();ctx.arc(px,py,h.radius,0,TAU);ctx.fill();ctx.stroke();for(let j=0;j<8;j++){let aa=j*TAU/8+worldTime;drawLine(px+Math.cos(aa)*(h.radius-10),py+Math.sin(aa)*(h.radius-10),px+Math.cos(aa)*(h.radius+6),py+Math.sin(aa)*(h.radius+6),'#eef9ff',2)}}
 if(h.type==='laser'){let on=Math.sin(worldTime*2.6+h.phase)>.12;drawLine(x,y-10,x,y+110,on?'#edfaff':'#475b69',on?4:1);if(on){ctx.globalAlpha=.2;drawLine(x,y-10,x,y+110,'#54f2ff',14);ctx.globalAlpha=1}ctx.fillStyle='#192a37';ctx.strokeStyle='#bcd5de';ctx.fillRect(x-12,y-24,24,13);ctx.strokeRect(x-12,y-24,24,13)}
@@ -96,6 +99,7 @@ ctx.fillStyle='#12212a';ctx.fillRect(-4,2,15,13);ctx.strokeStyle=color;ctx.lineW
 ctx.fillStyle=color;ctx.beginPath();ctx.moveTo(-11,-3);ctx.lineTo(-7,-11);ctx.lineTo(5,-13);ctx.lineTo(13,-5);ctx.closePath();ctx.fill();drawLine(9,-1,22,20,'#aac6d0',2);drawLine(-3,14,-18,13,'#abc2ca',3);drawLine(-13,8,-31,8,color,3);drawLine(16,5,30,6,'#b0c4cd',2);
 // Rider in a low racing crouch, built from clear articulated strokes.
 ctx.lineWidth=4;drawLine(-4,-4,-8,-21,color,4);drawLine(-8,-21,5,-26,color,4);drawLine(5,-26,18,-10,color,3);drawLine(18,-10,23,-6,color,3);drawLine(-6,-8,-15,7,color,3);drawLine(-15,7,-8,14,color,3);ctx.fillStyle=color;ctx.beginPath();ctx.arc(8,-33,8,0,TAU);ctx.fill();drawLine(8,-34,17,-31,'#101a22',2);if(!b.enemy){drawLine(-16,-12,-26,-12,'#76f3ff',2);if(b.charge>0){drawLine(-23,1,-43,2,'#65f5ff',3);drawLine(-23,8,-39,9,'#a5feff',2)}}else{ctx.fillStyle='#a9b9c9';ctx.fillRect(-11,-27,5,7)}
+if(b.guard>0){ctx.strokeStyle='#ff9fba';ctx.lineWidth=3;ctx.beginPath();ctx.arc(0,-10,40,-2,2);ctx.stroke()}
 if(b.attackAnim>0){ctx.strokeStyle=hot;ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(12,-25);ctx.lineTo(33,-25);ctx.lineTo(42,-10);ctx.stroke();ctx.beginPath();ctx.arc(27,-14,20,-.65,.75);ctx.stroke()}
 if(b.enemy&&!b.dead){ctx.fillStyle=b.archetype?.color||'#b8d1df';ctx.font='8px monospace';ctx.textAlign='center';ctx.fillText(b.name||b.role,0,-62)}
 if(b.enemy&&b.telegraph>0&&b.attackIntent){ctx.fillStyle='#ff718a';ctx.font='bold 14px monospace';ctx.textAlign='center';ctx.fillText('!',0,-55);ctx.strokeStyle='#ff718a';ctx.beginPath();ctx.arc(0,-33,14,0,TAU);ctx.stroke()}if(b.damageFlash>0){ctx.strokeStyle='#ff7183';ctx.globalAlpha=Math.min(1,b.damageFlash*3);ctx.beginPath();ctx.arc(0,-9,42,0,TAU);ctx.stroke();ctx.globalAlpha=1}ctx.restore();if(b.enemy&&b.hp<b.maxHp){ctx.fillStyle='#4f6270';ctx.fillRect(x-17,y-49,34,3);ctx.fillStyle='#d4edf4';ctx.fillRect(x-17,y-49,34*Math.max(0,b.hp)/b.maxHp,3)}if(settings.hitboxes){ctx.strokeStyle='#ff697b';ctx.strokeRect(x-32,y-44,64,68);for(const [side,c] of [[-1,b.contactR],[1,b.contactF]]){const wx=x+side*22*Math.cos(b.angle)-17*Math.sin(b.angle),wy=y+side*22*Math.sin(b.angle)+17*Math.cos(b.angle)+11;ctx.fillStyle=c?'#54f2ff':'#ff657b';ctx.fillRect(wx-3,wy-3,6,6)}}}
@@ -121,7 +125,7 @@ function drawEmpty(){if(!player){camY=0}}
 // DEATHWIRE // RIDECRAFT + DEATHWORKS integrated mechanical overhaul
 // All values are in world pixels, seconds and radians. One game-world physics.
 // -----------------------------------------------------------------------------
-let hitLog=[],assemblies=[];
+let hitLog=[],assemblies=[],strikeAt=0,bikeContacts=new Map();
 let seedKey='', spawnRng=null, lastCheckpoint=0, checkpointIndex=0, checkpoints=[],
     wreckPieces=[], wreckClock=0, crashReason='', comboCount=0, comboUntil=0,
     bestCombo=0, chainKills=0, riderSerial=0, stageMessage='', stageMessageUntil=0,
@@ -137,15 +141,15 @@ const ARCHETYPES=[
   {key:'SURVIVOR',speed:360,hp:100,attack:11,tell:.83,color:'#bfc5dc'}
 ];
 function rngAI(a=0,b=1){return a+(b-a)*(spawnRng?spawnRng():Math.random())}
-function getSegment(x){
+function getSegment(x,minY=-Infinity,maxY=Infinity){
  let best=null;
  for(const g of ground){if(g.dead||x<g.x1||x>g.x2)continue;
   const t=(x-g.x1)/Math.max(1,g.x2-g.x1),y=lerp(g.y1,g.y2,t);
-  if(!best||y<best.y)best={y,slope:(g.y2-g.y1)/(g.x2-g.x1),road:g,vy:0};
+  if(y>=minY&&y<=maxY&&(!best||y<best.y))best={y,slope:(g.y2-g.y1)/(g.x2-g.x1),road:g,vy:0};
  }
  for(const h of hazards){if(h.type!=='platform'||h.broken||x<h.x||x>h.x+h.width)continue;
   const y=platformY(h);
-  if(!best||y<best.y)best={y,slope:0,platform:h,vy:Math.cos(worldTime*h.speed+h.phase)*h.speed*h.amp};
+  if(y>=minY&&y<=maxY&&(!best||y<best.y))best={y,slope:0,platform:h,vy:Math.cos(worldTime*h.speed+h.phase)*h.speed*h.amp};
  }
  return best;
 }
@@ -159,7 +163,7 @@ function bumpScore(label,points=80){
 }
 function road(w,dy=0,extra={}){
  // Road endpoints and maximum slope are constrained. Gaps are separate geometry.
- const y2=clamp(roadY+dy,280,437);
+ const y2=clamp(roadY+dy,activeEvent?.technical?-950:280,activeEvent?.technical?800:437);
  ground.push({x1:cursor,x2:cursor+w,y1:roadY,y2,dead:false,fragile:false,trigger:0,breakDelay:.8,...extra});
  cursor+=w;roadY=y2;
 }
@@ -172,6 +176,41 @@ function generateModule(forced=null){
   ['flow','ramp','jump','spikes','saws','crusher','barrels','bridge','platform','laser','swing','conveyor','cascade','wheel','barricade','loop','doublejump','halfpipe','rocketjump'];
  const typ=forced||(activeEvent?activeEvent.modules[moduleCount%activeEvent.modules.length]:(moduleCount%5===4?pickTrack(['overdrive','foundry','datastream','orbital']):pickTrack(deck)));let x0=cursor;moduleCount++;
 
+
+ if(['megacity','hammerfall','prism','singularity'].includes(typ)){
+  const base=roadY;const art={type:typ,start:x0,end:0,y:base};assemblies.push(art);road(500,0);
+  if(typ==='megacity'){
+   road(760,-420);road(220,0);hz('boost',cursor-120,roadY-3,{damage:0});
+   road(200,-80,{launch:true,requiredSpeed:400});const lip=roadY;gap(240);roadY=lip+65;road(300,200);
+   for(let i=0;i<3;i++)hz('gate',cursor-200+i*85,roadY-25,{integrity:1,damage:18});
+   road(620,370);road(240,0);road(300,-130,{launch:true});gap(150);roadY+=75;road(500,0);
+  }
+  if(typ==='hammerfall'){
+   road(600,300);const sy=roadY,start=cursor;road(900,0);for(let i=0;i<4;i++)road(150,0,{fragile:true,breakDelay:3.2});
+   for(let i=0;i<3;i++)hz('piston',start+200+i*300,sy-180,{reach:170,damage:35,phase:i*2.3});
+   ground.push({x1:start+900,x2:start+1500,y1:sy+100,y2:sy+100,dead:false});ground.push({x1:start+1500,x2:start+2180,y1:sy+100,y2:sy-400,dead:false});road(680,-400);road(240,0);hz('boost',cursor-90,roadY-3,{damage:0});
+   road(240,-90,{launch:true,requiredSpeed:400});gap(250);roadY+=80;road(550,0);
+  }
+  if(typ==='prism'){
+   const start=cursor,sy=roadY;
+   road(700,160);road(1100,0);road(400,-160);
+   // Upper shortcut: hop onto the elevated entry; lower road remains a slower route.
+   ground.push({x1:start+220,x2:start+620,y1:sy-40,y2:sy-300,dead:false});
+   ground.push({x1:start+620,x2:start+1350,y1:sy-300,y2:sy-300,dead:false,launch:true});
+   ground.push({x1:start+1500,x2:start+1900,y1:sy-240,y2:sy-100,dead:false});
+   hz('boost',start+1000,sy-303,{damage:0});
+   for(let i=0;i<4;i++)hz('gate',start+820+i*220,sy+135,{integrity:1,damage:20});
+   road(400,-180,{launch:true});gap(155);roadY+=100;road(500,0);
+  }
+  if(typ==='singularity'){
+   road(680,-380);road(260,0);hz('boost',cursor-100,roadY-3,{damage:0});
+   const radius=220;road(620,0);hz('loop',cursor-300,roadY-radius,{radius,damage:0});
+   road(420,260);road(220,0);hz('boost',cursor-90,roadY-3,{damage:0});
+   road(250,-120,{launch:true,requiredSpeed:420});gap(300);roadY+=110;road(350,240);road(200,0);hz('bulkhead',cursor-40,roadY,{damage:999});
+   hz('gate',cursor-170,roadY-25,{integrity:1,damage:18});road(700,220);
+  }
+  const reset=398-roadY;road(Math.max(400,Math.abs(reset)*2),reset);art.end=cursor;
+ }
  if(['overdrive','foundry','datastream','orbital'].includes(typ)){
   const base=roadY;assemblies.push({type:typ,start:x0,end:0,y:base});
   road(280,0);
@@ -291,14 +330,16 @@ function generateModule(forced=null){
 function initTrack(){
  ground=[];hazards=[];enemies=[];particles=[];sparks=[];labels=[];sectionMetrics=[];assemblies=[];
  cursor=-800;roadY=398;moduleCount=0;road(1000,0);decorate('START / DEAD CITY',0,200);
+ if(activeEvent?.technical){road(500,0);if(activeEvent.format==='demolition')hz('barrel',cursor-230,roadY-16,{relay:true,damage:18});for(const type of activeEvent.modules){generateModule(type);if(activeEvent.id===11){road(240,0);hz('repair',cursor-120,roadY-28,{damage:0})}if(activeEvent.format==='demolition'){road(1000,0);hz('barrel',cursor-300,roadY-16,{relay:true,damage:18});}}road(500,0);finishX=cursor-180;activeEvent.length=finishX;}else{
  generateModule('flow');generateModule('ramp');generateModule(activeEvent?.practice?'flow':'spikes');
- for(let i=0;i<3;i++)generateModule();generatedUpTo=cursor;nextEnemyX=680;
+ for(let i=0;i<3;i++)generateModule();}
+ generatedUpTo=cursor;nextEnemyX=680;
  checkpoints=[];lastCheckpoint=0;checkpointIndex=0;
 }
 function spawnEnemy(x,y,type=null){
  const a=type||ARCHETYPES[Math.floor(rngAI(0,ARCHETYPES.length))];
  const e=makeBike(x,y,true);e.id=++riderSerial;e.role=a.key;e.archetype=a;e.hp=e.maxHp=a.hp;
- e.vx=rngAI(a.speed-40,a.speed+15);e.targetSpeed=({SPRINTER:550,BRUISER:480,RAIDER:520,SURVIVOR:505}[a.key]||500)+rngAI(-12,12);
+ e.vx=rngAI(a.speed-40,a.speed+15);e.targetSpeed=({SPRINTER:565,BRUISER:445,RAIDER:525,SURVIVOR:490}[a.key]||500)+rngAI(-12,12);
  e.name=['VEX','MOTHER IRON','NULL','SAINT'][ARCHETYPES.indexOf(a)]||a.key;e.ai=rngAI(0,100);e.attackIntent=0;e.telegraph=0;e.risk=rngAI(.15,.93);
  e.damageFlash=0;e.invuln=.5;e.finished=false;e.finTime=Infinity;
  enemies.push(e);return e
@@ -310,14 +351,14 @@ function makeBike(x,y,isEnemy=false){return{
  dead:false,gone:false,enemy:isEnemy,damageFlash:0,wheel:0,side:1,ai:0,targetSpeed:isEnemy?355:360,
  lastX:x,lastY:y,fallTime:0,landings:0,combo:0,charge:0,airTime:0,flipRotation:0,
  airborneSpin:0,nearH:[],finished:false,finTime:Infinity,role:'PLAYER',attackIntent:0,telegraph:0,
- recovering:0,stagger:0,lastLanding:0,spawnX:x
+ guard:0,recovering:0,stagger:0,lastLanding:0,spawnX:x
 }}
 function startGame(newSeed=false){
  mode=$('modeSelect').value;loadRecords();showRecord();
  let entered=$('seedInput').value.trim();
  if(newSeed||!entered){entered=String(Math.floor(Math.random()*90000000)+10000000);$('seedInput').value=entered}
  seedKey=entered;seed=hashSeed(seedKey);rng=srand(seed);spawnRng=srand(seed^0x4d7a923b);fxRng=srand(seed^0x9e3779b9);
- warningText='';warningUntil=0;hitLog=[];runTime=0;worldTime=0;clock=0;frame=0;score=0;kills=0;nearMisses=0;shake=0;flash=0;camX=-180;camY=0;
+ warningText='';warningUntil=0;strikeAt=0;bikeContacts=new Map();hitLog=[];runTime=0;worldTime=0;clock=0;frame=0;score=0;kills=0;nearMisses=0;shake=0;flash=0;camX=-180;camY=0;
  riderSerial=0;chainKills=0;comboCount=0;bestCombo=0;comboUntil=0;wreckPieces=[];wreckClock=0;gameResult='';
  finishX=activeEvent?activeEvent.length:(mode==='trial'?2950:5100);recoveryCredits=mode==='trial'?3:0;physicsAccumulator=0;
  initTrack();player=makeBike(0,370,false);player.y=370;player.onGround=true;player.vx=250;
@@ -325,13 +366,14 @@ function startGame(newSeed=false){
  ensureTrack();
  if(activeEvent){const part=PARTS[save.equipped];player.hp=player.maxHp=part.hp;}
  if(mode!=='endless'){while(!groundAt(finishX)?.road||groundAt(finishX)?.road?.fragile)finishX+=30;}
- if(activeEvent?.format==='demolition'){
-  for(let i=1;i<=3;i++){const desired=finishX*i/4;let g=ground.find(g=>g.x1>desired&&g.x2-g.x1>200&&!g.fragile&&!g.launch);if(g){const x=(g.x1+g.x2)/2;hz('barrel',x,(g.y1+g.y2)/2-16,{relay:true,damage:18})}}
+ if(activeEvent?.format==='demolition'&&!activeEvent.technical){
+  for(let i=1;i<=3;i++){const desired=finishX*i/4;const candidates=ground.filter(g=>g.x1>desired&&g.x2-g.x1>200&&Math.abs(g.y2-g.y1)<40&&!g.fragile&&!g.launch&&g.x1<finishX-180);const g=candidates.find(g=>{const x=Math.min(g.x2-90,finishX-160);return !ground.some(r=>r.launch&&r.x2<x&&r.x2>x-750)&&!hazards.some(h=>h.relay&&Math.abs(h.x-x)<150)});if(g){const x=Math.min(g.x2-90,finishX-160);hz('barrel',x,lerp(g.y1,g.y2,(x-g.x1)/(g.x2-g.x1))-16,{relay:true,damage:18})}}
+
  }
  // Place starting grid close enough to actually race against rivals.
  if(mode==='sprint'){
   for(let i=0;i<4;i++){
-   const pos=90+i*75,g=groundAt(pos);if(g)spawnEnemy(pos,g.y-29,ARCHETYPES[i]);
+   const pos=120+i*155,g=groundAt(pos);if(g){const e=spawnEnemy(pos,g.y-29,ARCHETYPES[i]);if(activeEvent?.id===11&&i===3){e.role='RAIDER';e.name='SAINT / PRIME';e.targetSpeed=590;e.archetype={...ARCHETYPES[2],tell:.7};}}
   }
  }
  gameState='play';clearControls();
@@ -376,22 +418,22 @@ function jumpBike(b,manual=false){
  smoke(b.x-15,b.y+25,9,70);if(!b.enemy&&manual)fx(310,.10,'triangle',.035);
  return true
 }
-function attack(){
- if(!player||player.attackCD>0||player.dead)return;
- player.attackCD=.43;player.attackAnim=.25;fx(360,.08,'square',.026);
+function attack(){if(!player||player.attackCD>0||player.dead)return;player.attackCD=.68;player.attackAnim=.36;strikeAt=worldTime+.14;fx(360,.08,'square',.026)}
+function shatter(h){smoke(h.x,h.y,35,200,'cyan');smoke(h.x,h.y,18,130);shake=Math.max(shake,3);fx(720,.12,'triangle',.04)}
+function resolveStrike(){
  let hit=false;
- for(const e of enemies){
+ for(const e of [...enemies].sort((a,b)=>Math.abs(a.x-player.x)-Math.abs(b.x-player.x))){
   if(e.dead||e.gone||e.finished)continue;
   const dx=e.x-player.x,dy=e.y-player.y;
   if(dx>5&&dx<93&&Math.abs(dy)<65){
    const impact=clamp((player.vx-e.vx)*.06+29+(activeEvent?PARTS[save.equipped].attack:0),24,48);
-   damage(e,impact,'STRIKE');e.vx+=90;e.vy-=155;e.angular+=.9;
-   e.stagger=.6;hit=true;smoke(e.x,e.y-12,13,125);
+   if(e.guard>0)e.blocks=(e.blocks||0)+1;damage(e,e.guard>0?impact*.18:impact,'STRIKE');e.vx+=90;e.vy-=155;e.angular+=.9;
+   e.stagger=.6;hit=true;smoke(e.x,e.y-12,13,125);break;
   }
  }
  for(const h of hazards){
   if((h.type==='barrel'||h.type==='gate')&&!h.broken&&h.x-player.x>3&&h.x-player.x<86&&Math.abs(h.y-player.y)<76){
-   h.broken=true;boom(h.x,h.y,1.1);hit=true;
+   h.broken=true;if(h.type==='gate')shatter(h);else boom(h.x,h.y,1.1);hit=true;
   }
  }
  if(hit){bumpScore('STRIKE',95);shake=Math.max(shake,2.8)}
@@ -403,7 +445,7 @@ function updateBike(b,dt){
  if(b.railRide){if((!b.enemy&&pressed.boost)&&b.boost>.025){b.vx+=200*dt;b.boost=Math.max(0,b.boost-dt*.44)}const h=b.railRide;b.lastX=b.x;b.lastY=b.y;b.vx=clamp(b.vx+(b.enemy||pressed.gas?90:-40)*dt,300,760);if(!b.enemy&&pressed.brake)b.vx=Math.max(250,b.vx-480*dt);b.x+=b.vx*dt;const t=clamp((b.x-h.x)/h.length,0,1);b.y=h.y-h.rise*Math.sin(Math.PI*t);b.angle=Math.atan(-h.rise*Math.PI/h.length*Math.cos(Math.PI*t));b.wheel+=b.vx*dt/11;b.onGround=false;if(t>=1){b.railRide=null;b.vy=120;b.angle=0;b.jumpCooldown=.2;if(!b.enemy)bumpScore('GHOST TRANSMISSION',220)}return}
  if(b.onGround&&!b.railRide){const rail=hazards.find(h=>h.type==='magrail'&&b.x>=h.x-18&&b.x<h.x+25);if(rail)b.railRide=rail;}
  if(b.loopRide){
-  const h=b.loopRide;h.progress+=dt*clamp(b.vx/104,2.9,6.3);
+  const h=b.loopRide;if(!b.enemy&&justJump){const a=h.progress;b.loopRide=null;b.vy=-Math.sin(a)*b.vx;b.angle=-a;b.onGround=false;justJump=false;return;}if(!b.enemy){b.vx=clamp(b.vx+(pressed.brake?-480:pressed.gas?80:0)*dt,130,850);if(pressed.boost&&b.boost>.025){b.vx=Math.min(850,b.vx+220*dt);b.boost=Math.max(0,b.boost-dt*.44)}}h.progress+=dt*clamp(b.vx/h.radius,.5,6.3);
   const a=h.progress;
   b.lastX=b.x;b.lastY=b.y;
   b.x=h.x+Math.sin(a)*h.radius;
@@ -419,13 +461,13 @@ function updateBike(b,dt){
  }
 
  b.lastX=b.x;b.lastY=b.y;
- for(const k of ['invuln','attackCD','attackAnim','jumpCooldown','damageFlash','charge','stagger','telegraph'])b[k]=Math.max(0,b[k]-dt);
+ for(const k of ['invuln','attackCD','attackAnim','jumpCooldown','damageFlash','charge','stagger','telegraph','guard'])b[k]=Math.max(0,b[k]-dt);
  b.wasGround=b.onGround;
  b.coyote=b.onGround?.09:Math.max(0,b.coyote-dt);
  let target=0,steer=0;
  if(!b.enemy){
-  const boosting=pressed.boost&&b.boost>.025;
-  target=(pressed.brake?105:pressed.gas?530:365)+(boosting?195:0);
+  const boosting=pressed.boost&&!pressed.brake&&b.boost>.025;
+  target=(pressed.brake?0:pressed.gas?530:365)+(boosting?195:0);
   if(boosting){b.boost=Math.max(0,b.boost-dt*.44);b.charge=.17;
    if(Math.random()<.6)smoke(b.x-26,b.y+8,1,115,'cyan')
   }else b.boost=Math.min(1,b.boost+dt*(activeEvent?PARTS[save.equipped].regen:.11));
@@ -433,11 +475,19 @@ function updateBike(b,dt){
   steer=(pressed.back?-1:0)+(pressed.forward?1:0);
  }else{
   const now=groundAt(b.x);
-  const trap=hazards.find(h=>!h.broken&&!h._gone&&['saw','spikes','wheel','barrel','laser','swing'].includes(h.type)&&h.x>b.x+25&&h.x<b.x+b.vx*(['laser','swing','wheel'].includes(h.type)?.38:.28));
-  target=b.targetSpeed;
+  const trap=hazards.find(h=>!h.broken&&!h._gone&&!h.relay&&['saw','spikes','wheel','barrel','laser','swing'].includes(h.type)&&h.x>b.x+25&&h.x<b.x+b.vx*(['laser','swing','wheel'].includes(h.type)?.38:.28));
+  target=b.targetSpeed;const bulk=hazards.find(h=>h.type==='bulkhead'&&h.x>b.x&&h.x-b.x<500);if(bulk&&b.y<bulk.y-70)target=0;
+  // Separate cruise tactics from boost tactics; each rider has a persistent rhythm.
+  target+=Math.sin(worldTime*(b.role==='RAIDER'?1.7:.65)+b.ai)*35;
+  const closeBack=player.x<b.x&&b.x-player.x<155&&Math.abs(player.y-b.y)<65;
+  if(closeBack&&player.attackAnim>.2&&b.jumpCooldown<=0&&b.onGround){if(b.role==='BRUISER')b.guard=.55;else if(jumpBike(b,true))b.evades=(b.evades||0)+1}
+  if(b.guard>0)target-=140;
+  for(const other of enemies){if(other!==b&&!other.dead&&other.x>b.x&&other.x-b.x<110&&Math.abs(other.y-b.y)<40){if(b.role==='SPRINTER'&&b.onGround)jumpBike(b,true);else target-=75;break}}
+
   // Allow the common ramp launch to fire: early AI hops used to miss entire landings.
   if(trap&&b.onGround&&!now?.road?.launch)jumpBike(b,true);
-  const useBoost=b.boost>.15&&b.onGround&&!trap&&(b.role==='SPRINTER'||b.role==='RAIDER');
+  const press=hazards.find(h=>h.type==='piston'&&h.x>b.x&&h.x-b.x<450);if(press){const t=worldTime+(press.x-b.x)/Math.max(b.vx,1);const bottom=press.y+(Math.sin(t*1.5+press.phase)+1)*press.reach*.5;const projected=press.y+(Math.sin((worldTime+.65)*1.5+press.phase)+1)*press.reach*.5;if(press.x-b.x>105&&projected>b.y-85)target=0;}
+  const useBoost=!press&&b.boost>.15&&b.onGround&&!trap&&(b.role==='SPRINTER'||b.role==='RAIDER');
   if(useBoost){target+=150;b.boost=Math.max(0,b.boost-dt*.44);b.charge=.17}else b.boost=Math.min(1,b.boost+dt*.11);
   const dx=player.x-b.x;
   if(Math.abs(dx)<97&&Math.abs(player.y-b.y)<66&&b.attackCD<=0&&b.stagger<=0&&b.role!=='SURVIVOR'){
@@ -447,8 +497,8 @@ function updateBike(b,dt){
   }
   if(b.attackIntent&&b.telegraph<=0){
    b.attackIntent=0;b.attackAnim=.22;
-   if(dx>-12&&dx<85&&Math.abs(player.y-b.y)<60){
-    damage(player,b.archetype.attack,'RIVAL STRIKE');
+   if(Math.abs(dx)<92&&Math.abs(player.y-b.y)<60){
+    const guarding=pressed.brake&&pressed.forward&&player.onGround;damage(player,b.archetype.attack*(guarding?.25:1),guarding?'PARRIED':'RIVAL STRIKE');
     player.vx=Math.max(115,player.vx-44);player.angular-=.45;
     smoke(player.x,player.y-12,10,100);
    }
@@ -457,17 +507,17 @@ function updateBike(b,dt){
   if(!b.onGround){const landing=groundAt(b.x+b.vx*.2);const desired=Math.atan(landing?.slope||0);steer=clamp((desired-b.angle)*3-b.angular*.7,-1,1);}
  }
  const response=b.enemy?1.65:2.75;
- if(!b.enemy){target+=(activeEvent?PARTS[save.equipped].speed:0);if(b.charge>0)target=Math.max(target,b.vx-20);}
- b.vx+=clamp((target-b.vx)*response,-(pressed.brake&&!b.enemy?720:175),b.enemy?230:320)*dt;
+ if(!b.enemy){target+=(activeEvent?PARTS[save.equipped].speed:0);if(b.charge>0&&!pressed.brake)target=Math.max(target,b.vx-20);}
+ b.vx+=clamp((target-b.vx)*response,-((pressed.brake&&!b.enemy)||(b.enemy&&target<50)?720:175),b.enemy?230:320)*dt;
  if(b.stagger>0)b.vx-=75*dt;
- const current=groundAt(b.x);
+ const current=getSegment(b.x,b.y-5,b.y+65)||groundAt(b.x);
  if(b.onGround&&current?.road?.conveyor)b.vx+=current.road.conveyor*160*dt;
- b.vx=clamp(b.vx,90,850);
+ b.vx=clamp(b.vx,0,850);if(!b.enemy&&pressed.brake&&b.vx<1)b.vx=0;
  if(b.onGround&&b.jumpCooldown<=0&&current?.road?.launch&&b.x>current.road.x2-47){
    jumpBike(b,false);b.vy-=clamp(b.vx*.17,35,96)
  }
  const priorVertical=b.vy;
- b.x+=b.vx*dt;b.wheel+=b.vx*dt/11;
+ b.x+=b.vx*dt;if(b.onGround&&current){const next=getSegment(b.x,current.y-20,current.y+20);if(next)b.y+=next.y-current.y;}b.wheel+=b.vx*dt/11;
  if(!b.onGround){b.vy+=925*dt;b.vy=clamp(b.vy,-640,800);b.y+=b.vy*dt;b.airTime+=dt;
   b.angular+=(steer*7.8-b.angular*.95)*dt;
   b.angular=clamp(b.angular,-5.4,5.4);
@@ -483,9 +533,9 @@ function updateBike(b,dt){
    let wx=b.x+side*22*Math.cos(b.angle)-17*Math.sin(b.angle);
    let wy=b.y+side*22*Math.sin(b.angle)+17*Math.cos(b.angle)+11;
    let prevWy=b.lastY+side*22*Math.sin(b.angle)+17*Math.cos(b.angle)+11;
-   const g=getSegment(wx);
+   const g=getSegment(wx,prevWy-14,wy+4);
    if(g){under.push(g);
-    if(wy>=g.y-3&&prevWy<=g.y+Math.max(12,Math.abs(g.vy)*dt+7)&&b.vy>=-45){
+    if(wy>=g.y-3&&prevWy<=g.y+Math.max(12,Math.abs(g.vy)*dt+7)&&(b.vy-g.slope*b.vx)>=-45){
       contacts.push({side,g,penetration:wy-g.y});
       if(g.platform)hitPlatform=g.platform;
     }
@@ -517,6 +567,7 @@ function updateBike(b,dt){
   b.suspension=Math.min(11,b.suspension+Math.max(0,landingSpeed-140)*.018);
   if(!hadGround&&b.airTime>.14){
    const bad=Math.abs(deviation)>1.12&&landingSpeed>130;
+   if(activeEvent?.technical&&Math.abs(deviation)>.85&&landingSpeed>160){if(!settings.god||b.enemy)destroyBike(b,'CARTWHEEL // LAND WITH THE ROAD');b.vx*=.55;b.stagger=1;}
    if(bad){damage(b,clamp(12+landingSpeed*.045,12,39),'HARD LANDING');b.vx*=.77;b.angular=0}
    else if(!b.enemy){
     if(b.airTime>.55)bumpScore('AIR TIME',Math.round(b.airTime*75));
@@ -535,7 +586,7 @@ function updateBike(b,dt){
  if(b.angle>Math.PI)b.angle-=TAU;if(b.angle<-Math.PI)b.angle+=TAU;
  // Fracture ground consistently under every rider, not only the player.
  if(b.onGround){for(const g of under){if(g?.road?.fragile&&!g.road.dead&&g.road.trigger===0){g.road.trigger=worldTime+(g.road.breakDelay||.85)}}}
- if(b.y>805||(!b.enemy&&b.x< -650)){
+ if(b.y>(activeEvent?.technical?1300:805)||(!b.enemy&&b.x< -650)){
    if(!b.enemy&&mode==='trial'&&recoveryCredits>0){recoverTrial('ABYSS');return}
    if(b.enemy){b.gone=true;return}b.invuln=0;damage(b,999,'FELL INTO THE ABYSS')
  }
@@ -545,6 +596,8 @@ function updateBike(b,dt){
 function hazardCollision(h,b,dt){
  if(b.dead||b.gone||b.finished||b.loopRide||h._gone||h.broken||h.type==='loop'||h.type==='magrail')return;
  const dx=b.x-h.x,dy=b.y-h.y;
+ if(h.type==='repair'){if(Math.abs(dx)<32&&Math.abs(dy)<55){h.usedFor=h.usedFor||new WeakSet();if(!h.usedFor.has(b)){h.usedFor.add(b);b.hp=Math.min(b.maxHp,b.hp+35);b.boost=Math.min(1,b.boost+.3);smoke(b.x,b.y,18,90,'cyan');if(!b.enemy)toast('SERVICE // +35 INTEGRITY',1)}}return;}
+ if(h.type==='bulkhead'){if(Math.abs(dx)<38&&dy< -55&&dy> -650&&(!settings.god||b.enemy))destroyBike(b,'BULKHEAD IMPACT');return;}
  let hit=false;
  if(h.type==='saw'){
   const yy=h.y+Math.sin(worldTime*1.7+h.phase)*9;
@@ -560,13 +613,14 @@ function hazardCollision(h,b,dt){
   if(hit){h.broken=true;boom(h.x,h.y,1.1);return}
  }
  if(h.type==='gate'&&!h.broken&&Math.abs(dx)<31&&dy>-37&&dy<62){
-  if(b.vx>500||b.charge>0){h.broken=true;boom(h.x,h.y,1.25);
+  if(b.vx>500||b.charge>0){h.broken=true;shatter(h);
     if(!b.enemy)bumpScore('BREACH',160)
   }else if(b.invuln<=0){damage(b,22,'BARRICADE');b.vx*=.68;b.vy-=130;h.integrity--;
-    if(h.integrity<=0){h.broken=true;boom(h.x,h.y,.85)}
+    if(h.integrity<=0){h.broken=true;shatter(h)}
   }
   return;
  }
+ if(h.type==='piston'){const bottom=h.y+(Math.sin(worldTime*1.5+h.phase)+1)*h.reach*.5;hit=Math.abs(dx)<80&&b.y>bottom-55&&b.y<bottom+20;}
  if(h.type==='crusher'){
   const down=(Math.sin(worldTime*2.4+h.phase)+1)/2;
   const bottom=h.y+down*105;
@@ -585,6 +639,7 @@ function hazardCollision(h,b,dt){
   if(!b.enemy){bumpScore('VELOCITY PAD',45);fx(480,.17,'triangle',.06)}
   smoke(h.x,h.y,18,135,'cyan')
  }
+ if(hit&&h.type==='piston'){const stroke=Math.floor((worldTime*1.5+h.phase+Math.PI/2)/TAU);h.contacts=h.contacts||new WeakMap();if(h.contacts.get(b)===stroke)return;h.contacts.set(b,stroke);}
  if(hit){
   const wasProtected=b.invuln>0;
   damage(b,h.damage,h.type.toUpperCase());
@@ -594,24 +649,28 @@ function hazardCollision(h,b,dt){
  }
 }
 function handleBikes(){
- const active=enemies.filter(e=>!e.dead&&!e.gone&&!e.finished);
+ const active=enemies.filter(e=>!e.dead&&!e.gone&&!e.finished);const nextContacts=new Map();const record=(a,b)=>{if(!nextContacts.has(a))nextContacts.set(a,new Set());nextContacts.get(a).add(b)};
  for(const e of active){
   const dx=e.x-player.x,dy=e.y-player.y;
-  if(Math.abs(dx)<38&&Math.abs(dy)<30){
+  if((Math.abs(dx)<38||bikeContacts.get(player)?.has(e)&&Math.abs(dx)<60)&&Math.abs(dy)<45)record(player,e);
+  if(Math.abs(dx)<38&&Math.abs(dy)<30){const fresh=!bikeContacts.get(player)?.has(e);
    const speed=Math.abs(e.vx-player.vx);
-   if(speed>65&&player.invuln<=0){damage(player,clamp(4+speed*.045,5,16),'COLLISION');player.vx=Math.max(125,player.vx-22);player.angular-=.16}
-   if(speed>65&&e.invuln<=0){damage(e,clamp(4+speed*.045,5,16),'IMPACT');e.vy-=45;e.angular+=.36}
+   if(fresh&&speed>65&&player.invuln<=0){damage(player,clamp(4+speed*.045,5,16),'COLLISION');player.vx=Math.max(125,player.vx-22);player.angular-=.16}
+   if(fresh&&speed>65&&e.invuln<=0){damage(e,clamp(4+speed*.045,5,16),'IMPACT');e.vy-=45;e.angular+=.36}
    const separation=(38-Math.abs(dx))*.6;const direction=dx>=0?1:-1;e.x+=direction*separation;player.x-=direction*separation*.4;
   }
  }
  for(let i=0;i<active.length;i++)for(let j=i+1;j<active.length;j++){
   const a=active[i],b=active[j];
-  if(Math.abs(a.x-b.x)<30&&Math.abs(a.y-b.y)<28){const relative=Math.abs(a.vx-b.vx),front=a.x>=b.x?a:b,rear=a.x>=b.x?b:a;const overlap=32-Math.abs(a.x-b.x);front.x+=overlap*.5;rear.x-=overlap*.5;
+  if((Math.abs(a.x-b.x)<30||bikeContacts.get(a)?.has(b)&&Math.abs(a.x-b.x)<60)&&Math.abs(a.y-b.y)<45)record(a,b);
+  if(Math.abs(a.x-b.x)<30&&Math.abs(a.y-b.y)<28){const fresh=!bikeContacts.get(a)?.has(b);const relative=Math.abs(a.vx-b.vx),front=a.x>=b.x?a:b,rear=a.x>=b.x?b:a;const overlap=32-Math.abs(a.x-b.x);front.x+=overlap*.5;rear.x-=overlap*.5;
    const avg=(front.vx+rear.vx)/2;front.vx=Math.max(front.vx,avg+15);rear.vx=Math.min(rear.vx,avg-15);
-   if(relative>100){damage(a,8,'PILEUP');damage(b,8,'PILEUP');}
+   if(fresh&&relative>100){damage(a,8,'PILEUP');damage(b,8,'PILEUP');}
   }
  }
+ bikeContacts=nextContacts;
 }
+
 function damage(b,n,why='IMPACT'){
  if(!b||b.dead||b.invuln>0||n<=0||(settings.god&&!b.enemy))return;
  if(!b.enemy){hitLog.push({x:Math.round(b.x),time:worldTime,why,n});if(hitLog.length>40)hitLog.shift()}
@@ -642,7 +701,7 @@ function recoverTrial(reason='CRASH'){
  if(mode!=='trial'||recoveryCredits<=0)return false;
  gameState='play';player.loopRide=null;player.railRide=null;recoveryCredits--;bumpScore('CHECKPOINT RESCUE',15);
  boomVisualOnly(player.x,player.y);
- const x=Math.max(0,lastCheckpoint);
+ const x=Math.max(0,lastCheckpoint);for(const g of ground)if(g.fragile&&g.x2>=x){g.dead=false;g.trigger=0;}
  player.x=x;player.y=(groundAt(x)?.y||398)-29;
  player.vx=240;player.vy=0;player.angle=0;player.angular=0;player.dead=false;
  player.onGround=true;player.coyote=0;player.invuln=2.4;player.hp=Math.max(65,player.hp);
@@ -667,7 +726,7 @@ function finish(win,reason){
 }
 function racePosition(){return 1+enemies.filter(e=>!e.dead&&!e.gone&&(e.finished||e.x>player.x)).length}
 function update(dt){
- worldTime+=dt;runTime+=dt;clock+=dt;
+ worldTime+=dt;runTime+=dt;clock+=dt;if(strikeAt&&worldTime>=strikeAt){strikeAt=0;if(!player.dead)resolveStrike()}
  for(const g of ground){
   if(g.fragile&&g.trigger>0&&worldTime>g.trigger&&!g.dead){
    g.dead=true;smoke((g.x1+g.x2)/2,(g.y1+g.y2)/2,20,130,'dim');fx(90,.18,'triangle',.055)
@@ -708,8 +767,8 @@ function update(dt){
  if(player.hp<=0&&gameState==='play')destroyBike(player,'RIDER ELIMINATED');
  const desired=player.x-Math.min(W*.31,365)-clamp((player.vx-300)*.24,0,105);
  camX=lerp(camX,desired,clamp(dt*3.6,0,1));
- const roadAhead=groundAt(player.x+220);const focusY=player.loopRide?player.loopRide.y:Math.min(player.y,(roadAhead?.y||player.y)-28);
- camY=lerp(camY,clamp(focusY-Math.max(185,H*.62),-200,250),clamp(dt*3.2,0,1));
+ const roadAhead=groundAt(player.x+220);const focusY=player.loopRide?player.y:player.y+clamp(((roadAhead?.y??player.y)-28-player.y)*.35,-100,100);
+ camY=lerp(camY,clamp(focusY-Math.max(185,H*.62),-1200,900),clamp(dt*3.2,0,1));
  shake=Math.max(0,shake-21*dt);flash=Math.max(0,flash-1.9*dt);
  updateHud();
  const next=labels.find(l=>l.start>player.x+30&&l.start-player.x<500);
@@ -796,6 +855,16 @@ function updateCrash(dt){
 }
 function drawAssemblies(){
  for(const a of assemblies){if(a.end<camX-200||a.start>camX+W+200)continue;const x=screenX(a.start),len=a.end-a.start,y=a.y-camY;ctx.save();ctx.strokeStyle='#587581';ctx.fillStyle='#09131d';
+ if(['megacity','hammerfall','prism','singularity'].includes(a.type)){
+  const color=a.type==='hammerfall'?'#ff9fba':a.type==='prism'?'#b398ff':'#54f2ff';
+  ctx.fillStyle='#0b1520';ctx.strokeStyle='#263c4b';ctx.lineWidth=3;
+  for(let i=0;i<8;i++){const xx=x+300+i*480,top=y-650+(i%3)*80;ctx.fillRect(xx,top,190,1100);ctx.strokeRect(xx,top,190,1100);for(let j=0;j<8;j++)drawLine(xx+18,top+70+j*110,xx+170,top+70+j*110,'#193543',2)}
+  if(a.type==='megacity'){for(let i=0;i<4;i++){const xx=x+980+i*170;drawLine(xx,y-700,xx+100,y+400,'#395263',4);drawLine(xx+100,y-700,xx,y+400,'#395263',4)}ctx.fillStyle='#294c5b';ctx.font='bold 90px monospace';ctx.fillText('SECTOR / 09',x+850,y-550)}
+  if(a.type==='hammerfall'){ctx.fillStyle='#13232c';ctx.fillRect(x+1700,y-270,1250,110);drawLine(x+1700,y-160,x+2950,y-160,color,5);for(let i=0;i<3;i++){const xx=x+1900+i*300;ctx.save();ctx.translate(xx,y-220);ctx.rotate(worldTime*.6*(i%2?1:-1));ctx.strokeStyle='#3c5a6b';ctx.lineWidth=10;ctx.beginPath();ctx.arc(0,0,130,0,TAU);ctx.stroke();for(let j=0;j<8;j++){const ang=j*TAU/8;drawLine(0,0,Math.cos(ang)*130,Math.sin(ang)*130,'#375466',8)}ctx.restore()}}
+  if(a.type==='prism'){for(let i=0;i<12;i++){const xx=x+600+i*160;ctx.strokeStyle=i%2?color:'#46778a';ctx.strokeRect(xx,y-540,70,840);drawLine(xx,y-540,xx+70,y+300,'#27314c',1)}ctx.fillStyle='#352a53';ctx.font='bold 76px monospace';ctx.fillText('MIRROR // ROUTE',x+800,y-400)}
+  if(a.type==='singularity'){const xx=x+1960;ctx.strokeStyle='#20374e';ctx.lineWidth=20;ctx.beginPath();ctx.arc(xx,y-600,370,0,TAU);ctx.stroke();ctx.setLineDash([4,20]);ctx.strokeStyle=color;ctx.lineWidth=2;ctx.beginPath();ctx.arc(xx,y-600,340,worldTime*.2,worldTime*.2+TAU);ctx.stroke();ctx.setLineDash([]);drawLine(xx-370,y-600,xx-500,y+650,'#32485a',14);drawLine(xx+370,y-600,xx+500,y+650,'#32485a',14)}
+ }
+
  if(a.type==='overdrive'){for(let i=0;i<5;i++){const xx=x+260+i*115;ctx.strokeRect(xx,y-105,70,120);drawLine(xx,y-105,xx+70,y-105,'#54f2ff',3)}for(let i=0;i<4;i++){const xx=x+900+i*90;drawLine(xx,y+170,xx,y-230,'#283b49',5);drawLine(xx-30,y-230,xx+30,y-230,'#ff9fba',2)}ctx.font='bold 44px monospace';ctx.fillStyle='#24424c';ctx.fillText('OVR / DRV',x+350,y-145)}
  if(a.type==='foundry'){ctx.fillRect(x+180,y-250,1050,24);drawLine(x+180,y-250,x+1230,y-250,'#ff9fba',3);for(let i=0;i<7;i++){const xx=x+230+i*145;drawLine(xx,y-250,xx,y+180,'#344957',8);ctx.save();ctx.translate(xx,y-185);ctx.rotate(worldTime*(i%2?1:-1));blade(0,0,36,0);ctx.restore()}for(let i=0;i<5;i++){drawLine(x+1300+i*100,y-130,x+1350+i*100,y+80,'#425467',2)}}
  if(a.type==='datastream'){for(let i=0;i<11;i++){let xx=x+280+i*95;const yy=y-28-175*Math.sin(Math.PI*i/10);ctx.strokeStyle=i%2?'#a79af8':'#54f2ff';ctx.strokeRect(xx-8,yy-80,16,160);ctx.fillStyle='#0f172c';ctx.fillRect(xx-20,y+90,40,120)}ctx.globalAlpha=.3;for(let i=0;i<10;i++)drawLine(x+200,y-220+i*24,x+1300,y-220+i*24,'#7c75b6',1)}
@@ -842,6 +911,7 @@ function auditTrack(){
  return {seed:seedKey,segments:ground.length,hazards:hazards.length,modules:sectionMetrics.length,gaps:gaps.length,maxGap:Math.max(0,...gaps.map(g=>g.length)),invalid};
 }
 
+function testPilot(cruise=false){pressed.gas=cruise!==true;const ahead=getSegment(player.x+player.vx*.28);const desired=player.onGround?Math.atan(ahead?.slope||0):Math.atan(ahead?.slope||0);const torque=(desired-player.angle)*3-player.angular*.7;pressed.back=torque<-.18;pressed.forward=torque>.18;const piston=hazards.find(h=>h.type==='piston'&&h.x>player.x&&h.x-player.x<400);const bulk=hazards.find(h=>h.type==='bulkhead'&&h.x>player.x&&h.x-player.x<500);if(bulk&&player.y<bulk.y-70)pressed.brake=true;else if(piston){const t=worldTime+(piston.x-player.x)/Math.max(player.vx,1);const bottom=piston.y+(Math.sin(t*1.5+piston.phase)+1)*piston.reach*.5;pressed.brake=piston.x-player.x>110&&bottom>player.y-70}else pressed.brake=false;pressed.boost=cruise===false&&!pressed.brake&&player.onGround&&!piston&&!bulk&&Math.abs(ahead?.slope||0)<.1&&player.boost>.1;if(cruise!==2&&player.onGround&&enemies.some(e=>!e.dead&&e.telegraph>0&&Math.abs(e.x-player.x)<110&&Math.abs(e.y-player.y)<65)){pressed.brake=true;pressed.forward=true;pressed.back=false;pressed.boost=false;}const trap=hazards.find(h=>!h.broken&&!h._gone&&!h.relay&&['spikes','saw','barrel','wheel','swing','laser'].includes(h.type)&&h.x>player.x+30&&h.x<player.x+player.vx*(['laser','swing','wheel'].includes(h.type)?.38:.26));if(trap&&player.onGround)justJump=true;if(hazards.some(h=>h.type==='barrel'&&!h.broken&&h.x>player.x&&h.x-player.x<80+player.vx*.14&&Math.abs(h.y-player.y)<76))justAttack=true;if(enemies.some(e=>!e.dead&&e.x>player.x&&e.x-player.x<85&&Math.abs(e.y-player.y)<60))justAttack=true;}
 // Black Circuit campaign. Kept in source for editing; embedded by tools/build.mjs.
 const FIXED_STEP=1/120;
 let physicsAccumulator=0,activeEvent=null,storageAvailable=true;
@@ -875,6 +945,19 @@ const V20_ROUTES=[
 EVENTS.forEach((e,i)=>{e.modules=V20_ROUTES[i];e.par*=1.25;e.brief+=' '+['Run the freight accelerator.','The Iron Choir never stops working.','Ride the signal above the broken grid.','Break orbit. Leave the city behind.'][e.region]});
 EVENTS[2].title='Overdrive / freight cannon';EVENTS[5].title='The iron cathedral';EVENTS[8].title='Ghost transmission';EVENTS[11].title='FULL THROTTLE / Saint’s last light';
 EVENTS[5].format='demolition';EVENTS[5].brief='Destroy all three cyan relays with a strike or collision, then escape the assembly line.';
+// v0.30: finite authored courses, each assembly appears once per course.
+const ROUTES30=[
+ ['megacity','flow'],['megacity','prism'],['megacity','overdrive','singularity'],
+ ['hammerfall','flow'],['hammerfall','megacity'],['hammerfall','foundry'],
+ ['prism','flow','platform'],['prism','datastream','megacity'],['prism','hammerfall'],
+ ['singularity','flow'],['singularity','prism'],['megacity','hammerfall','prism','singularity']
+];
+EVENTS.forEach((e,i)=>{e.technical=true;e.modules=ROUTES30[i];e.par=[17,24,32,20,27,28,22,30,28,23,32,50][i];e.length=6500+i*650;});
+const NAMES30=['Rooftop initiation','Switchback syndicate','The kilometer cannon','Descent into Moloch','Iron jaw','Break the assembly god','Glass highway','Mirror knife','Shatter the grid','Cathedral of light','Exit velocity','SAINT / event horizon'];
+EVENTS.forEach((e,i)=>e.title=NAMES30[i]);
+EVENTS[0].brief='Climb the megatower. Match the landing slope with your lean; speed alone will not hold the bike upright.';
+EVENTS[6].brief='Hop onto the violet shortcut or breach the lower glass tunnel. The upper route rewards controlled takeoff.';
+EVENTS[9].brief='A 440-meter silhouette loop, rooftop descent and charged void launch. Hop can release a loop rail.';
 const PARTS=[
  {name:'STOCK / Wireframe',desc:'Balanced, agile, unbreakable spirit. The complete circuit is built for this machine.',cost:0,hp:100,speed:0,regen:.11,attack:0},
  {name:'ENGINE / Redline',desc:'+35 top speed. Lighter armor: 85 integrity. Faster lines demand cleaner riding.',cost:200,hp:85,speed:35,regen:.11,attack:0},
@@ -945,7 +1028,7 @@ $('devReset').onclick=()=>{if(confirm('Erase campaign medals, parts and credits?
 const devObserver=new MutationObserver(()=>{if($('devMenu').classList.contains('hidden'))return;$('devModule').replaceChildren();sectionMetrics.forEach((m,i)=>{const o=document.createElement('option');o.value=i;o.textContent=i+' / '+m.type+' / '+Math.round(m.start)+'m';$('devModule').append(o)})});devObserver.observe($('devMenu'),{attributes:true,attributeFilter:['class']});
 
 $('startBtn').addEventListener('click',()=>{activeEvent=null;startGame(false)});$('howBtn').addEventListener('click',showManual);$('manualBack').addEventListener('click',closeManual);$('pauseBtn').addEventListener('click',pauseToggle);$('resumeBtn').addEventListener('click',pauseToggle);$('restartBtn').addEventListener('click',()=>startGame(false));$('quitBtn').addEventListener('click',quit);$('againBtn').addEventListener('click',()=>startGame(false));$('newBtn').addEventListener('click',()=>{activeEvent=null;startGame(true)});$('endQuitBtn').addEventListener('click',quit);$('helpBtn').addEventListener('click',showManual);$('soundBtn').addEventListener('click',()=>{settings.sound=!settings.sound;save.options.sound=settings.sound;persist();$('soundBtn').textContent=settings.sound?'SFX ON':'SFX OFF';if(settings.sound)audioInit()});$('devClose').addEventListener('click',closeDev);$('devAuditBtn').addEventListener('click',()=>{const r=auditTrack();$('devAudit').textContent=r.invalid.length?`${r.invalid.length} ISSUES | ${r.invalid[0]}`:`OK | ${r.modules} modules | ${r.maxGap.toFixed(0)}px max gap`});$('devGod').addEventListener('change',e=>settings.god=e.target.checked);$('devSlow').addEventListener('change',e=>settings.slow=e.target.checked);$('devHitboxes').addEventListener('change',e=>settings.hitboxes=e.target.checked);$('devShake').addEventListener('change',e=>settings.shake=e.target.checked);$('devHeal').addEventListener('click',()=>{player.hp=player.maxHp;player.boost=1});$('devSpawn').addEventListener('click',()=>{spawnEnemy(player.x+240,groundAt(player.x+240)?.y-19||350);$('devCounts').textContent=`${enemies.length} / ${hazards.length}`});$('devWarp').addEventListener('click',()=>warpTo(Number($('devDistance').value)||2500));
-window.__deathwire={state:()=>({activeEvent:activeEvent?.id,angle:player?.angle,y:player?.y,grounded:player?.onGround,frontContact:!!player?.contactF,rearContact:!!player?.contactR,loop:!!player?.loopRide,finishX,checkpointIndex,lastCheckpoint,relays:hazards.filter(h=>h.relay&&h.broken).length,boost:player?.boost,gameState,seedKey,seed,mode,position:player?.x,speed:player?.vx,hp:player?.hp,kills,rank:player?racePosition():null,ground:ground.length,hazards:hazards.length,enemies:enemies.length,worldTime,comboCount,recoveries:recoveryCredits}),audit:auditTrack,modules:()=>sectionMetrics.slice(),advance:(seconds)=>{for(let i=0;i<Math.min(10000,Math.round(seconds/FIXED_STEP))&&gameState==='play';i++)update(FIXED_STEP);return {state:gameState,position:player?.x,hp:player?.hp,score}},start:(s)=>{if(s!==undefined)$('seedInput').value=String(s);startGame(false)},pause:pauseToggle,dev:toggleDev,controls:pressed,warp:warpTo,launch:launchEvent,hits:()=>hitLog,campaign:()=>JSON.parse(JSON.stringify(save)),events:EVENTS,validateSave,geometry:()=>({checkpoints:checkpoints.map(c=>({...c})),ground:ground.map(g=>({...g})),hazards:hazards.map(h=>({type:h.type,x:h.x,y:h.y,actualY:h.type==='platform'?platformY(h):h.y,radius:h.radius,width:h.width})),riders:enemies.map(e=>({time:e.finTime,boost:e.boost,id:e.id,x:e.x,y:e.y,hp:e.hp,dead:e.dead,gone:e.gone,finished:e.finished,role:e.role}))}),test:{encounter:(type,gear=0)=>{activeEvent=null;startGame(false);ground=[];hazards=[];enemies=[];assemblies=[];sectionMetrics=[];cursor=-500;roadY=398;road(1000,0);generateModule(type);finishX=cursor-120;mode='trial';activeEvent={practice:true,modules:['flow'],length:finishX};nextEnemyX=Infinity;save.equipped=gear;player.hp=player.maxHp=PARTS[gear].hp;return {finishX,modules:sectionMetrics.slice()};},render:()=>{updateHud();render()},assemblies:()=>assemblies.map(a=>({...a})),raceOut:()=>{for(let i=0;i<14400&&enemies.some(e=>!e.finished&&!e.dead&&!e.gone);i++)update(FIXED_STEP);return enemies.map(e=>({reason:e.reason,name:e.name,finished:e.finished,time:e.finTime,hp:e.hp,x:e.x,dead:e.dead||e.gone}))},setBike:(v)=>Object.assign(player,v),setRivals:(v)=>{enemies=v.map(x=>Object.assign(makeBike(x.x,x.y,true),x))},finish:(win)=>finish(win,'TEST FINISH'),jump:()=>jumpBike(player,true),hit:attack,damage:(n)=>damage(player,n,'TEST'),recover:recoverTrial,step:(n)=>{for(let i=0;i<n&&gameState==='play';i++)update(FIXED_STEP)},simulate:(n,auto=false,cruise=false)=>{let minHP=player.hp,crashes=0;for(let i=0;i<n;i++){if(gameState==='play'){if(auto){pressed.gas=!cruise;pressed.back=player.angle>.2;pressed.forward=player.angle<-.3;const trap=hazards.find(h=>!h.broken&&!h._gone&&['spikes','saw','barrel','wheel','swing','laser'].includes(h.type)&&h.x>player.x+30&&h.x<player.x+player.vx*(['laser','swing','wheel'].includes(h.type)?.38:.26));if(trap&&player.onGround)justJump=true;if(hazards.some(h=>h.type==='barrel'&&!h.broken&&h.x>player.x&&h.x-player.x<80&&Math.abs(h.y-player.y)<76))justAttack=true;if(enemies.some(e=>!e.dead&&e.x>player.x&&e.x-player.x<85&&Math.abs(e.y-player.y)<60))justAttack=true;}update(FIXED_STEP);minHP=Math.min(minHP,player.hp)}else if(gameState==='crash'){crashes++;updateCrash(FIXED_STEP)}else break;}return {state:gameState,x:player.x,hp:player.hp,time:runTime,minHP,crashes,recoveries:recoveryCredits}},resetProgress:()=>{save=freshSave();persist()}}};
+window.__deathwire={state:()=>({result:gameResult,activeEvent:activeEvent?.id,angle:player?.angle,y:player?.y,grounded:player?.onGround,frontContact:!!player?.contactF,rearContact:!!player?.contactR,loop:!!player?.loopRide,finishX,checkpointIndex,lastCheckpoint,relays:hazards.filter(h=>h.relay&&h.broken).length,boost:player?.boost,gameState,seedKey,seed,mode,position:player?.x,speed:player?.vx,hp:player?.hp,kills,rank:player?racePosition():null,ground:ground.length,hazards:hazards.length,enemies:enemies.length,worldTime,comboCount,recoveries:recoveryCredits}),audit:auditTrack,modules:()=>sectionMetrics.slice(),advance:(seconds)=>{for(let i=0;i<Math.min(10000,Math.round(seconds/FIXED_STEP))&&gameState==='play';i++)update(FIXED_STEP);return {state:gameState,position:player?.x,hp:player?.hp,score}},start:(s)=>{if(s!==undefined)$('seedInput').value=String(s);startGame(false)},pause:pauseToggle,dev:toggleDev,controls:pressed,warp:warpTo,launch:launchEvent,hits:()=>hitLog,campaign:()=>JSON.parse(JSON.stringify(save)),events:EVENTS,validateSave,geometry:()=>({checkpoints:checkpoints.map(c=>({...c})),ground:ground.map(g=>({...g})),hazards:hazards.map(h=>({type:h.type,x:h.x,y:h.y,relay:h.relay,broken:h.broken,actualY:h.type==='platform'?platformY(h):h.y,radius:h.radius,width:h.width})),riders:enemies.map(e=>({blocks:e.blocks||0,evades:e.evades||0,guard:e.guard,time:e.finTime,boost:e.boost,id:e.id,x:e.x,y:e.y,hp:e.hp,dead:e.dead,gone:e.gone,finished:e.finished,role:e.role}))}),test:{pilot:testPilot,encounter:(type,gear=0)=>{activeEvent=null;startGame(false);ground=[];hazards=[];enemies=[];assemblies=[];sectionMetrics=[];cursor=-500;roadY=398;activeEvent={practice:true,technical:['megacity','hammerfall','prism','singularity'].includes(type),modules:['flow']};road(1000,0);generateModule(type);finishX=cursor-120;mode='trial';activeEvent={...activeEvent,length:finishX};nextEnemyX=Infinity;save.equipped=gear;player.hp=player.maxHp=PARTS[gear].hp;return {finishX,modules:sectionMetrics.slice()};},render:()=>{updateHud();render()},assemblies:()=>assemblies.map(a=>({...a})),raceOut:()=>{for(let i=0;i<14400&&enemies.some(e=>!e.finished&&!e.dead&&!e.gone);i++)update(FIXED_STEP);return enemies.map(e=>({reason:e.reason,name:e.name,finished:e.finished,time:e.finTime,hp:e.hp,x:e.x,dead:e.dead||e.gone}))},setBike:(v)=>Object.assign(player,v),setRivals:(v)=>{enemies=v.map(x=>Object.assign(makeBike(x.x,x.y,true),x))},finish:(win)=>finish(win,'TEST FINISH'),jump:()=>jumpBike(player,true),hit:attack,damage:(n)=>damage(player,n,'TEST'),recover:recoverTrial,step:(n)=>{for(let i=0;i<n&&gameState==='play';i++)update(FIXED_STEP)},simulate:(n,auto=false,cruise=false)=>{let minHP=player.hp,crashes=0;for(let i=0;i<n;i++){if(gameState==='play'){if(auto)testPilot(cruise);update(FIXED_STEP);minHP=Math.min(minHP,player.hp)}else if(gameState==='crash'){crashes++;updateCrash(FIXED_STEP)}else break;}return {state:gameState,x:player.x,hp:player.hp,time:runTime,minHP,crashes,recoveries:recoveryCredits}},resetProgress:()=>{save=freshSave();persist()}}};
 last=performance.now();requestAnimationFrame(tick);
 })();
 </script></body></html>

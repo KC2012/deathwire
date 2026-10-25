@@ -1,5 +1,16 @@
 # Changelog
 
+## v0.30 / EVENT HORIZON
+
+- Rebuilt the twelve campaign event sequences around megatower climbs, a hammer foundry descent, layered Prism routes, and a 440-unit guided reactor loop/catcher. Finale combines all four with visible shared service pads and Saint Prime.
+- Large vertical range, height-aware wheel contacts, rising-ramp catches, thin bridge rendering and a vertical camera that follows the rider.
+- Pitch-critical landings, full stopping brakes, boost/brake precedence and controllable/releasable guided loops.
+- Physical upper/lower shortcut selection, smashable glass without explosion damage, large timed presses and collapsing spans with a lower escape route.
+- Melee windup/single-target strikes, AI guards/evasion, player guard, wider grids, varied rival throttle rhythms and traffic responses.
+- Per-contact impact bookkeeping, shared per-stroke press damage, restored fragile geometry on gauntlet recovery, and authored reachable demolition targets.
+- Navigation comparison, combat/stop/route regressions, real-frame mega-course screenshots, racing field statistics and campaign retry logs.
+
+
 ## v0.20 / FULL THROTTLE
 
 - Four connected signature assemblies: freight cannon, working foundry/collapsing skybridge, elevated magnetic data rail, and linked orbital tower launches.

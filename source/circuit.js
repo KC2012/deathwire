@@ -31,6 +31,19 @@ const V20_ROUTES=[
 EVENTS.forEach((e,i)=>{e.modules=V20_ROUTES[i];e.par*=1.25;e.brief+=' '+['Run the freight accelerator.','The Iron Choir never stops working.','Ride the signal above the broken grid.','Break orbit. Leave the city behind.'][e.region]});
 EVENTS[2].title='Overdrive / freight cannon';EVENTS[5].title='The iron cathedral';EVENTS[8].title='Ghost transmission';EVENTS[11].title='FULL THROTTLE / Saint’s last light';
 EVENTS[5].format='demolition';EVENTS[5].brief='Destroy all three cyan relays with a strike or collision, then escape the assembly line.';
+// v0.30: finite authored courses, each assembly appears once per course.
+const ROUTES30=[
+ ['megacity','flow'],['megacity','prism'],['megacity','overdrive','singularity'],
+ ['hammerfall','flow'],['hammerfall','megacity'],['hammerfall','foundry'],
+ ['prism','flow','platform'],['prism','datastream','megacity'],['prism','hammerfall'],
+ ['singularity','flow'],['singularity','prism'],['megacity','hammerfall','prism','singularity']
+];
+EVENTS.forEach((e,i)=>{e.technical=true;e.modules=ROUTES30[i];e.par=[17,24,32,20,27,28,22,30,28,23,32,50][i];e.length=6500+i*650;});
+const NAMES30=['Rooftop initiation','Switchback syndicate','The kilometer cannon','Descent into Moloch','Iron jaw','Break the assembly god','Glass highway','Mirror knife','Shatter the grid','Cathedral of light','Exit velocity','SAINT / event horizon'];
+EVENTS.forEach((e,i)=>e.title=NAMES30[i]);
+EVENTS[0].brief='Climb the megatower. Match the landing slope with your lean; speed alone will not hold the bike upright.';
+EVENTS[6].brief='Hop onto the violet shortcut or breach the lower glass tunnel. The upper route rewards controlled takeoff.';
+EVENTS[9].brief='A 440-meter silhouette loop, rooftop descent and charged void launch. Hop can release a loop rail.';
 const PARTS=[
  {name:'STOCK / Wireframe',desc:'Balanced, agile, unbreakable spirit. The complete circuit is built for this machine.',cost:0,hp:100,speed:0,regen:.11,attack:0},
  {name:'ENGINE / Redline',desc:'+35 top speed. Lighter armor: 85 integrity. Faster lines demand cleaner riding.',cost:200,hp:85,speed:35,regen:.11,attack:0},

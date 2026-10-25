@@ -1,3 +1,22 @@
+# v0.30 verification
+
+Run a static server on port 8000, then `npm test`, `npm run test:campaign`, `npm run test:racing`, `npm run test:navigation`, `npm run test:combat`, `npm run test:routes`, `npm run test:live`, `npm run test:export`, `npm run test:encounters`, and `node tests/objectives.cjs`.
+
+- `v30-results.json`: held throttle+boost crashes in Megacity and Singularity; geometry-aware normal input clears all four new families. Stock bike, no god mode, health overrides, warps or recovery in traversal. Staged screenshots reposition only after a run and are not traversal evidence.
+- `fork30-results.json`: an actual hop reaches the upper Prism surface; no-hop takes the lower tunnel. More than 300 units of vertical separation; both choices remain playable.
+- `combat30-results.json`: immediate windup does not deal damage; the actual AI guards/evades; a second target is not hit; full braking stops; first physical impact still damages.
+- `campaign-results.json`: all twelve events with ordinary-input policy retries, no upgrades, invincibility, health overrides, warps or forced completion. The final campaign record contains 14 attempts for 12 clears. `attempts` records failed runs and successful policies, including a delayed-start option. A first-pass-perfect claim would be false. Finale service pads are normal visible world objects usable by all riders.
+- `racing-results.json`: 18 runs across six race courses and three seeds, real positions and finish times, eliminations, player DNF status and field rollout. `beatPlayer` counts finishers beating a DNF as well as faster valid finishers. The final recorded sample has 54/72 AI finishers, finishers in 18/18 runs, and 13/18 player completions. Summary is in `racing-summary.json`; these are scripted, not human, statistics.
+- `live30-results.json`: real requestAnimationFrame runs using normal control state from a test controller. Four mega-course completions with live screenshots, not manual human playtests.
+- Existing 17 browser checks, 100 extended seed construction audits, v1-save/objective tests and standalone smoke checks remain required. The old loop fixture was extended for the larger physical circumference; melee fixtures now wait for the windup, and the spike fixture constructs a spike encounter explicitly. Trial abyss fixtures use a height below the new terrain range.
+- `encounter-results.json` remains 32 build/speed combinations for the retained v0.20 families; it does not cover every new course/build combination.
+
+Iteration found genuine failures: narrow terrain bounds, upper floors catching bikes below them, inaccessible hopped rising surfaces, bridge recovery softlocks, relay targets placed on the lower escape route, explosive glass, repeated contact/stroke damage, an opening placed before its flat apron, and held inputs still bypassing early versions. These were corrected and the affected tests rerun. A stopping/catcher control policy and retry logs preserve failed outcomes rather than counting zero-input or zero-test runs as evidence.
+
+Screenshots were inspected for the new vertical layouts and large loop readability. Real-device performance, other browser engines and human fun/balance evaluation remain unrun. The historical sections below describe previous releases, not current measured totals.
+
+---
+
 # v0.20 validation
 
 Run the existing commands below plus `npm run test:racing`, `npm run test:encounters`, and `node tests/objectives.cjs` with the static server on port 8000.

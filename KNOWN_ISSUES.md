@@ -1,12 +1,12 @@
-# v0.20 known limitations
+# v0.30 known limits
 
-- Guided magnetic rails and loops are arcade assists, not dynamic rigid-body track simulation. Rail braking/throttle/boost work; rail jumping/free inversion is not implemented.
-- AI finishing is substantially improved, not guaranteed. Two of eighteen recorded race fields were eliminated; the test policy attacks aggressively. No invulnerability, respawn teleport or positional speed boost is used. Durability values are explicit chassis choices (85/135/100/100).
-- The demolition climax is demanding: the recorded stock rider finished at 10 integrity. It can fail by missing relays even if the road is completed. The HUD tracks all three; collisions or strikes destroy them.
-- Campaign events remain short (roughly 12–30 seconds at sustained throttle). The release emphasizes distinct connected assemblies over a longer campaign. Not every old event received a new format.
-- Moving presses and breaking decks share collisions with rivals. Decorative machinery is distinguishable from bright road edges, but real human clarity testing is still needed.
-- The seed audits check construction envelopes, not every possible player input or hazard phase. The 32 isolated encounter combinations cover two input policies and four builds, not exhaustive variations.
-- No new weapon inventory, pursuit mode, course editor, dynamic rotating platforms, complex alternate-route navigation or character narrative system was added.
-- Real mobile hardware, assistive technology, browser engines beyond Chromium, and prolonged Endless soak/performance tests remain unrun. Landscape layout and desktop browser rendering passed.
-- Saves remain browser/origin-local. Unknown future schema versions reset; current v1 progress is retained. Existing course best times remain historical even though courses changed.
-- Cloud snapshot publication/restoration remains outside this release's verification. GitHub availability is separate from environment publication.
+- A full rigid-body bike/rider simulation, freely rotating rideable machinery and unconstrained loops are not implemented. Guided loops expose speed/release control; art machinery outside bright road/collision shapes is decorative.
+- Two of the four isolated new families still permit held throttle+boost completion. They provide racing/recovery rhythm and route choices; not every section demands precision. Navigation comparisons establish two specific failures of held inputs, not a universal impossibility proof.
+- Campaign completion uses a bounded set of normal-input retries. The attempt log includes crashes and combat deaths; first-pass success on every event is not claimed. Upper routes, landing alignment, braking and guarding need learning.
+- The press section and late races remain demanding. AI riders can fail and can defeat the player. There is no hidden catch-up speed, invulnerability, respawn teleport or finish projection.
+- AI recognizes hazards and traffic but does not search a full route graph. The optional Prism shortcut is player-selectable; AI may take it through a jump but does not guarantee optimal branch planning.
+- Collision damage is an arcade consequence; solid presses are not rigid-body constraints. A per-stroke hit cannot repeatedly drain health without a new stroke. The same rule applies to player and rivals.
+- Old campaign records remain historical after course changes. Saves remain browser/origin-local and unknown future formats are rejected; current v1 progress is preserved.
+- Desktop Chromium and landscape bounds were checked. Human feel/balance testing, assistive technology, Firefox/Safari, real mobile touch/audio/performance and long Endless soak testing remain unrun.
+- The 32 build/speed matrix remains a regression of the retained v0.20 assemblies. New mega-course coverage is stock-bike input-policy traversal, not exhaustive coverage of every garage build and phase.
+- New screenshots include both staged engineering views and real animation-frame runs; neither substitutes for human playtesting. Cloud task restoration/publication is not verified by game tests.

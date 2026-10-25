@@ -1,6 +1,6 @@
 {
   "name": "deathwire",
-  "version": "0.20.0",
+  "version": "0.30.0",
   "private": true,
   "description": "Offline single-player cyberpunk motorcycle combat racing",
   "scripts": {
@@ -10,7 +10,11 @@
     "test:campaign": "node tests/campaign.cjs",
     "test:export": "node tests/export.cjs",
     "test:racing": "node tests/racing.cjs",
-    "test:encounters": "node tests/encounters.cjs"
+    "test:encounters": "node tests/encounters.cjs",
+    "test:navigation": "node tests/v30.cjs",
+    "test:combat": "node tests/combat30.cjs",
+    "test:routes": "node tests/fork30.cjs",
+    "test:live": "node tests/live30.cjs"
   },
   "devDependencies": {
     "playwright": "1.64.1"

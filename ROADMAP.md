@@ -1,5 +1,15 @@
 # Milestones
 
+## v0.30 delivered
+
+- [x] Authored vertical campaign sequences with four large course families.
+- [x] Meaningful pitch landings, full braking, reactor catcher and actual layered shortcut.
+- [x] Timed strikes, reactive rivals, player guard and improved contact/machine damage semantics.
+- [x] Shared finale service pads, lower bridge escape and gauntlet recovery fixes.
+- [x] Input-policy comparison, route choice and combat regressions, field statistics and retry-aware campaign traversal.
+- [ ] Human balance testing, real mobile hardware, free rigid-body loops, rotating rideable machinery and deeper narrative progression remain future work.
+
+
 ## v0.20 delivered
 
 - [x] Four district signature families and reauthored pacing.

@@ -1,17 +1,8 @@
 {
   "races": 18,
-  "ai_finishers": 33,
+  "ai_finishers": 54,
   "ai_starters": 72,
-  "races_with_ai_finishers": 16,
-  "races_ai_beat_player": 12,
-  "empty_fields": [
-    [
-      10,
-      1
-    ],
-    [
-      11,
-      0
-    ]
-  ]
+  "races_with_ai_finishers": 18,
+  "races_ai_beat_player": 17,
+  "player_completions": 13
 }
